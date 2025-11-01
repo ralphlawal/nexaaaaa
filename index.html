@@ -3,624 +3,530 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NexaCore Labs — Futuristic Product Studio</title>
-  <meta name="description" content="NexaCore Labs — AI-first product studio. Design, build and teach futuristic digital products." />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- GSAP & Lottie CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" defer></script>
-
-  <!-- === INSTRUCTIONS (replace before publishing) ===
-    1) Replace the logo file: assets/logo.png (or change src in <img id="siteLogo">)
-    2) Replace Formspree endpoint in the contact form action attribute:
-         action="https://formspree.io/f/your-form-id" -> your real endpoint
-    3) Replace Lottie animation URL(s) if you have custom json files
-    4) Replace placeholder images in assets/ or change URLs in the markup
-    5) To disable sound, remove or change calls to playAudio('ping')
-    6) Deploy: all static — drop into Netlify / Vercel / GitHub Pages
-  ============================================================ -->
+  <title>NexaCore Labs — AI · Apps · Web · Brand</title>
+  <meta name="description" content="NexaCore Labs — AI-first product studio building future-ready apps, websites, and brands." />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
   <style>
-    /* ============================
-       NEXACORE LABS — INLINE CSS
-       Single-file full site styles
-       ============================ */
+  /* -------------------------
+     NexaCore Labs single-file site
+     Mobile-first, responsive, accessible
+     ------------------------- */
 
-    :root{
-      --bg: #04060a;
-      --panel: #071121;
-      --muted: #9fb2c6;
-      --accent: #00E5FF;   /* Electric blue */
-      --accent-2: #0077FF;
-      --nurfutura: #ff8a00; /* placeholder Nur Futura color */
-      --glow: 0 14px 60px rgba(0,229,255,0.10);
-      --radius: 14px;
-      --maxw: 1200px;
-      --font-sans: 'Rajdhani', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      --font-tech: 'Orbitron', sans-serif;
-    }
+  :root{
+    --bg:#07080b;
+    --panel: rgba(255,255,255,0.03);
+    --muted:#9fb2c6;
+    --accent-blue:#3B82F6;
+    --accent-cyan:#06B6D4;
+    --nurfutura-start:#8b2c00;
+    --nurfutura-end:#8b2c00;
+    --white:#f5f7fa;
+    --glass: rgba(255,255,255,0.02);
+    --radius:12px;
+    --maxw:1100px;
+    --header-h:72px;
+  }
 
-    /* Reset & base */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--font-sans);
-      color:#eaf6ff;
-      background:
-        radial-gradient(900px 280px at 8% 8%, rgba(0,229,255,0.02), transparent),
-        radial-gradient(700px 220px at 92% 92%, rgba(0,119,255,0.01), transparent),
-        var(--bg);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      overflow-x:hidden;
-    }
+  :root[data-theme="light"]{
+    --bg:#f6f8fb;
+    --panel: rgba(0,0,0,0.03);
+    --muted:#334155;
+    --white:#071022;
+  }
 
-    a{color:inherit}
-    img{max-width:100%;display:block}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background: radial-gradient(800px 240px at 10% 10%, rgba(59,130,246,0.03), transparent), radial-gradient(700px 200px at 92% 92%, rgba(6,182,212,0.02), transparent), var(--bg);
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
 
-    .container{max-width:var(--maxw);margin:0 auto;padding:18px}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--maxw);margin:0 auto;padding:16px}
 
-    
-    /* ============================
-       HEADER / NAVIGATION
-       Reusable: keep same on all pages
-       ============================ */
-    .nexa-header{
-      position:fixed;left:0;right:0;top:0;z-index:9998;
-      background:linear-gradient(180deg, rgba(3,6,15,0.86), rgba(3,6,15,0.45));
-      border-bottom:1px solid rgba(0,229,255,0.04);
-      backdrop-filter: blur(8px);
-      transition:backdrop-filter .3s, background .3s;
-    }
-    .nexa-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:12px}
-    .nexa-brand{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none}
-    .nexa-logo{width:56px;height:56px;border-radius:12px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(0,229,255,0.18));transition:transform .18s}
-    .nexa-brand:hover .nexa-logo{transform:translateY(-3px) rotate(-2deg)}
-    .nexa-title{font-family:var(--font-tech);color:#e2fbff;font-weight:700;letter-spacing:1px;font-size:16px;text-transform:uppercase}
-    .nexa-nav ul{display:flex;list-style:none;gap:18px;margin:0;padding:0}
-    .nexa-nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-family:var(--font-tech);font-weight:600}
-    .nexa-nav a:hover{color:var(--accent);text-shadow:0 0 8px rgba(0,229,255,0.12)}
-    .nexa-nav a::after{content:"";position:absolute;height:2px;background:var(--accent);left:0;right:auto;bottom:6px;width:0;transition:width .25s}
-    .nexa-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#00101a;padding:10px 14px;border-radius:12px;border:none;font-weight:800;box-shadow:var(--glow);cursor:pointer;font-family:var(--font-tech)}
-    .partner-pill{background:linear-gradient(90deg,var(--nurfutura),#ff651a);padding:8px 12px;border-radius:999px;text-decoration:none;color:#001;font-weight:700}
+  /* Loader */
+  #loader {
+    position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:linear-gradient(180deg, rgba(2,6,15,0.96), rgba(0,0,0,0.96));z-index:99999;
+    transition:opacity .35s ease,transform .35s ease;
+  }
+  #loader.hide{opacity:0;transform:translateY(-8px);pointer-events:none}
+  .loader-logo{width:84px;height:84px;border-radius:14px;background:linear-gradient(135deg,var(--accent-blue),var(--accent-cyan));display:flex;align-items:center;justify-content:center;font-family:Orbitron;color:#001;font-weight:800}
+  .loader-sub{color:var(--muted);font-size:13px}
 
-    .menu-icon{display:none;cursor:pointer;width:44px;height:44px;border-radius:10px;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
-    .menu-icon span{display:block;height:2px;width:18px;background:var(--accent);margin:3px 0;border-radius:2px}
+  /* Header */
+  header.site-header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:linear-gradient(180deg, rgba(2,6,15,0.92), rgba(2,6,15,0.65));backdrop-filter:blur(6px);border-bottom:1px solid rgba(59,130,246,0.03);z-index:9999}
+  header .inner{max-width:var(--maxw);margin:0 auto;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+  .brand img{width:50px;height:50px;border-radius:10px;object-fit:contain}
+  .brand .title{font-family:Orbitron;font-weight:700}
+  .nav{display:flex;align-items:center;gap:10px}
+  .nav a{padding:8px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:600}
+  .nav a:hover{color:var(--accent-blue)}
+  .primary-cta{background:linear-gradient(90deg,var(--accent-blue),var(--accent-cyan));color:#001;padding:8px 14px;border-radius:12px;font-weight:800;border:none;cursor:pointer;box-shadow:0 12px 60px rgba(59,130,246,0.12)}
+  /* theme & mobile toggles */
+  .controls{display:flex;align-items:center;gap:8px}
+  .icon-btn{width:42px;height:42px;border-radius:10px;border:none;background:transparent;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+  .icon-btn:hover{color:var(--accent-blue)}
 
-    /* ============================
-       HERO
-       ============================ */
-    main{padding-top:96px}
-    .hero{display:grid;grid-template-columns:1fr 440px;gap:26px;align-items:center;padding:48px 0}
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:16px;padding:22px;border:1px solid rgba(255,255,255,0.03);position:relative;overflow:hidden}
-    .hero-title{font-family:var(--font-tech);font-size:34px;margin:0;line-height:1.02;color:var(--accent)}
-    .hero-lead{color:var(--muted);margin-top:10px;font-size:15px}
-    .cta-row{display:flex;gap:10px;margin-top:16px}
-    .tag{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
+  /* Mobile Panel */
+  #mobilePanel{display:none;position:fixed;top:var(--header-h);right:12px;background:linear-gradient(180deg,rgba(3,6,12,0.98),rgba(3,6,12,0.95));padding:12px;border-radius:10px;z-index:99999;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+  #mobilePanel ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0}
+  #mobilePanel a{display:block;padding:8px 12px;color:var(--white);border-radius:8px}
 
-    .stage{height:420px;border-radius:12px;background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-    .float{position:absolute;border-radius:999px;pointer-events:none}
-    .float.small{width:40px;height:40px;background:linear-gradient(90deg,var(--accent),rgba(0,229,255,0.15));left:6%;top:24%}
-    .float.mid{width:70px;height:70px;background:linear-gradient(90deg,var(--accent-2),rgba(0,119,255,0.12));right:8%;top:12%}
-    .float.glass{width:120px;height:120px;background:rgba(255,255,255,0.02);border-radius:18px;border:1px solid rgba(0,229,255,0.04);left:28%;bottom:14%}
-    .robot-card{position:absolute;right:12px;bottom:14px;z-index:22;width:320px;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+  /* Main / Hero */
+  main{padding-top:calc(var(--header-h) + 22px)}
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:center;padding:28px 0}
+  .hero .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.03)}
+  .hero h1{font-family:Orbitron;font-size:clamp(22px,4.2vw,36px);color:var(--accent-blue);margin:0;line-height:1.05}
+  .hero .lead{color:var(--muted);margin-top:10px}
+  .cta-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .cta{background:linear-gradient(90deg,var(--accent-blue),var(--accent-cyan));color:#001;padding:10px 14px;border-radius:12px;border:none;font-weight:800;cursor:pointer}
+  .cta.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent-blue)}
+  .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);margin-right:8px}
 
-    /* ============================
-       SECTIONS & CARDS
-       ============================ */
-    .section{padding:22px 0}
-    .section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03)}
-    .project-thumb{height:140px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#00101a;font-weight:800}
-    .founder{padding:18px}
+  /* Stage */
+  .stage{height:320px;border-radius:12px;background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .float{position:absolute;border-radius:999px;pointer-events:none}
+  .float.s{width:36px;height:36px;background:linear-gradient(90deg,var(--accent-blue),rgba(59,130,246,0.12));left:6%;top:20%}
+  .float.m{width:64px;height:64px;background:linear-gradient(90deg,var(--accent-cyan),rgba(6,182,212,0.12));right:8%;top:14%}
+  .float.g{width:100px;height:100px;background:rgba(255,255,255,0.02);left:26%;bottom:12%;border-radius:18px;border:1px solid rgba(59,130,246,0.04)}
 
-    /* ============================
-       MODALS / ASSISTANT / TOAST / COOKIE
-       ============================ */
-    .assistant{position:fixed;right:18px;bottom:18px;width:74px;height:74px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#00101a;font-weight:800;z-index:120;box-shadow:var(--glow);cursor:pointer;border:2px solid rgba(255,255,255,0.04)}
-    .assistant-chat{position:fixed;right:18px;bottom:108px;width:360px;border-radius:12px;background:var(--panel);padding:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 30px 80px rgba(0,0,0,0.6);z-index:120;display:none}
-    .assistant-chat .stream{max-height:260px;overflow:auto}
-    .toast{position:fixed;left:18px;bottom:18px;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:10px;color:#00101a;font-weight:800;box-shadow:var(--glow);display:none;z-index:120}
-    .cookie{position:fixed;left:18px;bottom:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:none;z-index:140}
+  /* Sections */
+  section{padding:18px 0}
+  .title-row{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px;gap:12px}
+  h2.section-title{font-family:Orbitron;font-size:18px;color:var(--accent-blue);margin:0}
+  .muted{color:var(--muted);font-size:14px}
 
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:200;padding:20px}
-    .modal .box{max-width:920px;width:100%;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
+  /* Cards & grids */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .card{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03)}
+  .project-thumb{height:160px;border-radius:10px;background:linear-gradient(90deg,var(--accent-blue),var(--accent-cyan));display:flex;align-items:center;justify-content:center;color:#001;font-weight:800}
+  .project-thumb img{width:100%;height:100%;object-fit:cover;border-radius:10px}
 
-    /* ============================
-       CONTACT FORM
-       ============================ */
-    .form-row{display:grid;grid-template-columns:1fr 320px;gap:16px}
-    .form-card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03)}
-    .form-card input,.form-card textarea{width:100%;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#eaf6ff;min-height:44px}
-    .form-card textarea{min-height:120px;resize:vertical}
+  /* services */
+  .service-list{display:flex;flex-direction:column;gap:10px}
+  .service-item{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)}
+  .service-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,var(--accent-blue),var(--accent-cyan));color:#001}
 
-    /* ============================
-       FOOTER
-       ============================ */
-    footer{padding:28px 0;color:var(--muted);text-align:center}
+  /* Nur Futura button */
+  .nurfutura-btn{display:inline-block;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,var(--nurfutura-start),var(--nurfutura-end));color:#fff;font-weight:800;border:none;cursor:pointer;box-shadow:0 0 20px rgba(139,92,246,0.38)}
+  .nurfutura-btn:hover{transform:translateY(-3px);box-shadow:0 0 34px rgba(139,92,246,0.68)}
+  @keyframes nfPulse{0%{box-shadow:0 0 20px rgba(139,92,246,0.28)}50%{box-shadow:0 0 34px rgba(139,92,246,0.58)}100%{box-shadow:0 0 20px rgba(139,92,246,0.28)}}
+  .nurfutura-btn.pulse{animation:nfPulse 3s infinite}
 
-    /* ============================
-       RESPONSIVE
-       ============================ */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr;gap:18px;padding-top:36px}
-      .nexa-nav{display:none}
-      .menu-icon{display:flex}
-      .nexa-title{display:none}
-      .stage{height:320px}
-      .form-row{grid-template-columns:1fr}
-    }
+  /* Contact layout */
+  .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:12px}
+  .form-card input,.form-card textarea,.form-card select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);color:var(--white)}
+
+  /* Modal */
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:99999;padding:12px}
+  .modal .box{max-width:920px;width:100%;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.03)}
+
+  /* Footer */
+  footer{padding:20px 0;border-top:1px solid rgba(59,130,246,0.03);color:var(--muted)}
+
+  /* Responsive adjustments */
+  @media(min-width:900px){ main{padding-top:calc(var(--header-h) + 36px)} .hero{grid-template-columns:1fr 400px;gap:22px} .stage{height:360px} .project-thumb{height:180px} }
+  @media(max-width:899px){
+    .nav{display:none}
+    .icon-btn.mobile{display:inline-flex}
+    #mobilePanel{display:none}
+    header .inner{gap:8px}
+    .hero{grid-template-columns:1fr;gap:12px}
+    .stage{height:240px}
+    .project-thumb{height:140px}
+    .contact-grid{grid-template-columns:1fr}
+    .cta-row{flex-direction:column}
+    .cta{width:100%}
+    .nurfutura-btn{width:100%;text-align:center}
+  }
+  @media(max-width:420px){
+    .brand img{width:44px;height:44px}
+    .brand .title{font-size:14px}
+    header .inner{padding:8px 12px}
+    .loader-logo{width:72px;height:72px}
+  }
   </style>
 </head>
+<body data-theme="dark">
+  <!-- LOADER -->
+  <div id="loader" role="status" aria-live="polite">
+    <div class="loader-logo" aria-hidden="true">NCL</div>
+    <div class="loader-sub">Booting NexaCore — initialising modules</div>
+  </div>
 
-<body>
-  
-
-  <!-- ===========================
-       HEADER (REUSABLE)
-       - uses assets/logo.png as default
-       =========================== -->
-  <header class="nexa-header" role="banner" aria-label="Main header">
-    <div class="nexa-inner container">
-      <a class="nexa-brand" href="#home" onclick="scrollTo('home')" title="NexaCore Labs Home">
-        <!-- Replace src with your logo file if you have one (assets/logo.png) -->
-        <img id="siteLogo" class="nexa-logo" src="logo.png" alt="NexaCore Labs logo" onerror="this.src='https://via.placeholder.com/120x120.png?text=NCL'">
+  <!-- HEADER -->
+  <header class="site-header" role="banner" aria-label="Main header">
+    <div class="inner container">
+      <a class="brand" href="#home" aria-label="NexaCore Labs home" onclick="scrollToId('home')">
+        <img src="logo.png" alt="NexaCore logo" onerror="this.src='https://via.placeholder.com/120?text=NCL'">
         <div>
-          <div class="nexa-title">NexaCore Labs</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">AI · Design · Education</div>
+          <div class="title">NexaCore Labs</div>
+          <div class="muted" style="font-size:12px">AI · App · Web · Brand</div>
         </div>
       </a>
 
-      <nav class="nexa-nav" role="navigation" aria-label="Main navigation">
-        <ul>
-          <li><a href="#home" onclick="scrollTo('home')">Home</a></li>
-          <li><a href="#about" onclick="scrollTo('about')">About</a></li>
-          <li><a href="#services" onclick="scrollTo('services')">Services</a></li>
-          <li><a href="#projects" onclick="scrollTo('projects')">Projects</a></li>
-          <li><a href="#partners" onclick="scrollTo('partners')">Partners</a></li>
-          <li><a href="#contact" onclick="scrollTo('contact')">Contact</a></li>
-        </ul>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#home" onclick="scrollToId('home')">Home</a>
+        <a href="#about" onclick="scrollToId('about')">About</a>
+        <a href="#services" onclick="scrollToId('services')">Services</a>
+        <a href="#projects" onclick="scrollToId('projects')">Projects</a>
+        <a href="#partners" onclick="scrollToId('partners')">Partners</a>
+        <a href="#contact" class="primary-cta" onclick="scrollToId('contact')">Work with us</a>
       </nav>
 
-      <div style="display:flex;align-items:center;gap:12px">
-        <a class="partner-pill" href="nurfuturamarketing.com.ng" target="_blank" rel="noopener" title="Nur Futura partnership">Nur Futura</a>
-        <button class="nexa-cta" onclick="scrollTo('contact')">Work With Us</button>
-        <div class="menu-icon" id="mobileToggle" onclick="toggleMobileMenu()" aria-hidden="true" title="Open menu">
-          <span></span><span></span><span></span>
-        </div>
+      <div class="controls">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+        <button class="icon-btn mobile" id="mobileToggle" aria-label="Open menu" title="Open menu"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
   </header>
 
-  <!-- ===========================
-       MOBILE MENU (overlay)
-       =========================== -->
-  <div id="mobileMenu" style="display:none;position:fixed;right:12px;top:76px;background:rgba(3,6,15,0.98);padding:12px;border-radius:12px;z-index:9999;box-shadow:0 30px 80px rgba(0,0,0,0.6)">
-    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">
-      <li><a href="#home" onclick="scrollTo('home');toggleMobileMenu();">Home</a></li>
-      <li><a href="#about" onclick="scrollTo('about');toggleMobileMenu();">About</a></li>
-      <li><a href="#services" onclick="scrollTo('services');toggleMobileMenu();">Services</a></li>
-      <li><a href="#projects" onclick="scrollTo('projects');toggleMobileMenu();">Projects</a></li>
-      <li><a href="#partners" onclick="scrollTo('partners');toggleMobileMenu();">Partners</a></li>
-      <li><a href="#contact" onclick="scrollTo('contact');toggleMobileMenu();">Contact</a></li>
+  <!-- Mobile panel (hidden on desktop) -->
+  <div id="mobilePanel" aria-hidden="true" role="menu">
+    <ul>
+      <li><a href="#home" onclick="scrollToId('home');toggleMobile(false)">Home</a></li>
+      <li><a href="#about" onclick="scrollToId('about');toggleMobile(false)">About</a></li>
+      <li><a href="#services" onclick="scrollToId('services');toggleMobile(false)">Services</a></li>
+      <li><a href="#projects" onclick="scrollToId('projects');toggleMobile(false)">Projects</a></li>
+      <li><a href="#partners" onclick="scrollToId('partners');toggleMobile(false)">Partners</a></li>
+      <li><a href="#contact" onclick="scrollToId('contact');toggleMobile(false)">Contact</a></li>
     </ul>
   </div>
 
-  <!-- ===========================
-       MAIN PAGE — ALL SECTIONS (single-file)
-       =========================== -->
-  <main id="main" aria-live="polite">
-    <!-- Home / Hero -->
-    <section id="home" class="hero container" aria-label="Intro">
+  <!-- MAIN -->
+  <main class="container" id="main" role="main">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Hero">
       <div class="panel">
-        <h1 class="hero-title">We craft AI-first products & cinematic brand experiences.</h1>
-        <p class="hero-lead">NexaCore Labs blends design, engineering, and strategy to build future-ready products, immersive campaigns, and hands-on tech education across markets like Nigeria and Ireland.</p>
+        <h1>We craft AI-first products & cinematic brand experiences.</h1>
+        <p class="lead muted">NexaCore Labs blends design, engineering, and strategy to build future-ready products, immersive campaigns, and hands-on tech education.</p>
 
         <div class="cta-row">
-          <button class="nexa-cta" onclick="scrollTo('contact')">Start a Project</button>
-          <button class="nexa-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)" onclick="scrollTo('projects')">View Projects</button>
-          <button class="nexa-cta" onclick="openAssistant()">Ask NexaBot</button>
+          <button class="cta" onclick="scrollToId('contact')">Start a project</button>
+          <button class="cta secondary" onclick="scrollToId('projects')">View projects</button>
+          <button class="cta" onclick="openAssistant()">Ask NexaBot</button>
         </div>
 
-        <div style="margin-top:16px;color:var(--muted)">
-          <span class="tag">AI · Automation</span>
-          <span class="tag">Design · Motion</span>
+        <div style="margin-top:12px">
+          <span class="chip">AI Development</span>
+          <span class="chip">App Development</span>
+          <span class="chip">Website Development</span>
         </div>
       </div>
 
-      <aside class="stage panel" id="stage" aria-hidden="false">
-        <div class="float small" id="f1" aria-hidden="true"></div>
-        <div class="float mid" id="f2" aria-hidden="true"></div>
-        <div class="float glass" id="f3" aria-hidden="true"></div>
+      <aside class="stage" aria-hidden="false">
+        <div class="float s" id="f1" aria-hidden="true"></div>
+        <div class="float m" id="f2" aria-hidden="true"></div>
+        <div class="float g" id="f3" aria-hidden="true"></div>
 
-        <!-- Lottie robot placeholder — defaults to public animation, replace if needed -->
-        <div id="lottieRobot" style="width:220px;height:220px;z-index:30" data-lottie-path="https://assets5.lottiefiles.com/packages/lf20_x62chJ.json"></div>
+        <div id="lottieHook" style="width:220px;height:220px" data-lottie-path=""></div>
 
-        <div class="robot-card" aria-hidden="false">
-          <h4>Core AI — NOVA</h4>
-          <p class="muted">Edge-ready ML pipelines, real-time inference, and human-centered prompts.</p>
+        <div style="position:absolute;right:14px;bottom:14px;background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)">
+          <strong>Core AI</strong>
+          <div class="muted" style="font-size:13px">Realtime inference · pipelines</div>
         </div>
       </aside>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="section container" aria-label="Services">
-      <div class="section-title">
-        <h2>Services</h2>
-        <small class="muted">Design • Build • Teach</small>
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-label="About">
+      <div class="title-row">
+        <h2 class="section-title">About NexaCore Labs</h2>
+        <small class="muted">We combine creativity, AI, and product thinking</small>
       </div>
-
-      <div class="cards">
-        <div class="card"><h3>AI & Automation</h3><p class="muted">RAG systems, conversational AI, prompt orchestration, and automation workflows.</p></div>
-        <div class="card"><h3>Web & Mobile</h3><p class="muted">React, Next.js, PWAs, and cloud-native, secure backends.</p></div>
-        <div class="card"><h3>Brand & Motion</h3><p class="muted">Identity design, motion libraries, and cinematic campaign microsites.</p></div>
-        <div class="card"><h3>Education</h3><p class="muted">Bootcamps, school curriculum, and practical mentorship programs.</p></div>
+      <div class="card">
+        <p class="muted">NexaCore Labs is a product studio that builds AI-first experiences, mobile & web apps, and premium brand visuals. We focus on AI Development, App Development, Website Development, Graphic Design, Brand Management and related services. We teach, launch, and grow products with a human-centered approach.</p>
+        <p style="margin-top:10px" class="muted"><strong>Mission:</strong> Build thoughtful, ethical AI and beautiful digital products that scale.</p>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section container" aria-label="About">
-      <div class="section-title">
-        <h2>About NexaCore Labs</h2>
-        <small class="muted">Design-first engineering with measurable outcomes</small>
+    <!-- SERVICES -->
+    <section id="services" class="section" aria-label="Services">
+      <div class="title-row">
+        <h2 class="section-title">Services</h2>
+        <small class="muted">What we deliver</small>
       </div>
 
       <div class="card">
-        <h3>Mission</h3>
-        <p class="muted">To build elegant, future-facing technology and brand experiences. We partner with creators, startups and enterprises to ship AI-first products and teach teams to build them.</p>
+        <div class="service-list">
+          <div class="service-item"><div class="service-icon"><i class="fa-solid fa-brain"></i></div><div><div style="font-weight:700">AI Development</div><div class="muted" style="font-size:13px">Conversational agents, custom models, pipelines and integrations.</div></div></div>
 
-        <h4 style="margin-top:12px">Approach</h4>
-        <ul style="padding-left:18px;color:var(--muted)">
-          <li>Design-led engineering</li>
-          <li>Human-centered AI</li>
-          <li>Project-based education</li>
-          <li>Community partnerships across Nigeria & Ireland</li>
-        </ul>
-      </div>
-    </section>
+          <div class="service-item"><div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div><div><div style="font-weight:700">App Development</div><div class="muted" style="font-size:13px">iOS/Android apps, PWAs and native experiences.</div></div></div>
 
-    <!-- Projects -->
-    <section id="projects" class="section container" aria-label="Projects">
-      <div class="section-title">
-        <h2>Projects</h2>
-      </div>
+          <div class="service-item"><div class="service-icon"><i class="fa-solid fa-code"></i></div><div><div style="font-weight:700">Website Development</div><div class="muted" style="font-size:13px">Fast, accessible, SEO-friendly sites & web apps.</div></div></div>
 
-      <div class="cards" role="list">
-        <article class="card" role="listitem">
-          <div class="project-thumb"><img src="zz.jpeg" alt="AURA AI placeholder" onerror="this.src='https://via.placeholder.com/400x200.png?text=AURA+AI'"></div>
-          <h3>AURA — Conversational Agent</h3>
-          <p class="muted">Multi-channel conversational support agent with analytics and knowledge connectors (placeholder).</p>
-          <div style="margin-top:8px;display:flex;gap:8px"><button class="nexa-cta" onclick="openProject('AURA — Conversational Agent','Full case study details placeholder. Replace with screenshots, metrics, and client quote.')">Preview</button><a class="nexa-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)" href="projects.html">Full Case</a></div>
-        </article>
+          <div class="service-item"><div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div><div><div style="font-weight:700">Graphic Design</div><div class="muted" style="font-size:13px">Brand visuals, motion and high-fidelity mockups.</div></div></div>
 
-        <article class="card" role="listitem">
-          <div class="project-thumb"><img src="z.jpeg" alt="NEXA CITY placeholder" onerror="this.src='https://via.placeholder.com/400x200.png?text=NEXA+CITY'"></div>
-          <h3>NEXA CITY — Brand Experience</h3>
-          <p class="muted">Immersive brand system for fintech, motion library, and campaign microsite (placeholder).</p>
-          <div style="margin-top:8px;display:flex;gap:8px"><button class="nexa-cta" onclick="openProject('NEXA CITY','Placeholder: Brand system, motion library, and campaign assets.')">Preview</button></div>
-        </article>
+          <div class="service-item"><div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div><div><div style="font-weight:700">Brand Management</div><div class="muted" style="font-size:13px">Identity, campaigns and long-term creative strategy.</div></div></div>
 
-        <article class="card" role="listitem">
-          <div class="project-thumb"><img src="zzz.jpeg" alt="EDU-BLOCK placeholder" onerror="this.src='https://via.placeholder.com/400x200.png?text=EDU-BLOCK'"></div>
-          <h3>EDU-BLOCK — Learning Platform</h3>
-          <p class="muted">Gamified learning platform for kids teaching coding with teacher dashboard (placeholder).</p>
-          <div style="margin-top:8px;display:flex;gap:8px"><button class="nexa-cta" onclick="openProject('EDU-BLOCK','Placeholder: Learning platform with gamified modules and teacher dashboard.')">Preview</button></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Partnership -->
-    <section id="partners" class="section container" aria-label="Partnership">
-      <div class="section-title"><h2>Partnership</h2><small class="muted">Strategic collaboration — Nur Futura Marketing</small></div>
-
-      <div style="display:grid;grid-template-columns:1fr 320px;gap:14px">
-        <div class="card">
-          <h3>Founder’s Statement</h3>
-          <p class="muted">“At NexaCore Labs we build technology that feels thoughtful and beautiful. Our partnership with Nur Futura Marketing amplifies our creative reach across West Africa and supports joint education initiatives.”</p>
-          <div style="margin-top:12px"><a class="nexa-cta" href="contact.html">Work With Us</a></div>
+          <div class="service-item"><div class="service-icon"><i class="fa-solid fa-layer-group"></i></div><div><div style="font-weight:700">Related</div><div class="muted" style="font-size:13px">Consulting, education, integrations and partner support.</div></div></div>
         </div>
-
-        <aside class="card">
-          <h4>Nur Futura Partnership</h4>
-          <p class="muted">We are excited to partner with Nur Futura Marketing for co-developed campaigns, product launches and education programs.</p>
-          <div style="margin-top:12px"><a class="nexa-cta" style="background:linear-gradient(90deg,var(--nurfutura),#ff651a); color:#001" href="www.nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer">Visit Nur Futura</a></div>
-          <div style="margin-top:8px;color:var(--muted);font-size:13px">Announced: 09, 2025</div>
-        </aside>
       </div>
     </section>
 
-    <!-- Insights / Blog -->
-    <section id="insights" class="section container" aria-label="Insights">
-      <div class="section-title"><h2>Insights</h2><small class="muted">Short takes on AI, design and product strategy</small></div>
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-label="Projects">
+      <div class="title-row">
+        <h2 class="section-title">Projects</h2>
+        <small class="muted">Prototypes & case studies</small>
+      </div>
+
       <div class="cards">
-        <article class="card"><h3>Human-Centered AI</h3><p class="muted">Principles for building respectful AI systems.</p><div style="margin-top:8px"><a class="nexa-cta" href="#">Read</a></div></article>
-        <article class="card"><h3>Design Systems at Scale</h3><p class="muted">Build tokenized design systems & motion libraries.</p><div style="margin-top:8px"><a class="nexa-cta" href="#">Read</a></div></article>
-        <article class="card"><h3>Starter Web AI Projects</h3><p class="muted">Three projects SMEs can use today.</p><div style="margin-top:8px"><a class="nexa-cta" href="#">Read</a></div></article>
+        <article class="card">
+          <div class="project-thumb"><img src="z.jpeg" alt="Nexa Study" onerror="this.src='https://via.placeholder.com/800x450?text=Nexa+Study'"></div>
+          <h3>Nexa Study</h3>
+          <p class="muted">AI-powered learning platform with gamified modules, teacher dashboards and automated grading.</p>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <button class="cta" onclick="openProject('Nexa Study','Demo placeholder for Nexa Study')">Preview</button>
+            <button class="cta secondary" onclick="scrollToId('contact')">Request Case Study</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="project-thumb"><img src="zz.jpeg" alt="Aura" onerror="this.src='https://via.placeholder.com/800x450?text=Aura'"></div>
+          <h3>Aura</h3>
+          <p class="muted">Conversational AI agent for multi-channel support and automation.</p>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <button class="cta" onclick="openProject('Aura','Demo placeholder for Aura')">Preview</button>
+            <button class="cta secondary" onclick="scrollToId('contact')">Request Case Study</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="project-thumb"><img src="zzz.jpeg" alt="NexaCity" onerror="this.src='https://via.placeholder.com/800x450?text=NexaCity'"></div>
+          <h3>NexaCity</h3>
+          <p class="muted">Smart city simulations and connected infrastructure visualizations.</p>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <button class="cta" onclick="openProject('NexaCity','Demo placeholder for NexaCity')">Preview</button>
+            <button class="cta secondary" onclick="scrollToId('contact')">Request Case Study</button>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section container" aria-label="Contact">
-      <div class="section-title"><h2>Contact</h2><small class="muted">Start a project — we reply within 48 hours</small></div>
+    <!-- PARTNERS -->
+    <section id="partners" class="section" aria-label="Partners">
+      <div class="title-row">
+        <h2 class="section-title">Partners</h2>
+        <small class="muted">Strategic collaboration — Nur Futura Marketing</small>
+      </div>
 
-      <div class="form-row">
-        <div class="form-card">
-          <h3>Start a Project</h3>
-          <!-- Replace the action URL with your real Formspree endpoint -->
-          <form id="contactForm" action="https://formspree.io/f/xqayvbag" method="POST" onsubmit="return handleForm(event)">
-            <label><span style="color:var(--accent)">Full name</span><input name="name" required></label>
-            <label><span style="color:var(--accent)">Email</span><input name="_replyto" type="email" required></label>
-            <label><span style="color:var(--accent)">Project type</span>
-              <select name="project_type" style="width:100%;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#eaf6ff">
-                <option>AI & Automation</option><option>Web / Mobile App</option><option>Brand & Motion</option><option>Education</option><option>Other</option>
-              </select>
-            </label>
-            <label><span style="color:var(--accent)">Message</span><textarea name="message" required></textarea></label>
-            <input type="text" name="_gotcha" style="display:none">
-            <div style="display:flex;gap:8px;margin-top:10px">
-              <button class="nexa-cta" type="submit">Send Message</button>
-              <button type="button" class="nexa-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)" onclick="fillDemo()">Auto Fill</button>
-            </div>
-            <div id="formStatus" style="margin-top:8px;color:var(--muted);display:none"></div>
-          </form>
+      <div class="card">
+        <h3>Nur Futura Marketing</h3>
+        <p class="muted">Partnering to blend strategic marketing and futuristic product launches — shared campaigns, education programs and brand accelerators.</p>
+        <div style="margin-top:12px">
+          <a class="nurfutura-btn pulse" href="nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer">Visit Nur Futura</a>
         </div>
+      </div>
+
+      <div style="margin-top:12px" class="muted">Want to partner? <button class="cta secondary" onclick="scrollToId('contact')">Become a Partner</button></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="title-row">
+        <h2 class="section-title">Contact</h2>
+        <small class="muted">Start a project — we reply in ~48 hours</small>
+      </div>
+
+      <div class="contact-grid">
+        <form id="contactForm" class="form-card" action="https://formspree.io/f/xqayvbag" method="POST" onsubmit="return submitContact(event)">
+          <label style="display:block"><strong>Your name</strong><input name="name" required /></label>
+          <label style="display:block;margin-top:8px"><strong>Email</strong><input name="_replyto" type="email" required /></label>
+          <label style="display:block;margin-top:8px"><strong>Project type</strong>
+            <select name="project_type" style="margin-top:6px">
+              <option>AI Development</option><option>App Development</option><option>Website Development</option><option>Graphic Design</option><option>Brand Management</option><option>Related</option>
+            </select>
+          </label>
+          <label style="display:block;margin-top:8px"><strong>Message</strong><textarea name="message" rows="6" required></textarea></label>
+
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+            <button class="cta" type="submit">Send Message</button>
+            <button type="button" class="cta secondary" onclick="fillDemo()">Auto Fill</button>
+          </div>
+          <div id="contactStatus" style="margin-top:8px;color:var(--muted);display:none"></div>
+        </form>
 
         <aside class="form-card">
           <h4>Contact Info</h4>
-          <p class="muted">Email: <a href="mailto:codezilla@nexacorelabs.site" style="color:var(--accent)">codezilla@nexacorelabs.site</a></p>
-          <p class="muted">Phone: +234 818 701 7489</p>
-          <p class="muted">Location: Lagos / Dublin</p>
+          <p class="muted">Email: <a href="mailto:codezilla@nexacorelabs.site" style="color:var(--accent-blue)">codezilla@nexacorelabs.site</a></p>
+          <p class="muted">Location: Lagos / Dublin (hybrid)</p>
 
           <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-            <a class="nexa-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)" href="#" onclick="event.preventDefault()">Twitter</a>
-            <a class="nexa-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)" href="#" onclick="event.preventDefault()">LinkedIn</a>
-            <a class="nexa-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)" href="#" onclick="event.preventDefault()">Instagram</a>
+            <a class="cta secondary" href="#" onclick="event.preventDefault()">Twitter</a>
+            <a class="cta secondary" href="#" onclick="event.preventDefault()">LinkedIn</a>
+            <a class="cta secondary" href="#" onclick="event.preventDefault()">Instagram</a>
+          </div>
+
+          <div style="margin-top:18px">
+            <div style="font-weight:700;margin-bottom:6px">Response time</div>
+            <div class="muted">We usually reply within <strong>48 hours</strong> — our AI likes to think before it types. 🤖💤</div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- Footer CTA -->
-    <section class="section container">
+    <!-- CTA FOOTER -->
+    <section class="section">
       <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
         <div>
-          <h3 style="margin:0">Ready to create?</h3>
-          <p class="muted" style="margin:6px 0 0">Tell us about your idea — we’ll respond within 48 hours.</p>
+          <h3 style="margin:0">Ready to create something extraordinary?</h3>
+          <div class="muted" style="margin-top:6px">Tell us about your idea — we’ll respond within 48 hours.</div>
         </div>
-        <div><a class="nexa-cta" href="#contact" onclick="scrollTo('contact')">Start a Project</a></div>
+        <div><button class="cta" onclick="scrollToId('contact')">Start a Project</button></div>
       </div>
     </section>
+
   </main>
 
-  <!-- ===========================
-       FOOTER
-       =========================== -->
-  <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div><strong>NexaCore Labs</strong><div style="color:var(--muted)">© <span id="year"></span> NexaCore Labs</div></div>
-      <div style="color:var(--muted)">Made with ⚙️ + AI — Electric Blue theme</div>
+  <!-- PROJECT MODAL -->
+  <div id="projectModal" class="modal" role="dialog" aria-hidden="true">
+    <div class="box">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="modalTitle">Project</h3>
+        <button class="cta secondary" onclick="closeProject()">Close</button>
+      </div>
+      <div id="modalBody" style="margin-top:12px;color:var(--muted)">Details...</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div><strong>NexaCore Labs</strong><div class="muted">© <span id="year"></span> NexaCore Labs</div></div>
+      <div class="muted">Made with ⚙️ + AI — Branded to your logo</div>
     </div>
   </footer>
 
-  <!-- ===========================
-       Assistant, Toast, Cookie, Project Modal
-       =========================== -->
-  <div class="assistant" id="assistantBtn" title="Open NexaBot">N</div>
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
 
-  <div class="assistant-chat" id="assistantChat" role="dialog" aria-hidden="true">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <strong>NexaBot</strong>
-      <button class="nexa-cta" onclick="closeAssistant()" style="padding:6px 8px;font-size:13px">Close</button>
-    </div>
-    <div class="stream" id="assistantStream" style="margin-top:8px">
-      <div class="msg" style="background:linear-gradient(90deg, rgba(0,229,255,0.06), rgba(0,119,255,0.02));padding:10px;border-radius:10px;color:var(--muted)">Hi — I'm NexaBot. Need help starting a project?</div>
-    </div>
-    <div style="display:flex;gap:8px;margin-top:10px">
-      <input id="assistInput" placeholder="Ask NexaBot..." style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);color:#dff6ff">
-      <button class="nexa-cta" onclick="sendAssist()">Send</button>
-    </div>
-  </div>
-
-  <div id="toast" class="toast" aria-hidden="true">Notification</div>
-
-  <div id="cookie" class="cookie" aria-hidden="true" style="display:none">
-    <div style="max-width:360px">
-      <div style="font-weight:700">We use cookies</div>
-      <div style="color:var(--muted)">Cookies improve your experience. You can disable them in your browser settings.</div>
-    </div>
-    <div style="margin-left:12px;display:flex;gap:8px;align-items:center">
-      <button id="acceptCookies" class="nexa-cta">Accept</button>
-      <button class="nexa-cta" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--accent)" onclick="document.getElementById('cookie').style.display='none'">Dismiss</button>
-    </div>
-  </div>
-
-  <div id="projectModal" class="modal" aria-hidden="true">
-    <div class="box">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <h3 id="projTitle">Project</h3>
-        <button class="nexa-cta" onclick="closeProject()">Close</button>
-      </div>
-      <div id="projBody" style="margin-top:12px;color:var(--muted)">Details...</div>
-    </div>
-  </div>
-
-  <!-- ===========================
-       INLINE JAVASCRIPT
-       =========================== -->
   <script>
-    // Small helpers and initialization
-    document.getElementById('year').textContent = new Date().getFullYear();
+  // Basic init
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Bootloader hide (on load)
-    window.addEventListener('load', ()=> {
-      const boot = document.getElementById('boot');
-      setTimeout(()=> {
-        boot.style.opacity = '0';
-        boot.style.transform = 'translateY(-8px)';
-        setTimeout(()=> boot.style.display = 'none', 480);
-        initSite();
-      }, 700);
+  // Loader safety: hide on load or after timeout
+  const loader = document.getElementById('loader');
+  let loaderHidden = false;
+  function hideLoader(){
+    if(loaderHidden) return;
+    loaderHidden = true;
+    loader.classList.add('hide');
+    setTimeout(()=> loader.style.display='none', 420);
+  }
+  window.addEventListener('load', ()=> setTimeout(hideLoader, 250));
+  setTimeout(hideLoader, 8000); // safety
+
+  // Mobile panel toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobilePanel = document.getElementById('mobilePanel');
+  function toggleMobile(open){
+    const isOpen = mobilePanel.classList.contains('open');
+    const show = (typeof open === 'boolean') ? open : !isOpen;
+    if(show){
+      mobilePanel.classList.add('open'); mobilePanel.style.display='block'; mobilePanel.setAttribute('aria-hidden','false');
+      document.addEventListener('click', outsideMobile);
+    } else {
+      mobilePanel.classList.remove('open'); mobilePanel.style.display='none'; mobilePanel.setAttribute('aria-hidden','true');
+      document.removeEventListener('click', outsideMobile);
+    }
+  }
+  function outsideMobile(e){ if(!mobilePanel.contains(e.target) && e.target !== mobileToggle) toggleMobile(false); }
+  mobileToggle.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMobile(); });
+
+  // Close mobile and modals on Escape
+  document.addEventListener('keydown', (ev)=>{ if(ev.key === 'Escape'){ toggleMobile(false); closeProject(); closeAssistant(); } });
+
+  // Scroll helper
+  function scrollToId(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - headerH - 8;
+    window.scrollTo({ top, behavior: 'smooth' });
+    toggleMobile(false);
+  }
+
+  // GSAP floats
+  document.addEventListener('DOMContentLoaded', ()=>{
+    try{
+      gsap.to("#f1",{y:-28,x:18,duration:6,repeat:-1,yoyo:true,ease:"sine.inOut"});
+      gsap.to("#f2",{y:36,x:-36,duration:8,repeat:-1,yoyo:true,ease:"sine.inOut"});
+      gsap.to("#f3",{y:-18,x:60,duration:10,repeat:-1,yoyo:true,ease:"sine.inOut"});
+    }catch(e){console.warn('GSAP missing',e)}
+
+    // Lottie hook if provided
+    document.querySelectorAll('[data-lottie-path]').forEach(el=>{
+      const p = el.getAttribute('data-lottie-path');
+      if(p && window.lottie){
+        try{ lottie.loadAnimation({container:el,renderer:'svg',loop:true,autoplay:true,path:p}); }
+        catch(err){ console.warn('Lottie failed',err) }
+      }
     });
+  });
 
-    // Initialization of site features
-    function initSite(){
-      initFloating();
-      initLottie();
-      initAssistant();
-      initToasts();
-      initCookie();
-      initScrollAnimations();
-      initForms();
-    }
+  // Modal
+  function openProject(title, body){
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalBody').textContent = body;
+    const m = document.getElementById('projectModal'); m.style.display='flex'; m.setAttribute('aria-hidden','false');
+  }
+  function closeProject(){ const m = document.getElementById('projectModal'); m.style.display='none'; m.setAttribute('aria-hidden','true'); }
 
-    // Floating elements with GSAP
-    function initFloating(){
-      try {
-        if(typeof gsap !== 'undefined'){
-          gsap.to("#f1", {y:-40, x:30, duration:6, repeat:-1, yoyo:true, ease:"sine.inOut"});
-          gsap.to("#f2", {y:40, x:-60, duration:8, repeat:-1, yoyo:true, ease:"sine.inOut"});
-          gsap.to("#f3", {y:-20, x:90, duration:10, repeat:-1, yoyo:true, ease:"sine.inOut"});
-          gsap.to(".nexa-cta", {boxShadow: "0 18px 80px rgba(0,229,255,0.12)", repeat:-1, yoyo:true, duration:1.8, ease:"sine.inOut"});
-        }
-      } catch(e) { console.warn('GSAP floating failed', e) }
-    }
+  // Assistant placeholder
+  function openAssistant(){ alert('NexaBot placeholder — open contact form to reach us.'); }
+  function closeAssistant(){ /* placeholder */ }
 
-    // Lottie animations
-    function initLottie(){
-      try{
-        if(typeof lottie !== 'undefined'){
-          document.querySelectorAll('[data-lottie-path]').forEach(el=>{
-            const path = el.getAttribute('data-lottie-path');
-            if(path) lottie.loadAnimation({container:el, renderer:'svg', loop:true, autoplay:true, path});
-          });
-        }
-      } catch(e){ console.warn('Lottie init error', e) }
-    }
+  // Contact form (Formspree)
+  async function submitContact(e){
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('contactStatus');
+    status.style.display='block'; status.textContent = 'Sending…';
+    const action = form.action;
+    const data = new FormData(form);
+    try {
+      const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
+      if(res.ok){ status.textContent = 'Thanks — we received your message.'; form.reset(); }
+      else { const j = await res.json(); status.textContent = j?.error || 'Submission failed'; }
+    } catch(err){ status.textContent = 'Network error'; }
+    setTimeout(()=> status.style.display='none', 6000);
+    return false;
+  }
+  function fillDemo(){
+    const f = document.getElementById('contactForm'); if(!f) return;
+    f.querySelector('[name="name"]').value = 'Ralph Lawal';
+    f.querySelector('[name="_replyto"]').value = 'ralph@example.com';
+    f.querySelector('[name="project_type"]').value = 'App Development';
+    f.querySelector('[name="message"]').value = 'Hi — I want to build an AI app. Please advise next steps.';
+  }
 
-    // Assistant (NexaBot)
-    function initAssistant(){
-      const btn = document.getElementById('assistantBtn');
-      const chat = document.getElementById('assistantChat');
-      if(!btn) return;
-      btn.addEventListener('click', ()=> {
-        if(chat.style.display === 'block'){ chat.style.display = 'none'; chat.setAttribute('aria-hidden','true'); }
-        else { chat.style.display = 'block'; chat.setAttribute('aria-hidden','false'); playAudio('ping'); }
-      });
-    }
-    function openAssistant(){ const chat=document.getElementById('assistantChat'); chat.style.display='block'; chat.setAttribute('aria-hidden','false'); playAudio('ping'); }
-    function closeAssistant(){ const chat=document.getElementById('assistantChat'); chat.style.display='none'; chat.setAttribute('aria-hidden','true'); }
-    function sendAssist(){
-      const input = document.getElementById('assistInput'); if(!input || !input.value) return;
-      const stream = document.getElementById('assistantStream');
-      const userDiv = document.createElement('div'); userDiv.textContent = input.value; userDiv.style.textAlign='right'; userDiv.style.marginTop='8px'; userDiv.style.color='#bfefff';
-      stream.appendChild(userDiv);
-      input.value='';
-      const botDiv = document.createElement('div'); botDiv.className='msg'; botDiv.style.marginTop='8px'; botDiv.textContent='NexaBot is thinking…';
-      stream.appendChild(botDiv);
-      playAudio('thinking');
-      setTimeout(()=> {
-        botDiv.textContent = 'Thanks — for projects click "Start a Project" or email codezilla@nexacorelabs.site';
-        playAudio('done');
-      }, 900);
-    }
+  // Theme toggle
+  const themeBtn = document.getElementById('themeToggle');
+  function setTheme(t){ document.documentElement.setAttribute('data-theme', t); localStorage.setItem('nexa-theme', t); updateThemeIcon(); }
+  function updateThemeIcon(){ const i = themeBtn.querySelector('i'); if(document.documentElement.getAttribute('data-theme') === 'light'){ i.className='fa-solid fa-moon' } else { i.className='fa-solid fa-sun' } }
+  themeBtn.addEventListener('click', ()=> { const curr = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light'; setTheme(curr); });
+  const saved = localStorage.getItem('nexa-theme') || 'dark'; setTheme(saved);
 
-    // Toast notifications
-    function initToasts(){
-      window.showToast = function(text='Notification', time=4200){
-        const toast = document.getElementById('toast');
-        if(!toast) return;
-        toast.textContent = text;
-        toast.style.display = 'block';
-        setTimeout(()=> toast.style.opacity = '0', time-600);
-        setTimeout(()=> { toast.style.display='none'; toast.style.opacity='1'; }, time);
-      };
-    }
+  // Close modal when clicking outside
+  document.addEventListener('click', function(e){
+    const modal = document.getElementById('projectModal');
+    if(modal.style.display === 'flex' && !modal.querySelector('.box').contains(e.target)) closeProject();
+  });
 
-    // Cookie consent
-    function initCookie(){
-      const cookie = document.getElementById('cookie');
-      if(!cookie) return;
-      if(!localStorage.getItem('ncl_cookies')) cookie.style.display='flex';
-      const accept = document.getElementById('acceptCookies');
-      if(accept) accept.addEventListener('click', ()=> {
-        localStorage.setItem('ncl_cookies','accepted'); cookie.style.display='none'; showToast('Cookies accepted');
-      });
-    }
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll animations (cards)
-    function initScrollAnimations(){
-      try{
-        if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
-          gsap.utils.toArray('.card, .panel').forEach(el=>{
-            gsap.fromTo(el, {y:20, opacity:0}, {y:0, opacity:1, duration:0.9, ease:'power2.out', scrollTrigger:{ trigger:el, start:'top 90%' }});
-          });
-        }
-      }catch(e){ /* ignore */ }
-    }
-
-    // Project modal handlers
-    function openProject(title, body){ document.getElementById('projTitle').textContent = title; document.getElementById('projBody').textContent = body; document.getElementById('projectModal').style.display='flex'; document.getElementById('projectModal').setAttribute('aria-hidden','false'); }
-    function closeProject(){ document.getElementById('projectModal').style.display='none'; document.getElementById('projectModal').setAttribute('aria-hidden','true'); }
-
-    // Mobile menu
-    function toggleMobileMenu(){
-      const m = document.getElementById('mobileMenu');
-      m.style.display = (m.style.display === 'block') ? 'none' : 'block';
-    }
-
-    // Smooth scroll helper
-    function scrollTo(id){
-      const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-
-    // Audio (tiny placeholders)
-    function playAudio(name){
-      try{
-        const ping = new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=');
-        ping.play().catch(()=>{});
-      }catch(e){}
-    }
-
-    // Form handler for Formspree
-    function initForms(){
-      const form = document.getElementById('contactForm');
-      if(!form) return;
-      form.addEventListener('submit', async function(e){
-        e.preventDefault();
-        const action = form.action;
-        const data = new FormData(form);
-        const status = document.getElementById('formStatus');
-        if(status){ status.style.display = 'block'; status.textContent = 'Sending…' }
-        try{
-          const res = await fetch(action, { method:'POST', body:data, headers:{ 'Accept':'application/json' }});
-          if(res.ok){ if(status) status.textContent = 'Thanks — your message was sent. We will respond within 48 hours.'; form.reset(); showToast('Message sent ✅'); }
-          else { const json = await res.json(); if(status) status.textContent = json?.error || 'Submission failed'; }
-        }catch(err){ if(status) status.textContent = 'Network error'; }
-        setTimeout(()=> { if(status) status.style.display='none'; }, 7000);
-      });
-    }
-
-    // Helper: prefill demo form values
-    function fillDemo(){
-      const form = document.getElementById('contactForm');
-      if(!form) return;
-      form.querySelector('[name="name"]').value = 'Ralph Lawal';
-      form.querySelector('[name="_replyto"]').value = 'ralph@example.com';
-      form.querySelector('[name="project_type"]').value = 'Web / Mobile App';
-      form.querySelector('[name="message"]').value = 'Hi — we want to build an AI-first product. Please advise next steps.';
-    }
-
-    // Small accessibility helpers
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){ closeProject(); closeAssistant(); document.getElementById('mobileMenu') && (document.getElementById('mobileMenu').style.display='none'); }
-    });
+  // End
   </script>
 </body>
 </html>
