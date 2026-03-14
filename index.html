@@ -35,7 +35,7 @@
     html{scroll-behavior:smooth;font-size:16px;}
     body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;}
     ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:var(--bg);} ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px;}
-    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");}
     .grid-bg{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,123,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
     .orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;}
     .orb-blue{background:rgba(0,123,255,0.18);} .orb-purple{background:rgba(106,27,154,0.18);}
@@ -49,7 +49,7 @@
     .section-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
     .container{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px);position:relative;z-index:2;}
-    section{padding:clamp(80px,10vw,130px) 0;position:relative;overflow:hidden;}
+    section{padding:clamp(60px,7vw,100px) 0;position:relative;overflow:hidden;}
     .gradient-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);}
     .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;padding:13px 26px;border-radius:99px;border:none;cursor:pointer;transition:all 0.28s var(--ease);position:relative;overflow:hidden;white-space:nowrap;}
     .btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.07);opacity:0;transition:opacity 0.2s;}
@@ -78,14 +78,14 @@
     .nav-cta{display:none;} @media(min-width:640px){.nav-cta{display:inline-flex;}}
     .hamburger{background:none;border:1px solid var(--border);color:var(--text);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;}
     .hamburger:hover{border-color:var(--blue);color:var(--blue);} @media(min-width:960px){.hamburger{display:none;}}
-    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(4px);}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:10000;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(6px);}
     .mobile-overlay.open{opacity:1;pointer-events:all;}
-    .mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:min(340px,90vw);background:var(--surface);border-left:1px solid var(--border);z-index:999;transform:translateX(100%);transition:transform 0.35s var(--ease);display:flex;flex-direction:column;padding:28px;}
+    .mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:min(340px,90vw);background:var(--surface);border-left:1px solid var(--border);z-index:10001;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;padding:28px;}
     .mobile-drawer.open{transform:translateX(0);}
     .mobile-drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;}
     .close-drawer{background:var(--surface2);border:1px solid var(--border);color:var(--text);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
     .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;}
-    .mobile-nav-links a{display:block;padding:12px 16px;font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--muted);border-radius:10px;transition:all 0.2s;}
+    .mobile-nav-links a{display:block;padding:11px 16px;font-family:var(--font-head);font-size:0.97rem;font-weight:600;color:var(--muted);border-radius:10px;transition:all 0.2s;}
     .mobile-nav-links a:hover{color:var(--white);background:var(--surface2);}
     .mobile-drawer-footer{margin-top:auto;padding-top:24px;border-top:1px solid var(--border);}
     .mobile-contact-links{display:flex;flex-direction:column;gap:12px;margin-top:16px;}
@@ -328,7 +328,7 @@
     #btt{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--blue);color:white;border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;z-index:500;box-shadow:0 4px 20px var(--blue-glow);opacity:0;transform:translateY(10px);transition:all 0.3s var(--ease);pointer-events:none;}
     #btt.visible{opacity:1;transform:translateY(0);pointer-events:all;}
     #btt:hover{transform:translateY(-3px);}
-    @media(max-width:640px){.hero-stats{gap:24px;}.stat-num{font-size:1.5rem;}#btt{bottom:20px;right:20px;}}
+    @media(max-width:640px){.hero-stats{gap:20px;}.stat-num{font-size:1.4rem;}#btt{bottom:20px;right:20px;}.hero-desc{font-size:0.97rem;}.hero-actions{gap:10px;}}
   </style>
 </head>
 <body>
@@ -373,7 +373,7 @@
   <div class="mobile-drawer-footer">
     <p style="font-size:0.8rem;color:var(--muted);font-weight:600;">Contact Us</p>
     <div class="mobile-contact-links">
-      <a href="/cdn-cgi/l/email-protection#375f525b5b587759524f56545845525b56554419445e4352"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="c2aaa7aeaead82aca7baa3a1adb0a7aea3a0b1ecb1abb6a7">[email&#160;protected]</span></a>
+      <a href="mailto:hello@nexacorelabs.site"><i class="fas fa-envelope"></i> hello@nexacorelabs.site</a>
       <a href="https://wa.me/2348187017489"><i class="fab fa-whatsapp"></i> +234 818 701 7489</a>
     </div>
   </div>
@@ -522,7 +522,7 @@
         <p style="margin-top:16px;">NexaCore Labs is an independent technology studio founded to bridge the gap between ambitious ideas and production-ready digital products. We operate across two vibrant tech ecosystems — Dublin, Ireland and Lagos, Nigeria — giving us a unique perspective on both Western and African digital markets.</p>
         <p>We work with startups, schools, enterprises and entrepreneurs to design, build and deploy software that's fast, reliable and genuinely impactful. Every project we take on is treated as our own.</p>
         <div class="locations-row"><div class="location-pill"><i class="fas fa-location-dot"></i> Dublin, Ireland</div><div class="location-pill"><i class="fas fa-location-dot"></i> Lagos, Nigeria</div></div>
-        <div class="about-ctas"><a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Work With Us</a><a href="/cdn-cgi/l/email-protection#abc3cec7c7c4ebc5ced3cac8c4d9cec7cac9d885d8c2dfce" class="btn btn-ghost"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="d9b1bcb5b5b699b7bca1b8bab6abbcb5b8bbaaf7aab0adbc">[email&#160;protected]</span></a></div>
+        <div class="about-ctas"><a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Work With Us</a><a href="mailto:hello@nexacorelabs.site" class="btn btn-ghost"><i class="fas fa-envelope"></i> hello@nexacorelabs.site</a></div>
       </div>
       <div class="about-cards-stack reveal reveal-delay-2">
         <div class="about-feature"><div class="af-icon"><i class="fas fa-layer-group"></i></div><div class="af-body"><h4>Full-Cycle Delivery</h4><p>From wireframe to deployment and beyond — we own the entire product lifecycle with no handoff confusion.</p></div></div>
@@ -559,7 +559,7 @@
         <h3>We're Hiring</h3>
         <div class="team-role">Open Roles</div>
         <p>We're always looking for talented developers, designers, and creatives who love building things that matter. Sound like you?</p>
-        <div style="margin-top:18px;"><a href="/cdn-cgi/l/email-protection#462e232a2a290628233e27252934232a27243568352f3223" class="btn btn-ghost" style="padding:9px 18px;font-size:0.85rem;"><i class="fas fa-paper-plane"></i> Get In Touch</a></div>
+        <div style="margin-top:18px;"><a href="mailto:hello@nexacorelabs.site" class="btn btn-ghost" style="padding:9px 18px;font-size:0.85rem;"><i class="fas fa-paper-plane"></i> Get In Touch</a></div>
       </div>
     </div>
   </div>
@@ -667,7 +667,7 @@
         <h2>Let's Build Something Exceptional</h2>
         <p>Have a project in mind? Reach out — we respond within 24 hours and love interesting challenges.</p>
         <div class="contact-methods">
-          <a href="/cdn-cgi/l/email-protection#8ce4e9e0e0e3cce2e9f4edefe3fee9e0edeeffa2ffe5f8e9" class="contact-method"><div class="cm-icon blue"><i class="fas fa-envelope"></i></div><div><div class="cm-label">Email Us</div><div class="cm-value"><span class="__cf_email__" data-cfemail="137b767f7f7c537d766b72707c61767f7271603d607a6776">[email&#160;protected]</span></div></div></a>
+          <a href="mailto:hello@nexacorelabs.site" class="contact-method"><div class="cm-icon blue"><i class="fas fa-envelope"></i></div><div><div class="cm-label">Email Us</div><div class="cm-value">hello@nexacorelabs.site</div></div></a>
           <a href="https://wa.me/2348187017489" target="_blank" class="contact-method"><div class="cm-icon green"><i class="fab fa-whatsapp"></i></div><div><div class="cm-label">WhatsApp</div><div class="cm-value">+234 818 701 7489</div></div></a>
           <div class="contact-method" style="cursor:default;"><div class="cm-icon blue"><i class="fas fa-location-dot"></i></div><div><div class="cm-label">Locations</div><div class="cm-value">Dublin, Ireland · Lagos, Nigeria</div></div></div>
         </div>
@@ -725,7 +725,7 @@
         <div class="section-badge">FAQ</div>
         <h2>Questions<br>Answered.</h2>
         <p>Everything you need to know before starting a project with us. Don't see your question? Just ask.</p>
-        <a href="/cdn-cgi/l/email-protection#f59d9099999ab59b908d94969a879099949786db869c8190" class="btn btn-primary" style="margin-top:28px;"><i class="fas fa-envelope"></i> Ask Us Directly</a>
+        <a href="mailto:hello@nexacorelabs.site" class="btn btn-primary" style="margin-top:28px;"><i class="fas fa-envelope"></i> Ask Us Directly</a>
       </div>
       <div class="faq-list reveal reveal-delay-2">
         <div class="faq-item"><div class="faq-question">How long does a typical project take? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">It depends on scope, but as a guide: landing pages take 1–2 weeks, full web applications take 4–10 weeks, and complex platforms like Examora take 3–6 months. We'll give you a realistic timeline during our discovery call before any work begins.</div></div></div>
@@ -755,7 +755,7 @@
         </div>
       </div>
       <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile & PWA</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#services">EdTech Platforms</a></li><li><a href="#services">Digital Marketing</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#team">Team</a></li><li><a href="#projects">Projects</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#blog">Insights</a></li><li><a href="#faq">FAQ</a></li><li><a href="/cdn-cgi/l/email-protection#aac2cfc6c6c5eac4cfd2cbc9c5d8cfc6cbc8d984d9c3decf"><span class="__cf_email__" data-cfemail="8de5e8e1e1e2cde3e8f5eceee2ffe8e1eceffea3fee4f9e8">[email&#160;protected]</span></a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#team">Team</a></li><li><a href="#projects">Projects</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#blog">Insights</a></li><li><a href="#faq">FAQ</a></li><li><a href="mailto:hello@nexacorelabs.site">hello@nexacorelabs.site</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 NexaCore Labs. All rights reserved. Based in <a href="#">Dublin 🇮🇪</a> & <a href="#">Lagos 🇳🇬</a>.</p>
@@ -766,12 +766,12 @@
 
 <button id="btt"><i class="fas fa-arrow-up"></i></button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const navbar=document.getElementById('navbar');
   window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',scrollY>40);document.getElementById('btt').classList.toggle('visible',scrollY>400);},{passive:true});
   const overlay=document.getElementById('mobileOverlay'),drawer=document.getElementById('mobileDrawer');
-  function openDrawer(){overlay.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden';}
-  function closeDrawer(){overlay.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';}
+  function openDrawer(){overlay.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden';document.body.style.position='fixed';document.body.style.width='100%';}
+  function closeDrawer(){overlay.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';document.body.style.position='';document.body.style.width='';}
   document.getElementById('menuOpen').addEventListener('click',openDrawer);
   document.getElementById('menuClose').addEventListener('click',closeDrawer);
   overlay.addEventListener('click',closeDrawer);
