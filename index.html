@@ -81,7 +81,7 @@
 
     /* ── LOADER ─────────────────────────────────────────── */
     #ncl-loader{position:fixed;inset:0;z-index:20000;background:#080c14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;animation:ncl-exit 0.8s ease 2.4s forwards;}
-    @keyframes ncl-exit{to{opacity:0;visibility:hidden;pointer-events:none;}}
+    @keyframes ncl-exit{0%{opacity:1;}100%{opacity:0;visibility:hidden;}}
     .ncl-hex-wrap{animation:ncl-breathe 1.6s ease-in-out infinite;}
     @keyframes ncl-breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
     .ncl-wordmark{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:#fff;animation:ncl-up 0.5s ease 0.1s both;}
@@ -91,6 +91,31 @@
     .ncl-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#007bff,#6a1b9a);animation:ncl-progress 2s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;}
     @keyframes ncl-up{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
     @keyframes ncl-progress{from{width:0%;}to{width:100%;}}
+
+
+    /* ── PROJECT FILTER BAR ──────────────────────────────── */
+    .proj-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;}
+    .pf-btn{font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;padding:8px 20px;border-radius:99px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.22s;font-family:var(--font-body);}
+    .pf-btn:hover{border-color:var(--border2);color:var(--blue);}
+    .pf-btn.active{background:var(--blue);border-color:var(--blue);color:white;}
+    .proj-card-sm{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;transition:all 0.28s var(--ease);display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;text-decoration:none;}
+    .proj-card-sm::before{content:'';position:absolute;inset:0;background:radial-gradient(350px at var(--mx,50%) var(--my,50%),rgba(0,123,255,0.06),transparent 70%);opacity:0;transition:opacity 0.3s;}
+    .proj-card-sm:hover::before{opacity:1;}
+    .proj-card-sm:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.3);}
+    .proj-card-sm[data-hidden]{display:none;}
+    .pc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+    .pc-icon{width:42px;height:42px;border-radius:11px;background:var(--blue-dim);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:16px;flex-shrink:0;}
+    .pc-ext{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;flex-shrink:0;transition:all 0.2s;}
+    .proj-card-sm:hover .pc-ext{border-color:var(--blue);color:var(--blue);}
+    .pc-cat{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:2px;}
+    .proj-card-sm h4{font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);line-height:1.2;}
+    .proj-card-sm p{font-size:0.85rem;color:var(--muted);line-height:1.65;flex:1;}
+    .pc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+    .pc-tag{font-family:var(--font-mono);font-size:0.68rem;padding:3px 9px;border-radius:6px;background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--muted);}
+    .projects-grid-sm{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;}
+    .feat-projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:24px;margin-bottom:48px;}
+    .feat-proj-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.32s var(--ease);display:flex;flex-direction:column;text-decoration:none;}
+    .feat-proj-card:hover{border-color:var(--blue);transform:translateY(-6px);box-shadow:0 25px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(0,123,255,0.15);}
 
     /* NAVBAR */
     #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.35s var(--ease);}
@@ -359,17 +384,7 @@
     @media(max-width:640px){.hero-stats{gap:20px;}.stat-num{font-size:1.4rem;}#btt{bottom:20px;right:20px;}.hero-desc{font-size:0.97rem;}.hero-actions{gap:10px;}}
 
     /* ── LOADER ─────────────────────────────────────────── */
-    #ncl-loader{position:fixed;inset:0;z-index:20000;background:#080c14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;animation:ncl-exit 0.8s ease 2.4s forwards;}
-    @keyframes ncl-exit{to{opacity:0;visibility:hidden;pointer-events:none;}}
-    .ncl-hex-wrap{animation:ncl-breathe 1.6s ease-in-out infinite;}
-    @keyframes ncl-breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
-    .ncl-wordmark{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:#fff;animation:ncl-up 0.5s ease 0.1s both;}
-    .ncl-wordmark span{color:#007bff;}
-    .ncl-tagline{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#8893a8;animation:ncl-up 0.5s ease 0.25s both;}
-    .ncl-track{width:160px;height:2px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;animation:ncl-up 0.5s ease 0.35s both;}
-    .ncl-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#007bff,#6a1b9a);animation:ncl-progress 2s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;}
-    @keyframes ncl-up{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-    @keyframes ncl-progress{from{width:0%;}to{width:100%;}}
+
   </style>
 </head>
 <body>
@@ -412,10 +427,10 @@
     <a href="#"><div class="logo-placeholder-full" style="background:none;width:auto;"><img src="nexacore_logo_dark.png" alt="NexaCore Labs" style="height:38px;width:auto;" onerror="this.style.display='none'"></div></a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#process">Process</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -433,19 +448,18 @@
   </div>
   <ul class="mobile-nav-links">
     <li><a href="#services" class="drawer-link">Services</a></li>
-    <li><a href="#process" class="drawer-link">How We Work</a></li>
     <li><a href="#projects" class="drawer-link">Projects</a></li>
     <li><a href="#pricing" class="drawer-link">Pricing</a></li>
+    <li><a href="#about" class="drawer-link">About</a></li>
     <li><a href="#team" class="drawer-link">Team</a></li>
     <li><a href="#testimonials" class="drawer-link">Testimonials</a></li>
-    <li><a href="#blog" class="drawer-link">Insights</a></li>
     <li><a href="#faq" class="drawer-link">FAQ</a></li>
     <li><a href="#contact" class="drawer-link">Contact</a></li>
   </ul>
   <div class="mobile-drawer-footer">
     <p style="font-size:0.8rem;color:var(--muted);font-weight:600;">Contact Us</p>
     <div class="mobile-contact-links">
-      <a href="/cdn-cgi/l/email-protection#4129242d2d2e012f243920222e33242d2023326f32283524"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="731b161f1f1c331d160b12101c01161f1211005d001a0716">[email&#160;protected]</span></a>
+      <a href="mailto:hello@nexacorelabs.site"><i class="fas fa-envelope"></i> <span class="ncl-email">[email protected]</span></a>
       <a href="https://wa.me/2348187017489"><i class="fab fa-whatsapp"></i> +234 818 701 7489</a>
     </div>
   </div>
@@ -519,156 +533,195 @@
     </div>
   </div>
 </section>
-<div class="gradient-divider"></div>
 
-<!-- HOW WE WORK -->
-<section id="process">
-  <div class="container">
-    <div class="process-header reveal"><div class="section-badge">How We Work</div><h2>From Idea to Live<br>in 5 Clear Steps</h2><p style="margin-top:14px;">No surprises. No confusion. Just a structured, transparent process that keeps you informed at every milestone.</p></div>
-    <div class="process-steps reveal reveal-delay-1">
-      <div class="process-step"><div class="step-num">01</div><span class="step-icon">🔍</span><h3>Discovery</h3><p>We deep-dive into your goals, users, and competitive landscape to align on exactly what to build and why.</p></div>
-      <div class="process-step"><div class="step-num">02</div><span class="step-icon">🎨</span><h3>Design</h3><p>We wireframe and prototype the user experience — every screen feels intuitive before a line of code is written.</p></div>
-      <div class="process-step"><div class="step-num">03</div><span class="step-icon">⚙️</span><h3>Build</h3><p>Our engineers develop with precision using modern stacks, clean architecture, and continuous updates to keep you in the loop.</p></div>
-      <div class="process-step"><div class="step-num">04</div><span class="step-icon">🧪</span><h3>Test & Refine</h3><p>Rigorous QA across devices and browsers, plus real user feedback rounds, to catch everything before it ships.</p></div>
-      <div class="process-step"><div class="step-num">05</div><span class="step-icon">🚀</span><h3>Launch & Support</h3><p>We deploy, monitor performance, and remain available post-launch — because great products need ongoing care.</p></div>
-    </div>
-  </div>
-</section>
-<div class="gradient-divider"></div>
-
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="projects-header">
-      <div class="reveal"><div class="section-badge">Our Work</div><h2>Products We've<br>Shipped</h2></div>
+      <div class="reveal">
+        <div class="section-badge">Our Work</div>
+        <h2>Products &amp; Projects<br>We&#39;ve Shipped</h2>
+        <p style="margin-top:12px;max-width:520px;">From flagship platforms to precision tools — every project built with purpose.</p>
+      </div>
       <a href="#contact" class="btn btn-ghost reveal" style="flex-shrink:0;">Start a Project <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="projects-grid">
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-thumb thumb-examora"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#001a3a;">📚</div></div>
-        <div class="project-body"><div class="project-type">EdTech Platform · Nigeria</div><h3>Examora</h3><p>Nigeria's smart exam preparation platform targeting JAMB, WAEC, NECO, Post-UTME, SAT & GRE — with AI-assisted learning and real-time performance analytics.</p><div class="project-stack"><span class="stack-tag">Firebase</span><span class="stack-tag">Vanilla JS</span><span class="stack-tag">AI</span><span class="stack-tag">EdTech</span></div><a href="https://examora.com.ng" target="_blank" class="project-link">Visit Examora <i class="fas fa-arrow-up-right-from-square"></i></a></div>
-      </div>
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-thumb thumb-skylight"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#0a1a0a;">🏫</div></div>
-        <div class="project-body"><div class="project-type">Education · Nigeria</div><h3>Skylight Model Schools</h3><p>A complete institutional web presence for Skylight Model Schools — showcasing admissions, academics, facilities, and community engagement.</p><div class="project-stack"><span class="stack-tag">Web Design</span><span class="stack-tag">CMS</span><span class="stack-tag">Responsive</span></div><a href="https://skylightmodelschools.com.ng" target="_blank" class="project-link">Visit Skylight <i class="fas fa-arrow-up-right-from-square"></i></a></div>
-      </div>
-      <div class="project-card reveal reveal-delay-3">
-        <div class="project-thumb thumb-scath"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#0a0a2a;">🌦️</div></div>
-        <div class="project-body"><div class="project-type">PWA · Ireland</div><h3>Scáth — Dublin Weather PWA</h3><p>A beautifully crafted progressive web app delivering hyper-local Dublin weather, AI chat insights, and community features for Irish users.</p><div class="project-stack"><span class="stack-tag">PWA</span><span class="stack-tag">AI Chat</span><span class="stack-tag">Firebase</span><span class="stack-tag">Ireland</span></div><a href="https://scath.ie.netlify.app" target="_blank" class="project-link">Visit Scáth <i class="fas fa-arrow-up-right-from-square"></i></a></div>
-      </div>
 
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#0a0a14,#1a1a3a);">
-          <div class="thumb-grid"></div>
-          <div class="project-thumb-icon" style="background:#0a0a20;">💻</div>
-        </div>
-        <div class="project-body">
-          <div class="project-type">EdTech · Coding Education</div>
-          <h3>Coding4KidsHub</h3>
-          <p>A dedicated coding education platform for young learners — featuring AI literacy curriculum, interactive quizzes, and structured lesson modules designed for ages 9+.</p>
-          <div class="project-stack"><span class="stack-tag">EdTech</span><span class="stack-tag">AI Curriculum</span><span class="stack-tag">HTML/CSS/JS</span></div>
-          <a href="#contact" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
+    <!-- FILTER BAR -->
+    <div class="proj-filter reveal">
+      <button class="pf-btn active" data-filter="all">All Projects</button>
+      <button class="pf-btn" data-filter="flagship">Flagship</button>
+      <button class="pf-btn" data-filter="business">Business</button>
+      <button class="pf-btn" data-filter="tools">Tools</button>
+      <button class="pf-btn" data-filter="web">Web</button>
+    </div>
 
-      <!-- Predictive Analytics Dashboard -->
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#001428,#003366);">
-          <div class="thumb-grid"></div>
-          <div class="project-thumb-icon" style="background:#001020;">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="18" width="5" height="12" rx="1" fill="#007bff"/><rect x="9" y="12" width="5" height="18" rx="1" fill="#007bff" opacity=".7"/><rect x="16" y="8" width="5" height="22" rx="1" fill="#007bff" opacity=".9"/><rect x="23" y="4" width="5" height="26" rx="1" fill="#007bff"/></svg>
-          </div>
-        </div>
+    <!-- ALL PROJECTS GRID — using proven .project-card structure -->
+    <div class="projects-grid" id="projGrid">
+
+      <!-- EXAMORA (flagship) -->
+      <div class="project-card reveal reveal-delay-1" data-cat="flagship">
+        <div class="project-thumb thumb-examora"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#001a3a;font-size:28px;">&#x1F4DA;</div></div>
         <div class="project-body">
-          <div class="project-type">AI · Data Analytics</div>
-          <h3>Predictive Analytics Dashboard</h3>
-          <p>AI-powered market forecasting tool delivering real-time data insights, trend prediction, and interactive visualisation for business decision-making.</p>
-          <div class="project-stack"><span class="stack-tag">AI</span><span class="stack-tag">Data Viz</span><span class="stack-tag">Python</span><span class="stack-tag">Dashboard</span></div>
-          <a href="#contact" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <div class="project-type">EdTech &middot; Nigeria &middot; Flagship &#x1F525;</div>
+          <h3>Examora</h3>
+          <p>Nigeria&#39;s modern CBT exam prep platform — JAMB, WAEC, NECO, Post-UTME and beyond. Real past questions, AI-powered practice, and real-time analytics.</p>
+          <div class="project-stack"><span class="stack-tag">Firebase</span><span class="stack-tag">JavaScript</span><span class="stack-tag">AI</span><span class="stack-tag">CBT</span></div>
+          <a href="https://examora.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit Examora <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <!-- Nur Futura Brand Identity -->
-      <div class="project-card reveal reveal-delay-3">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#1a0a00,#4a1800);">
-          <div class="thumb-grid"></div>
-          <div class="project-thumb-icon" style="background:#150800;">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#ff7433" stroke-width="2.5" fill="none"/><circle cx="16" cy="16" r="6" fill="#8b2c00"/><circle cx="16" cy="16" r="2.5" fill="#ff7433"/></svg>
-          </div>
-        </div>
+      <!-- SKYLIGHT -->
+      <div class="project-card reveal reveal-delay-2" data-cat="business">
+        <div class="project-thumb thumb-skylight"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#0a1a0a;font-size:28px;">&#x1F3EB;</div></div>
         <div class="project-body">
-          <div class="project-type">Branding · Identity</div>
-          <h3>Nur Futura Brand Identity</h3>
-          <p>Complete brand system including visual identity, style guidelines, logo design, and creative direction for Nur Futura Marketing.</p>
-          <div class="project-stack"><span class="stack-tag">Branding</span><span class="stack-tag">Identity</span><span class="stack-tag">Guidelines</span></div>
-          <a href="https://nurfuturamarketing.com" target="_blank" rel="noopener noreferrer" class="project-link">Visit Nur Futura <i class="fas fa-arrow-up-right-from-square"></i></a>
+          <div class="project-type">Education &middot; Nigeria</div>
+          <h3>Sky-Light Model Schools</h3>
+          <p>Government-approved school website for a K–College institution — admissions, academics, parent portal, and results checking.</p>
+          <div class="project-stack"><span class="stack-tag">Web Design</span><span class="stack-tag">CMS</span><span class="stack-tag">Responsive</span></div>
+          <a href="https://skylightmodelschools.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit Skylight <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <!-- E-commerce Platform -->
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#0a1a0a,#0a2a18);">
-          <div class="thumb-grid"></div>
-          <div class="project-thumb-icon" style="background:#081408;">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 6h3l3 14h14l2-10H9" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="13" cy="24" r="2" fill="#007bff"/><circle cx="23" cy="24" r="2" fill="#007bff"/></svg>
-          </div>
-        </div>
+      <!-- SCATH -->
+      <div class="project-card reveal reveal-delay-3" data-cat="flagship">
+        <div class="project-thumb thumb-scath"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#0a0a2a;font-size:28px;">&#x1F326;</div></div>
         <div class="project-body">
-          <div class="project-type">E-Commerce · Web Dev</div>
-          <h3>E-Commerce Platform</h3>
-          <p>Custom full-stack e-commerce solution for a retail client — featuring product management, secure payments, order tracking, and a responsive storefront.</p>
-          <div class="project-stack"><span class="stack-tag">React</span><span class="stack-tag">Node.js</span><span class="stack-tag">Payments</span><span class="stack-tag">Firebase</span></div>
-          <a href="#contact" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <div class="project-type">PWA &middot; Ireland &middot; Flagship</div>
+          <h3>Sc&aacute;th &mdash; Dublin Weather PWA</h3>
+          <p>Hyper-local Dublin weather, AI chat insights, and community features for Irish users. A beautifully crafted progressive web app.</p>
+          <div class="project-stack"><span class="stack-tag">PWA</span><span class="stack-tag">AI Chat</span><span class="stack-tag">Firebase</span></div>
+          <a href="https://scath.ie.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Sc&aacute;th <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <!-- Social Media Campaign -->
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#1a0a1a,#2a0a3a);">
-          <div class="thumb-grid"></div>
-          <div class="project-thumb-icon" style="background:#120812;">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M28 8c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z" fill="#6a1b9a"/><path d="M4 16c0-6.6 5.4-12 12-12s12 5.4 12 12-5.4 12-12 12S4 22.6 4 16z" stroke="#6a1b9a" stroke-width="2" fill="none"/><path d="M10 16l4 4 8-8" stroke="#c77dff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
-          </div>
-        </div>
+      <!-- NUR FUTURA -->
+      <div class="project-card reveal reveal-delay-1" data-cat="business">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#1a0800,#3a1000)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#120500;font-size:26px;"><i class="fas fa-bullhorn" style="color:#ff7433;"></i></div></div>
         <div class="project-body">
-          <div class="project-type">Marketing · Strategy</div>
-          <h3>Social Media Campaign</h3>
-          <p>End-to-end viral marketing strategy for a startup — content creation, audience targeting, platform management, and growth analytics delivering measurable results.</p>
-          <div class="project-stack"><span class="stack-tag">Strategy</span><span class="stack-tag">Content</span><span class="stack-tag">Analytics</span><span class="stack-tag">Growth</span></div>
-          <a href="#contact" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <div class="project-type">Marketing &middot; Agency</div>
+          <h3>Nur Futura Marketing</h3>
+          <p>Full-service marketing &amp; music distribution agency — brand management, artist development, global PR, and digital campaigns.</p>
+          <div class="project-stack"><span class="stack-tag">Marketing</span><span class="stack-tag">Music</span><span class="stack-tag">Agency</span></div>
+          <a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit Nur Futura <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <!-- Creator Portfolio System -->
-      <div class="project-card reveal reveal-delay-3">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#0a0a1a,#14143a);">
-          <div class="thumb-grid"></div>
-          <div class="project-thumb-icon" style="background:#08080e;">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="3" stroke="#007bff" stroke-width="2" fill="none"/><path d="M8 12h16M8 16h10M8 20h6" stroke="#007bff" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </div>
+      <!-- WOLACH -->
+      <div class="project-card reveal reveal-delay-2" data-cat="business">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#001a28,#003348)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#001020;font-size:26px;"><i class="fas fa-hands-holding-child" style="color:#007bff;"></i></div></div>
         <div class="project-body">
-          <div class="project-type">Web Dev · Creator Tools</div>
-          <h3>Creator Portfolio System</h3>
-          <p>A flexible template engine for content creators and freelancers — enabling beautiful, customisable portfolio sites with no coding knowledge required.</p>
-          <div class="project-stack"><span class="stack-tag">Templates</span><span class="stack-tag">CMS</span><span class="stack-tag">Responsive</span></div>
-          <a href="#contact" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <div class="project-type">NGO &middot; Welfare</div>
+          <h3>WOLACH Foundation</h3>
+          <p>Website for a registered welfare foundation providing inclusive education, physiotherapy, and vocational training for persons with disabilities.</p>
+          <div class="project-stack"><span class="stack-tag">NGO</span><span class="stack-tag">Welfare</span><span class="stack-tag">Web</span></div>
+          <a href="https://wolach.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit WOLACH <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <!-- Enterprise Automation -->
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#001a14,#003328);">
-          <div class="thumb-grid"></div>
-          <div class="project-thumb-icon" style="background:#001008;">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="10" y="10" width="12" height="12" rx="2" stroke="#007bff" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="2.5" fill="#007bff"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4" stroke="#007bff" stroke-width="2" stroke-linecap="round"/><path d="M7 7l3 3M22 22l3 3M22 10l3-3M7 25l3-3" stroke="#007bff" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </div>
+      <!-- FINETOUCH -->
+      <div class="project-card reveal reveal-delay-3" data-cat="business">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#141408,#282810)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#101008;font-size:26px;"><i class="fas fa-wrench" style="color:#007bff;"></i></div></div>
         <div class="project-body">
-          <div class="project-type">AI · Automation</div>
-          <h3>Enterprise Automation</h3>
-          <p>Internal workflow optimisation tool for an enterprise client — automating repetitive processes, reducing manual errors, and saving hundreds of hours monthly.</p>
-          <div class="project-stack"><span class="stack-tag">Automation</span><span class="stack-tag">AI</span><span class="stack-tag">API</span><span class="stack-tag">Workflow</span></div>
-          <a href="#contact" class="project-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <div class="project-type">Business &middot; Web</div>
+          <h3>Finetouch Maintenance</h3>
+          <p>Contracting company site with service listings, team pages, and enquiry forms.</p>
+          <div class="project-stack"><span class="stack-tag">Business</span><span class="stack-tag">Web</span><span class="stack-tag">Responsive</span></div>
+          <a href="https://finetouchmaintainance.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- 6TH AVE -->
+      <div class="project-card reveal reveal-delay-1" data-cat="business">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#141414,#282828)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#101010;font-size:26px;"><i class="fas fa-hard-hat" style="color:#007bff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Construction &middot; Web</div>
+          <h3>6th Ave Construction</h3>
+          <p>Roofing &amp; exterior services website with a clean quote request workflow and service showcase.</p>
+          <div class="project-stack"><span class="stack-tag">Construction</span><span class="stack-tag">Web</span></div>
+          <a href="https://6thavenueconstruction.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- IN THE DOG HOUSE -->
+      <div class="project-card reveal reveal-delay-2" data-cat="web">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#0a1a08,#142814)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#081208;font-size:26px;"><i class="fas fa-dog" style="color:#007bff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Web &middot; Pets</div>
+          <h3>In the Dog House</h3>
+          <p>Pet boarding site with gallery, booking info and service listings.</p>
+          <div class="project-stack"><span class="stack-tag">Pets</span><span class="stack-tag">Web</span><span class="stack-tag">Booking</span></div>
+          <a href="https://inthedoghouse.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- POMOCHII -->
+      <div class="project-card reveal reveal-delay-3" data-cat="tools">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#14080a,#281018)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#100608;font-size:26px;"><i class="fas fa-clock" style="color:#007bff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Tool &middot; Productivity</div>
+          <h3>Pomochii</h3>
+          <p>Pomodoro-style focus timer to help track and protect deep work sessions.</p>
+          <div class="project-stack"><span class="stack-tag">Productivity</span><span class="stack-tag">App</span><span class="stack-tag">Timer</span></div>
+          <a href="https://pomochii.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Pomochii <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- CURRENCY CONVERTER -->
+      <div class="project-card reveal reveal-delay-1" data-cat="tools">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-money-bill-transfer" style="color:#007bff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Tool &middot; Finance</div>
+          <h3>Currency Converter</h3>
+          <p>Real-time exchange rates and multi-currency conversion tool for global users.</p>
+          <div class="project-stack"><span class="stack-tag">Finance</span><span class="stack-tag">Utility</span><span class="stack-tag">Real-time</span></div>
+          <a href="https://nexacoregloball.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- FEES CALCULATOR -->
+      <div class="project-card reveal reveal-delay-2" data-cat="tools">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-calculator" style="color:#007bff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Tool &middot; Finance</div>
+          <h3>Fees Calculator</h3>
+          <p>Calculate payment gateway fees with precision across multiple processors.</p>
+          <div class="project-stack"><span class="stack-tag">Finance</span><span class="stack-tag">Calc</span></div>
+          <a href="https://nexafeescalculator.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- SIMPLE INVOICE -->
+      <div class="project-card reveal reveal-delay-3" data-cat="tools">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-file-invoice-dollar" style="color:#007bff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Tool &middot; Finance</div>
+          <h3>Simple Invoice</h3>
+          <p>Minimal invoice generator built for freelancers and solo operators.</p>
+          <div class="project-stack"><span class="stack-tag">Finance</span><span class="stack-tag">Tool</span><span class="stack-tag">Freelance</span></div>
+          <a href="https://nexinvoice.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- GRADIENT GENERATOR -->
+      <div class="project-card reveal reveal-delay-1" data-cat="tools">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#1a0a28,#300a50)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#12061e;font-size:26px;"><i class="fas fa-palette" style="color:#c77dff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Tool &middot; Design</div>
+          <h3>Gradient Generator</h3>
+          <p>Create and export beautiful CSS gradients instantly for any web project.</p>
+          <div class="project-stack"><span class="stack-tag">Design</span><span class="stack-tag">Tool</span><span class="stack-tag">CSS</span></div>
+          <a href="https://nexgradient.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <!-- QR GENERATOR -->
+      <div class="project-card reveal reveal-delay-2" data-cat="tools">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-qrcode" style="color:#007bff;"></i></div></div>
+        <div class="project-body">
+          <div class="project-type">Tool &middot; Utility</div>
+          <h3>QR &amp; Barcode Generator</h3>
+          <p>Responsive QR code generation with instant one-click download.</p>
+          <div class="project-stack"><span class="stack-tag">Utility</span><span class="stack-tag">Tool</span><span class="stack-tag">QR</span></div>
+          <a href="https://nexagenn.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
@@ -710,7 +763,7 @@
         <p style="margin-top:16px;">NexaCore Labs is an independent technology studio founded to bridge the gap between ambitious ideas and production-ready digital products. We operate across two vibrant tech ecosystems — Dublin, Ireland and Lagos, Nigeria — giving us a unique perspective on both Western and African digital markets.</p>
         <p>We work with startups, schools, enterprises and entrepreneurs to design, build and deploy software that's fast, reliable and genuinely impactful. Every project we take on is treated as our own.</p>
         <div class="locations-row"><div class="location-pill"><i class="fas fa-location-dot"></i> Dublin, Ireland</div><div class="location-pill"><i class="fas fa-location-dot"></i> Lagos, Nigeria</div></div>
-        <div class="about-ctas"><a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Work With Us</a><a href="/cdn-cgi/l/email-protection#650d0009090a250b001d04060a1700090407164b160c1100" class="btn btn-ghost"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="e088858c8c8fa08e859881838f92858c818293ce93899485">[email&#160;protected]</span></a></div>
+        <div class="about-ctas"><a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Work With Us</a><a href="mailto:hello@nexacorelabs.site" class="btn btn-ghost"><i class="fas fa-envelope"></i> <span class="ncl-email">[email protected]</span></a></div>
       </div>
       <div class="about-cards-stack reveal reveal-delay-2">
         <div class="about-feature"><div class="af-icon"><i class="fas fa-layer-group"></i></div><div class="af-body"><h4>Full-Cycle Delivery</h4><p>From wireframe to deployment and beyond — we own the entire product lifecycle with no handoff confusion.</p></div></div>
@@ -747,28 +800,12 @@
         <h3>We're Hiring</h3>
         <div class="team-role">Open Roles</div>
         <p>We're always looking for talented developers, designers, and creatives who love building things that matter. Sound like you?</p>
-        <div style="margin-top:18px;"><a href="/cdn-cgi/l/email-protection#9ef6fbf2f2f1def0fbe6fffdf1ecfbf2fffcedb0edf7eafb" class="btn btn-ghost" style="padding:9px 18px;font-size:0.85rem;"><i class="fas fa-paper-plane"></i> Get In Touch</a></div>
+        <div style="margin-top:18px;"><a href="mailto:hello@nexacorelabs.site" class="btn btn-ghost" style="padding:9px 18px;font-size:0.85rem;"><i class="fas fa-paper-plane"></i> Get In Touch</a></div>
       </div>
     </div>
   </div>
 </section>
-<div class="gradient-divider"></div>
 
-<!-- TECH STACK -->
-<section id="tech">
-  <div class="container">
-    <div class="tech-header reveal"><div class="section-badge">Tech Stack</div><h2>The Tools We Build With</h2><p style="margin-top:12px;">A curated toolkit optimized for performance, scalability and developer experience.</p></div>
-    <div class="tech-categories reveal reveal-delay-1">
-      <div><div class="tech-category-label">Frontend & UI</div><div class="tech-chips"><div class="tech-chip"><i class="fab fa-html5"></i> HTML5</div><div class="tech-chip"><i class="fab fa-css3-alt"></i> CSS3</div><div class="tech-chip"><i class="fab fa-js"></i> JavaScript</div><div class="tech-chip"><i class="fab fa-react"></i> React</div><div class="tech-chip"><i class="fas fa-wind"></i> Tailwind CSS</div><div class="tech-chip"><i class="fas fa-mobile-alt"></i> PWA</div></div></div>
-      <div><div class="tech-category-label">Backend & Database</div><div class="tech-chips"><div class="tech-chip"><i class="fab fa-node-js"></i> Node.js</div><div class="tech-chip"><i class="fas fa-fire"></i> Firebase</div><div class="tech-chip"><i class="fas fa-database"></i> Supabase</div><div class="tech-chip"><i class="fas fa-server"></i> REST APIs</div><div class="tech-chip"><i class="fas fa-bolt"></i> Firestore</div></div></div>
-      <div><div class="tech-category-label">AI & Intelligence</div><div class="tech-chips"><div class="tech-chip"><i class="fas fa-robot"></i> OpenAI API</div><div class="tech-chip"><i class="fas fa-brain"></i> Claude AI</div><div class="tech-chip"><i class="fas fa-microchip"></i> Gemini</div><div class="tech-chip"><i class="fas fa-wand-magic-sparkles"></i> LLM Integration</div></div></div>
-      <div><div class="tech-category-label">Tools & Infrastructure</div><div class="tech-chips"><div class="tech-chip"><i class="fab fa-github"></i> GitHub</div><div class="tech-chip"><i class="fas fa-cloud"></i> Netlify</div><div class="tech-chip"><i class="fab fa-figma"></i> Figma</div><div class="tech-chip"><i class="fab fa-python"></i> Python</div><div class="tech-chip"><i class="fas fa-code"></i> VS Code</div></div></div>
-    </div>
-  </div>
-</section>
-<div class="gradient-divider"></div>
-
-<!-- PRICING -->
 <section id="pricing">
   <div class="container">
     <div class="pricing-header reveal"><div class="section-badge">Pricing</div><h2>Transparent Pricing.<br>No Hidden Costs.</h2><p style="margin-top:14px;">Every project is unique — but here's a clear starting point. All plans include full source code delivery and 30-day post-launch support.</p></div>
@@ -855,7 +892,7 @@
         <h2>Let's Build Something Exceptional</h2>
         <p>Have a project in mind? Reach out — we respond within 24 hours and love interesting challenges.</p>
         <div class="contact-methods">
-          <a href="/cdn-cgi/l/email-protection#3f575a5353507f515a475e5c504d5a535e5d4c114c564b5a" class="contact-method"><div class="cm-icon blue"><i class="fas fa-envelope"></i></div><div><div class="cm-label">Email Us</div><div class="cm-value"><span class="__cf_email__" data-cfemail="5a323f3636351a343f223b3935283f363b38297429332e3f">[email&#160;protected]</span></div></div></a>
+          <a href="mailto:hello@nexacorelabs.site" class="contact-method"><div class="cm-icon blue"><i class="fas fa-envelope"></i></div><div><div class="cm-label">Email Us</div><div class="cm-value"><span class="ncl-email">[email protected]</span></div></div></a>
           <a href="https://wa.me/2348187017489" target="_blank" class="contact-method"><div class="cm-icon green"><i class="fab fa-whatsapp"></i></div><div><div class="cm-label">WhatsApp</div><div class="cm-value">+234 818 701 7489</div></div></a>
           <div class="contact-method" style="cursor:default;"><div class="cm-icon blue"><i class="fas fa-location-dot"></i></div><div><div class="cm-label">Locations</div><div class="cm-value">Dublin, Ireland · Lagos, Nigeria</div></div></div>
         </div>
@@ -878,34 +915,7 @@
     </div>
   </div>
 </section>
-<div class="gradient-divider"></div>
 
-<!-- BLOG TEASER -->
-<section id="blog">
-  <div class="container">
-    <div class="blog-header">
-      <div class="reveal"><div class="section-badge">Insights</div><h2>From the NexaCore<br>Lab Notebook</h2></div>
-      <div class="reveal" style="flex-shrink:0;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:0.88rem;">Full blog <span class="coming-soon-ribbon">Coming Soon</span></div>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-card reveal reveal-delay-1">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,#001a3a,#0047b3);"><div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.08) 1px,transparent 1px);background-size:25px 25px;"></div><span class="blog-category" style="background:rgba(0,123,255,0.25);color:#79c0ff;border:1px solid rgba(0,123,255,0.3);">AI & Tech</span></div>
-        <div class="blog-body"><div class="blog-meta"><span><i class="fas fa-calendar"></i> Jan 2025</span> · <span><i class="fas fa-clock"></i> 5 min</span></div><h3>How AI is Transforming Exam Prep in West Africa</h3><p>Millions of Nigerian students sit JAMB each year. We explore how AI-driven platforms are changing pass rates — and what Examora is doing differently.</p><span class="blog-read" style="cursor:default;opacity:0.5;">Coming Soon <i class="fas fa-arrow-right"></i></span></div>
-      </div>
-      <div class="blog-card reveal reveal-delay-2">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,#0a1a0a,#1a4a1a);"><div style="position:absolute;inset:0;background-image:linear-gradient(rgba(40,200,100,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(40,200,100,0.06) 1px,transparent 1px);background-size:25px 25px;"></div><span class="blog-category" style="background:rgba(40,200,100,0.2);color:#7ee787;border:1px solid rgba(40,200,100,0.3);">Web Dev</span></div>
-        <div class="blog-body"><div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 2025</span> · <span><i class="fas fa-clock"></i> 7 min</span></div><h3>Why PWAs Are the Right Move for African Markets in 2025</h3><p>Low data costs, unreliable connectivity, and Android dominance — here's why Progressive Web Apps outperform native apps in emerging markets.</p><span class="blog-read" style="cursor:default;opacity:0.5;">Coming Soon <i class="fas fa-arrow-right"></i></span></div>
-      </div>
-      <div class="blog-card reveal reveal-delay-3">
-        <div class="blog-thumb" style="background:linear-gradient(135deg,#0d0d2e,#1a1a5e);"><div style="position:absolute;inset:0;background-image:linear-gradient(rgba(106,27,154,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(106,27,154,0.08) 1px,transparent 1px);background-size:25px 25px;"></div><span class="blog-category" style="background:rgba(106,27,154,0.2);color:#c77dff;border:1px solid rgba(106,27,154,0.3);">Strategy</span></div>
-        <div class="blog-body"><div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 2025</span> · <span><i class="fas fa-clock"></i> 6 min</span></div><h3>Building a Tech Startup Across Two Continents: What We've Learned</h3><p>Operating between Dublin and Lagos is an advantage and a challenge. Here's what dual-market presence has taught us about product, culture, and clients.</p><span class="blog-read" style="cursor:default;opacity:0.5;">Coming Soon <i class="fas fa-arrow-right"></i></span></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="gradient-divider"></div>
-
-<!-- FAQ -->
 <section id="faq">
   <div class="container">
     <div class="faq-wrapper">
@@ -913,7 +923,7 @@
         <div class="section-badge">FAQ</div>
         <h2>Questions<br>Answered.</h2>
         <p>Everything you need to know before starting a project with us. Don't see your question? Just ask.</p>
-        <a href="/cdn-cgi/l/email-protection#caa2afa6a6a58aa4afb2aba9a5b8afa6aba8b9e4b9a3beaf" class="btn btn-primary" style="margin-top:28px;"><i class="fas fa-envelope"></i> Ask Us Directly</a>
+        <a href="mailto:hello@nexacorelabs.site" class="btn btn-primary" style="margin-top:28px;"><i class="fas fa-envelope"></i> Ask Us Directly</a>
       </div>
       <div class="faq-list reveal reveal-delay-2">
         <div class="faq-item"><div class="faq-question">How long does a typical project take? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">It depends on scope, but as a guide: landing pages take 1–2 weeks, full web applications take 4–10 weeks, and complex platforms like Examora take 3–6 months. We'll give you a realistic timeline during our discovery call before any work begins.</div></div></div>
@@ -943,7 +953,7 @@
         </div>
       </div>
       <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile & PWA</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#services">EdTech Platforms</a></li><li><a href="#services">Digital Marketing</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#team">Team</a></li><li><a href="#projects">Projects</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#blog">Insights</a></li><li><a href="#faq">FAQ</a></li><li><a href="/cdn-cgi/l/email-protection#177f727b7b785779726f76747865727b76756439647e6372"><span class="__cf_email__" data-cfemail="bfd7dad3d3d0ffd1dac7dedcd0cddad3deddcc91ccd6cbda">[email&#160;protected]</span></a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#team">Team</a></li><li><a href="#projects">Projects</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="mailto:hello@nexacorelabs.site"><span class="ncl-email">[email protected]</span></a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 NexaCore Labs. All rights reserved. Based in <a href="#">Dublin 🇮🇪</a> & <a href="#">Lagos 🇳🇬</a>.</p>
@@ -954,9 +964,18 @@
 
 <button id="btt"><i class="fas fa-arrow-up"></i></button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   'use strict';
+
+  /* ── LOADER: remove from DOM after animation so it can NEVER block clicks ── */
+  (function(){
+    var L = document.getElementById('ncl-loader');
+    if(L){
+      // Remove from DOM entirely after the CSS animation finishes (2.4s + 0.8s = 3.2s)
+      setTimeout(function(){ if(L && L.parentNode){ L.parentNode.removeChild(L); } }, 3300);
+    }
+  })();
 
   /* ── REVEAL: immediately show anything already in viewport ─────────── */
   function initReveal(){
@@ -1052,7 +1071,7 @@
     });
   } catch(err){}
 
-  /* ── SMOOTH SCROLL (drawer closes first, then scrolls) ─────────────── */
+  /* ── SMOOTH SCROLL — offset for fixed navbar ───────────────────────── */
   try {
     document.querySelectorAll('a[href^="#"]').forEach(function(a){
       a.addEventListener('click', function(e){
@@ -1061,18 +1080,20 @@
         var target = document.querySelector(id);
         if(!target) return;
         e.preventDefault();
-        // Close drawer first if open
+        // Close drawer first
         var ov2    = document.getElementById('mobileOverlay');
         var drawer = document.getElementById('mobileDrawer');
         if(ov2)    ov2.classList.remove('open');
         if(drawer) drawer.classList.remove('open');
-        document.body.style.overflow  = '';
-        document.body.style.position  = '';
-        document.body.style.width     = '';
-        // Small delay so drawer slides away before scroll
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width    = '';
+        // Scroll with navbar offset after drawer closes
         setTimeout(function(){
-          target.scrollIntoView({behavior:'smooth', block:'start'});
-        }, 50);
+          var navH = document.getElementById('navbar').offsetHeight || 72;
+          var top  = target.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+          window.scrollTo({top: top, behavior: 'smooth'});
+        }, 80);
       });
     });
   } catch(err){}
@@ -1130,6 +1151,74 @@
           });
       });
     }
+  } catch(err){}
+
+
+  /* ── PROJECT FILTER ─────────────────────────────────────────────────── */
+  try {
+    document.querySelectorAll('.pf-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.pf-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('#projGrid .proj-card-sm, .feat-projects .feat-proj-card').forEach(function(card){
+          var cat = card.getAttribute('data-cat') || '';
+          if(filter === 'all' || cat === filter){
+            card.removeAttribute('data-hidden');
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    // mouse glow on small cards
+    document.querySelectorAll('.proj-card-sm').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
+        card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
+      });
+    });
+  } catch(err){}
+
+})();
+</script>
+<script>
+(function(){
+  var u='hello',d='nexacorelabs',t='site';
+  var e=u+'@'+d+'.'+t;
+  document.querySelectorAll('.ncl-email').forEach(function(el){
+    if(el.tagName==='A') el.href='mailto:'+e;
+    else el.textContent=e;
+  });
+
+  /* ── PROJECT FILTER ─────────────────────────────────────────────────── */
+  try {
+    document.querySelectorAll('.pf-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.pf-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('#projGrid .proj-card-sm, .feat-projects .feat-proj-card').forEach(function(card){
+          var cat = card.getAttribute('data-cat') || '';
+          if(filter === 'all' || cat === filter){
+            card.removeAttribute('data-hidden');
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    // mouse glow on small cards
+    document.querySelectorAll('.proj-card-sm').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
+        card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
+      });
+    });
   } catch(err){}
 
 })();
