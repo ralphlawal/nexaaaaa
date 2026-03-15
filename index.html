@@ -23,7 +23,7 @@
   <style>
     :root {
       --blue:#007bff; --blue-dim:rgba(0,123,255,0.12); --blue-glow:rgba(0,123,255,0.35);
-      --purple:#6a1b9a; --purple-dim:rgba(106,27,154,0.15);
+      --purple:#6a1b9a; --purple-dim:rgba(106,27,154,0.15); --nf:#8b2c00; --nf-light:#ff7433; --nf-dim:rgba(139,44,0,0.15);
       --bg:#080c14; --bg2:#0d1220; --surface:#111827; --surface2:#1a2235;
       --border:rgba(255,255,255,0.07); --border2:rgba(0,123,255,0.25);
       --text:#f0f4ff; --muted:#8893a8; --white:#ffffff;
@@ -62,7 +62,34 @@
     .reveal.in-view{opacity:1;transform:translateY(0);}
     .reveal-delay-1{transition-delay:0.1s;} .reveal-delay-2{transition-delay:0.2s;} .reveal-delay-3{transition-delay:0.3s;} .reveal-delay-4{transition-delay:0.4s;}
 
-    /* LOADER */
+    /* ── POPUP ──────────────────────────────────────────── */
+    #ncl-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:19000;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(6px);}
+    #ncl-popup-overlay.show{opacity:1;pointer-events:all;}
+    #ncl-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%);z-index:19001;background:var(--surface);border:1px solid rgba(0,123,255,0.25);border-radius:24px;padding:44px 40px 36px;width:min(520px,92vw);text-align:center;opacity:0;transition:opacity 0.4s ease,transform 0.4s ease;box-shadow:0 40px 80px rgba(0,0,0,0.6);}
+    #ncl-popup.show{opacity:1;transform:translate(-50%,-50%);}
+    .popup-glow{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,rgba(0,123,255,0.18),transparent 70%);pointer-events:none;}
+    .popup-icon{width:68px;height:68px;background:linear-gradient(135deg,var(--blue),#6a1b9a);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 22px;box-shadow:0 8px 30px rgba(0,123,255,0.35);}
+    #ncl-popup h3{font-family:var(--font-head);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:10px;}
+    #ncl-popup p{font-size:0.95rem;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+    .popup-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .popup-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+    .popup-close:hover{background:rgba(255,255,255,0.1);color:var(--white);}
+    .popup-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+    .popup-pill{font-family:var(--font-mono);font-size:0.72rem;padding:4px 12px;border-radius:99px;background:rgba(0,123,255,0.1);border:1px solid rgba(0,123,255,0.25);color:var(--blue);}
+
+
+    /* ── LOADER ─────────────────────────────────────────── */
+    #ncl-loader{position:fixed;inset:0;z-index:20000;background:#080c14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;animation:ncl-exit 0.8s ease 2.4s forwards;}
+    @keyframes ncl-exit{to{opacity:0;visibility:hidden;pointer-events:none;}}
+    .ncl-hex-wrap{animation:ncl-breathe 1.6s ease-in-out infinite;}
+    @keyframes ncl-breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
+    .ncl-wordmark{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:#fff;animation:ncl-up 0.5s ease 0.1s both;}
+    .ncl-wordmark span{color:#007bff;}
+    .ncl-tagline{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#8893a8;animation:ncl-up 0.5s ease 0.25s both;}
+    .ncl-track{width:160px;height:2px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;animation:ncl-up 0.5s ease 0.35s both;}
+    .ncl-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#007bff,#6a1b9a);animation:ncl-progress 2s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;}
+    @keyframes ncl-up{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes ncl-progress{from{width:0%;}to{width:100%;}}
 
     /* NAVBAR */
     #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.35s var(--ease);}
@@ -98,7 +125,7 @@
     @media(min-width:960px){.hero-grid{grid-template-columns:1fr 1fr;gap:80px;}}
     .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;flex-wrap:wrap;}
     .hero-pill{background:var(--blue-dim);border:1px solid var(--border2);color:var(--blue);font-family:var(--font-mono);font-size:0.78rem;padding:5px 12px;border-radius:99px;white-space:nowrap;}
-    .hero-pill.purple{background:var(--purple-dim);border-color:rgba(106,27,154,0.4);color:#c77dff;}
+    .hero-pill.purple{background:rgba(106,27,154,0.18);border-color:rgba(106,27,154,0.4);color:#c77dff;}
     .hero-title{margin-bottom:22px;} .hero-title .line{display:block;} .hero-title .accent{color:var(--blue);} .hero-title .accent-purple{color:#c77dff;}
     .hero-desc{font-size:1.08rem;max-width:520px;margin-bottom:38px;color:var(--muted);}
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
@@ -128,14 +155,14 @@
     .service-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:34px;transition:all 0.32s var(--ease);position:relative;overflow:hidden;cursor:default;}
     .service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(400px at var(--mx,50%) var(--my,50%),rgba(0,123,255,0.06),transparent 70%);opacity:0;transition:opacity 0.3s;}
     .service-card:hover::before{opacity:1;} .service-card:hover{border-color:var(--border2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.35);}
-    .service-card.nf-card{background:linear-gradient(135deg,rgba(106,27,154,0.12),rgba(0,123,255,0.08));border-color:rgba(106,27,154,0.3);}
-    .service-card.nf-card:hover{border-color:rgba(106,27,154,0.5);}
+    .service-card.nf-card{background:linear-gradient(135deg,rgba(139,44,0,0.12),rgba(0,123,255,0.08));border-color:rgba(139,44,0,0.3);}
+    .service-card.nf-card:hover{border-color:rgba(139,44,0,0.5);}
     .svc-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:22px;background:var(--blue-dim);color:var(--blue);border:1px solid var(--border2);}
-    .svc-icon.purple-icon{background:var(--purple-dim);color:#c77dff;border-color:rgba(106,27,154,0.4);}
+    .svc-icon.purple-icon{background:rgba(139,44,0,0.15);color:#ff7433;border-color:rgba(139,44,0,0.4);}
     .service-card h3{font-size:1.18rem;margin-bottom:12px;color:var(--white);} .service-card p{font-size:0.95rem;line-height:1.7;}
     .svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
     .svc-tag{font-family:var(--font-mono);font-size:0.72rem;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--muted);}
-    .nf-badge{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:#c77dff;background:rgba(106,27,154,0.15);border:1px solid rgba(106,27,154,0.35);padding:4px 12px;border-radius:99px;margin-top:18px;}
+    .nf-badge{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:#ff7433;background:rgba(139,44,0,0.15);border:1px solid rgba(139,44,0,0.35);padding:4px 12px;border-radius:99px;margin-top:18px;}
     .nf-badge::before{content:'✦';}
 
     /* PROCESS */
@@ -322,19 +349,63 @@
     .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:28px;border-top:1px solid var(--border);}
     .footer-bottom p{font-size:0.82rem;color:var(--muted);} .footer-bottom a{color:var(--blue);}
     .nf-footer-credit{font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:6px;}
-    .nf-footer-credit strong{color:#c77dff;}
+    .nf-footer-credit strong{color:#ff7433;}
 
     /* BTT */
     #btt{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--blue);color:white;border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;z-index:500;box-shadow:0 4px 20px var(--blue-glow);opacity:0;transform:translateY(10px);transition:all 0.3s var(--ease);pointer-events:none;}
     #btt.visible{opacity:1;transform:translateY(0);pointer-events:all;}
     #btt:hover{transform:translateY(-3px);}
     @media(max-width:640px){.hero-stats{gap:20px;}.stat-num{font-size:1.4rem;}#btt{bottom:20px;right:20px;}.hero-desc{font-size:0.97rem;}.hero-actions{gap:10px;}}
+
+    /* ── LOADER ─────────────────────────────────────────── */
+    #ncl-loader{position:fixed;inset:0;z-index:20000;background:#080c14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;animation:ncl-exit 0.8s ease 2.4s forwards;}
+    @keyframes ncl-exit{to{opacity:0;visibility:hidden;pointer-events:none;}}
+    .ncl-hex-wrap{animation:ncl-breathe 1.6s ease-in-out infinite;}
+    @keyframes ncl-breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
+    .ncl-wordmark{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:#fff;animation:ncl-up 0.5s ease 0.1s both;}
+    .ncl-wordmark span{color:#007bff;}
+    .ncl-tagline{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#8893a8;animation:ncl-up 0.5s ease 0.25s both;}
+    .ncl-track{width:160px;height:2px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;animation:ncl-up 0.5s ease 0.35s both;}
+    .ncl-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#007bff,#6a1b9a);animation:ncl-progress 2s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;}
+    @keyframes ncl-up{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes ncl-progress{from{width:0%;}to{width:100%;}}
   </style>
 </head>
 <body>
+<div id="ncl-loader" aria-hidden="true">
+  <div class="ncl-hex-wrap">
+    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="42,5 75,23 75,61 42,79 9,61 9,23" stroke="#007bff" stroke-width="3" fill="none"/>
+      <polygon points="42,16 65,29 65,55 42,68 19,55 19,29" stroke="#007bff" stroke-width="2" fill="none" opacity="0.5"/>
+      <polygon points="42,27 58,36 58,48 42,57 26,48 26,36" fill="#003d7a" opacity="0.9"/>
+      <circle cx="42" cy="42" r="7.5" fill="#007bff"/>
+      <circle cx="42" cy="42" r="3.5" fill="#cce5ff"/>
+    </svg>
+  </div>
+  <div class="ncl-wordmark">Nexa<span>Core</span> Labs</div>
+  <div class="ncl-tagline">Technology · Innovation · Impact</div>
+  <div class="ncl-track"><div class="ncl-fill"></div></div>
+</div>
 
+<!-- WELCOME POPUP -->
+<div id="ncl-popup-overlay"></div>
+<div id="ncl-popup">
+  <div class="popup-glow"></div>
+  <button class="popup-close" id="popupClose" aria-label="Close"><i class="fas fa-times"></i></button>
+  <div class="popup-icon">🚀</div>
+  <h3>Welcome to NexaCore Labs</h3>
+  <p>We build high-performance digital products, AI tools, and custom platforms from Dublin & Lagos. Let's build something exceptional together.</p>
+  <div class="popup-pills">
+    <span class="popup-pill">🇮🇪 Dublin, Ireland</span>
+    <span class="popup-pill">🇳🇬 Lagos, Nigeria</span>
+    <span class="popup-pill">AI · Web · EdTech</span>
+  </div>
+  <div class="popup-actions">
+    <a href="#contact" class="btn btn-primary" id="popupCTA" style="font-size:0.92rem;padding:12px 24px;"><i class="fas fa-rocket"></i> Start a Project</a>
+    <a href="#projects" class="btn btn-ghost" id="popupWork" style="font-size:0.92rem;padding:12px 24px;">View Our Work</a>
+  </div>
+</div>
 
-<!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#"><div class="logo-placeholder-full" style="background:none;width:auto;"><img src="nexacore_logo_dark.png" alt="NexaCore Labs" style="height:38px;width:auto;" onerror="this.style.display='none'"></div></a>
@@ -759,7 +830,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2025 NexaCore Labs. All rights reserved. Based in <a href="#">Dublin 🇮🇪</a> & <a href="#">Lagos 🇳🇬</a>.</p>
-      <div class="nf-footer-credit"><i class="fas fa-bullhorn" style="color:#c77dff;font-size:12px;"></i> Marketing by <strong>Nur Futura Marketing</strong></div>
+      <div class="nf-footer-credit"><i class="fas fa-bullhorn" style="color:#ff7433;font-size:12px;"></i> Marketing by <strong>Nur Futura Marketing</strong></div>
     </div>
   </div>
 </footer>
@@ -767,27 +838,109 @@
 <button id="btt"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-  const navbar=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',scrollY>40);document.getElementById('btt').classList.toggle('visible',scrollY>400);},{passive:true});
-  const overlay=document.getElementById('mobileOverlay'),drawer=document.getElementById('mobileDrawer');
-  function openDrawer(){overlay.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden';document.body.style.position='fixed';document.body.style.width='100%';}
-  function closeDrawer(){overlay.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';document.body.style.position='';document.body.style.width='';}
-  document.getElementById('menuOpen').addEventListener('click',openDrawer);
-  document.getElementById('menuClose').addEventListener('click',closeDrawer);
-  overlay.addEventListener('click',closeDrawer);
-  document.querySelectorAll('.drawer-link').forEach(l=>l.addEventListener('click',closeDrawer));
-  document.getElementById('btt').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id==='#')return;const el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}});});
-  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-  document.querySelectorAll('.service-card').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});});
-  document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-question').addEventListener('click',()=>{const was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');});});
-  const form=document.getElementById('contactForm'),formMsg=document.getElementById('formMsg'),submitBtn=document.getElementById('submitBtn');
-  form.addEventListener('submit',async e=>{e.preventDefault();submitBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';submitBtn.disabled=true;formMsg.className='form-msg';
-    try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-      if(res.ok){formMsg.textContent="\u2713 Message sent! We'll be in touch within 24 hours.";formMsg.className='form-msg success';form.reset();setTimeout(()=>formMsg.className='form-msg',6000);}else throw new Error();}
-    catch{formMsg.textContent='\u2717 Something went wrong. Email us at hello@nexacorelabs.site';formMsg.className='form-msg error';}
-    finally{submitBtn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message';submitBtn.disabled=false;}});
+  /* ── WELCOME POPUP ─────────────────────────────── */
+  (function(){
+    if(sessionStorage.getItem('ncl-visited')) return;
+    var ov = document.getElementById('ncl-popup-overlay');
+    var pp = document.getElementById('ncl-popup');
+    function show(){ ov.classList.add('show'); pp.classList.add('show'); }
+    function hide(){ ov.classList.remove('show'); pp.classList.remove('show'); sessionStorage.setItem('ncl-visited','1'); }
+    setTimeout(show, 3200);
+    document.getElementById('popupClose').addEventListener('click', hide);
+    ov.addEventListener('click', hide);
+    document.getElementById('popupCTA').addEventListener('click', hide);
+    document.getElementById('popupWork').addEventListener('click', hide);
+  })();
+
+  /* ── NAVBAR SCROLL + BTT ────────────────────────── */
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function(){
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('btt').classList.toggle('visible', window.scrollY > 400);
+  }, {passive:true});
+
+  /* ── MOBILE DRAWER ──────────────────────────────── */
+  var ov2    = document.getElementById('mobileOverlay');
+  var drawer = document.getElementById('mobileDrawer');
+  function openDrawer(){
+    ov2.classList.add('open'); drawer.classList.add('open');
+    document.body.style.overflow='hidden'; document.body.style.position='fixed'; document.body.style.width='100%';
+  }
+  function closeDrawer(){
+    ov2.classList.remove('open'); drawer.classList.remove('open');
+    document.body.style.overflow=''; document.body.style.position=''; document.body.style.width='';
+  }
+  document.getElementById('menuOpen').addEventListener('click', openDrawer);
+  document.getElementById('menuClose').addEventListener('click', closeDrawer);
+  ov2.addEventListener('click', closeDrawer);
+  document.querySelectorAll('.drawer-link').forEach(function(l){ l.addEventListener('click', closeDrawer); });
+
+  /* ── BACK TO TOP ────────────────────────────────── */
+  document.getElementById('btt').addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+  /* ── SMOOTH SCROLL ──────────────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id==='#') return;
+      var el = document.querySelector(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  });
+
+  /* ── REVEAL ON SCROLL ───────────────────────────── */
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in-view'); obs.unobserve(e.target); }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  /* ── SERVICE CARD GLOW ──────────────────────────── */
+  document.querySelectorAll('.service-card').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
+      card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
+    });
+  });
+
+  /* ── FAQ ACCORDION ──────────────────────────────── */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-question').addEventListener('click', function(){
+      var was = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!was) item.classList.add('open');
+    });
+  });
+
+  /* ── CONTACT FORM ───────────────────────────────── */
+  var form      = document.getElementById('contactForm');
+  var formMsg   = document.getElementById('formMsg');
+  var submitBtn = document.getElementById('submitBtn');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    formMsg.className = 'form-msg';
+    fetch(form.action, {method:'POST', body:new FormData(form), headers:{Accept:'application/json'}})
+      .then(function(res){
+        if(res.ok){
+          formMsg.textContent = "✓ Message sent! We'll be in touch within 24 hours.";
+          formMsg.className = 'form-msg success';
+          form.reset();
+          setTimeout(function(){ formMsg.className='form-msg'; }, 6000);
+        } else { throw new Error(); }
+      })
+      .catch(function(){
+        formMsg.textContent = '✗ Something went wrong. Email us at hello@nexacorelabs.site';
+        formMsg.className = 'form-msg error';
+      })
+      .finally(function(){
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        submitBtn.disabled = false;
+      });
+  });
 </script>
 </body>
 </html>
