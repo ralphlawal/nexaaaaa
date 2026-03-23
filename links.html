@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaCore Labs</title>
+<meta name="description" content="NexaCore Labs — Technology Studio. Dublin, Ireland & Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:#07090f;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:44px 20px 64px;}
+.bg-glow{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.g1{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(130px);background:rgba(0,123,255,.12);top:-120px;right:-120px;}
+.g2{position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(130px);background:rgba(106,27,154,.1);bottom:-80px;left:-100px;}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:36px 36px;}
+.wrap{max-width:460px;width:100%;position:relative;z-index:1;}
+
+/* header */
+.hd{text-align:center;margin-bottom:40px;}
+.hex{width:72px;height:72px;margin:0 auto 16px;border-radius:50%;background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.3);display:flex;align-items:center;justify-content:center;}
+.hex svg{width:44px;height:44px;}
+h1{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-.02em;margin-bottom:5px;}
+.sub{font-size:.85rem;color:#8a9ab8;margin-bottom:14px;}
+.locs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+.loc{font-size:.73rem;font-weight:500;padding:4px 12px;border-radius:99px;background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.25);color:#7db8ff;}
+
+/* section label */
+.lbl{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#3d4f6a;margin:28px 0 10px;}
+
+/* link card */
+.lnk{display:flex;align-items:center;gap:14px;padding:15px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:14px;text-decoration:none;color:#fff;margin-bottom:9px;transition:all .22s;}
+.lnk:hover{border-color:rgba(0,123,255,.4);transform:translateX(3px);}
+.lnk.nf:hover{border-color:rgba(255,110,40,.4);}
+.ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.bl{background:rgba(0,123,255,.12);border:1px solid rgba(0,123,255,.25);color:#007bff;}
+.gr{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.25);color:#25d366;}
+.or{background:rgba(255,110,40,.12);border:1px solid rgba(255,110,40,.25);color:#ff6e28;}
+.pu{background:rgba(180,100,255,.12);border:1px solid rgba(180,100,255,.25);color:#c77dff;}
+.title{font-size:.92rem;font-weight:600;line-height:1.2;}
+.desc{font-size:.75rem;color:#8a9ab8;margin-top:2px;}
+.arr{margin-left:auto;color:#3d4f6a;font-size:.8rem;transition:transform .2s;}
+.lnk:hover .arr{transform:translateX(3px);color:#007bff;}
+.lnk.nf:hover .arr{color:#ff6e28;}
+
+/* footer */
+.foot{text-align:center;margin-top:44px;font-size:.76rem;color:#3d4f6a;line-height:2;}
+.foot a{color:#007bff;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="bg-glow"><div class="g1"></div><div class="g2"></div><div class="dots"></div></div>
+<div class="wrap">
+
+  <div class="hd">
+    <div class="hex">
+      <svg viewBox="0 0 44 44" fill="none">
+        <polygon points="22,2 38,11 38,33 22,42 6,33 6,11" stroke="#007bff" stroke-width="2.2" fill="none"/>
+        <polygon points="22,9 33,15.5 33,28.5 22,35 11,28.5 11,15.5" stroke="#007bff" stroke-width="1.5" fill="none" opacity=".45"/>
+        <circle cx="22" cy="22" r="4.5" fill="#007bff"/>
+        <circle cx="22" cy="22" r="2.1" fill="#cce5ff"/>
+      </svg>
+    </div>
+    <h1>NexaCore Labs</h1>
+    <p class="sub">Technology Studio</p>
+    <div class="locs">
+      <span class="loc">Dublin, Ireland</span>
+      <span class="loc">Nigeria</span>
+    </div>
+  </div>
+
+  <p class="lbl">Get started</p>
+
+  <a href="https://nexacorelabs.site" target="_blank" class="lnk">
+    <div class="ico bl"><i class="fas fa-globe"></i></div>
+    <div><div class="title">Our Website</div><div class="desc">Portfolio, services and pricing</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="https://nexacorelabs.site/#contact" target="_blank" class="lnk">
+    <div class="ico bl"><i class="fas fa-rocket"></i></div>
+    <div><div class="title">Start a Project</div><div class="desc">Tell us what you want to build</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="https://wa.me/2348187017489" target="_blank" class="lnk">
+    <div class="ico gr"><i class="fab fa-whatsapp"></i></div>
+    <div><div class="title">WhatsApp</div><div class="desc">+234 818 701 7489 — fast replies</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="mailto:hello&#64;nexacorelabs&#46;site" class="lnk">
+    <div class="ico bl"><i class="fas fa-envelope"></i></div>
+    <div><div class="title">Email</div><div class="desc">hello&#64;nexacorelabs&#46;site</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <p class="lbl">Live Products</p>
+
+  <a href="https://examora.com.ng" target="_blank" class="lnk">
+    <div class="ico bl"><i class="fas fa-graduation-cap"></i></div>
+    <div><div class="title">Examora</div><div class="desc">CBT exam preparation platform — Nigeria</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="https://kiracycle.netlify.app" target="_blank" class="lnk">
+    <div class="ico pu"><i class="fas fa-heart"></i></div>
+    <div><div class="title">Kíra</div><div class="desc">Menstrual health app — private & offline</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="https://scath-ie.vercel.app" target="_blank" class="lnk">
+    <div class="ico bl"><i class="fas fa-cloud-rain"></i></div>
+    <div><div class="title">Scáth</div><div class="desc">Dublin weather intelligence — Ireland</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="https://wolach.com.ng" target="_blank" class="lnk">
+    <div class="ico bl"><i class="fas fa-hands-holding-heart"></i></div>
+    <div><div class="title">WOLACH Foundation</div><div class="desc">Welfare & disability inclusion — Nigeria</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="https://skylightmodelschools.com.ng" target="_blank" class="lnk">
+    <div class="ico bl"><i class="fas fa-school"></i></div>
+    <div><div class="title">Sky-Light Model Schools</div><div class="desc">K–12 institutional platform — Nigeria</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <p class="lbl">Insights</p>
+
+  <a href="blog-post-1.html" class="lnk">
+    <div class="ico bl"><i class="fas fa-pen-nib"></i></div>
+    <div><div class="title">Why Nigerian Websites Don't Convert</div><div class="desc">4 min read</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="blog-post-2.html" class="lnk">
+    <div class="ico bl"><i class="fas fa-pen-nib"></i></div>
+    <div><div class="title">What Is a PWA?</div><div class="desc">5 min read</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <a href="blog-post-3.html" class="lnk">
+    <div class="ico bl"><i class="fas fa-pen-nib"></i></div>
+    <div><div class="title">How We Built Examora</div><div class="desc">6 min read — case study</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <p class="lbl">Marketing Partner</p>
+
+  <a href="https://nurfuturamarketing.com.ng" target="_blank" class="lnk nf">
+    <div class="ico or"><i class="fas fa-bullhorn"></i></div>
+    <div><div class="title">Nur Futura Marketing</div><div class="desc">Brand strategy, music & campaigns</div></div>
+    <i class="fas fa-chevron-right arr"></i>
+  </a>
+
+  <div class="foot">
+    <div>&#169; 2026 NexaCore Labs</div>
+    <div><a href="https://nexacorelabs.site">nexacorelabs.site</a></div>
+    <div>Dublin, Ireland &amp; Nigeria</div>
+  </div>
+
+</div>
+</body>
+</html>
