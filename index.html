@@ -1,510 +1,413 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NexaCore Labs | Technology. Innovation. Impact.</title>
-  <meta name="description" content="NexaCore Labs — A forward-thinking technology studio building digital products, AI solutions, and immersive web experiences from Ireland and Lagos.">
-  <!-- OG / Social Sharing -->
-  <meta property="og:title" content="NexaCore Labs | Technology. Innovation. Impact.">
-  <meta property="og:description" content="We build high-performance digital products, AI tools, and web platforms for businesses that demand excellence — from Dublin and Lagos.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nexacorelabs.site">
-  <meta property="og:image" content="https://nexacorelabs.site/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NexaCore Labs | Technology. Innovation. Impact.">
-  <meta name="twitter:description" content="Digital products, AI solutions and web platforms from Ireland and Nigeria.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nexacorelabs.site">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --blue:#007bff; --blue-dim:rgba(0,123,255,0.12); --blue-glow:rgba(0,123,255,0.35);
-      --purple:#6a1b9a; --purple-dim:rgba(106,27,154,0.15); --nf:#8b2c00; --nf-light:#ff7433; --nf-dim:rgba(139,44,0,0.15);
-      --bg:#080c14; --bg2:#0d1220; --surface:#111827; --surface2:#1a2235;
-      --border:rgba(255,255,255,0.07); --border2:rgba(0,123,255,0.25);
-      --text:#f0f4ff; --muted:#8893a8; --white:#ffffff;
-      --radius:14px; --radius-lg:22px;
-      --ease:cubic-bezier(0.25,0.46,0.45,0.94);
-      --font-head:'Syne',sans-serif; --font-body:'DM Sans',sans-serif; --font-mono:'JetBrains Mono',monospace;
-    }
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;font-size:16px;}
-    body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;}
-    ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:var(--bg);} ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px;}
-    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");}
-    .grid-bg{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,123,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
-    .orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;}
-    .orb-blue{background:rgba(0,123,255,0.18);} .orb-purple{background:rgba(106,27,154,0.18);}
-    h1,h2,h3,h4,h5{font-family:var(--font-head);line-height:1.15;letter-spacing:-0.02em;color:var(--white);}
-    h1{font-size:clamp(2.4rem,6vw,4.5rem);font-weight:800;}
-    h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;}
-    h3{font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;}
-    p{color:var(--muted);font-size:1.02rem;line-height:1.75;}
-    a{text-decoration:none;color:inherit;}
-    .section-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-dim);border:1px solid var(--border2);padding:6px 14px;border-radius:99px;margin-bottom:18px;}
-    .section-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,60px);position:relative;z-index:2;}
-    section{padding:clamp(60px,7vw,100px) 0;position:relative;overflow:hidden;}
-    .gradient-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);}
-    .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;padding:13px 26px;border-radius:99px;border:none;cursor:pointer;transition:all 0.28s var(--ease);position:relative;overflow:hidden;white-space:nowrap;}
-    .btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.07);opacity:0;transition:opacity 0.2s;}
-    .btn:hover::after{opacity:1;}
-    .btn-primary{background:var(--blue);color:var(--white);box-shadow:0 0 30px var(--blue-glow);}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 4px 35px var(--blue-glow);}
-    .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border);}
-    .btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s var(--ease),transform 0.65s var(--ease);}
-    .reveal.in-view{opacity:1;transform:translateY(0);}
-    .no-js .reveal{opacity:1;transform:none;}
-    .reveal-delay-1{transition-delay:0.1s;} .reveal-delay-2{transition-delay:0.2s;} .reveal-delay-3{transition-delay:0.3s;} .reveal-delay-4{transition-delay:0.4s;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaCore Labs — Technology Studio | Dublin & Lagos</title>
+<meta name="description" content="NexaCore Labs builds high-performance websites, apps, AI tools and EdTech platforms. Based in Dublin, Ireland and Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --bg:#07090f;--bg2:#0c0f1a;--surf:#111827;--surf2:#1a2235;
+  --blue:#007bff;--bd:rgba(0,123,255,.12);--bg2:rgba(0,123,255,.25);
+  --purple:#6a1b9a;--nf:#ff6e28;
+  --white:#fff;--light:#e8eef8;--muted:#8a9ab8;--dim:#3d4f6a;
+  --brd:rgba(255,255,255,.08);--brd2:rgba(0,123,255,.3);
+  --r:14px;--rl:22px;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);background:var(--bg);color:var(--light);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:4px;}
+h1,h2,h3,h4{font-family:var(--fh);line-height:1.1;letter-spacing:-.02em;color:var(--white);}
+h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:800;}
+h2{font-size:clamp(2rem,4vw,3.1rem);font-weight:700;}
+h3{font-size:clamp(1.05rem,2.5vw,1.3rem);font-weight:600;}
+p{color:var(--muted);line-height:1.75;font-size:1rem;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,56px);position:relative;z-index:2;}
+section{padding:clamp(72px,9vw,120px) 0;position:relative;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,123,255,.3),transparent);}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.3);padding:6px 14px;border-radius:99px;margin-bottom:20px;}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fb);font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:99px;border:none;transition:all .28s var(--ease);white-space:nowrap;}
+.bp{background:var(--blue);color:#fff;box-shadow:0 0 28px rgba(0,123,255,.3);}
+.bp:hover{transform:translateY(-2px);box-shadow:0 4px 32px rgba(0,123,255,.45);}
+.bg{background:transparent;color:var(--light);border:1px solid var(--brd);}
+.bg:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
 
-    /* ── POPUP ──────────────────────────────────────────── */
-    #ncl-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:19000;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(6px);}
-    #ncl-popup-overlay.show{opacity:1;pointer-events:all;}
-    #ncl-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%);z-index:19001;background:var(--surface);border:1px solid rgba(0,123,255,0.25);border-radius:24px;padding:44px 40px 36px;width:min(520px,92vw);text-align:center;opacity:0;transition:opacity 0.4s ease,transform 0.4s ease;box-shadow:0 40px 80px rgba(0,0,0,0.6);}
-    #ncl-popup.show{opacity:1;transform:translate(-50%,-50%);}
-    .popup-glow{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,rgba(0,123,255,0.18),transparent 70%);pointer-events:none;}
-    .popup-icon{width:68px;height:68px;background:linear-gradient(135deg,var(--blue),#6a1b9a);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 22px;box-shadow:0 8px 30px rgba(0,123,255,0.35);}
-    #ncl-popup h3{font-family:var(--font-head);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:10px;}
-    #ncl-popup p{font-size:0.95rem;color:var(--muted);line-height:1.7;margin-bottom:28px;}
-    .popup-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    .popup-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
-    .popup-close:hover{background:rgba(255,255,255,0.1);color:var(--white);}
-    .popup-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
-    .popup-pill{font-family:var(--font-mono);font-size:0.72rem;padding:4px 12px;border-radius:99px;background:rgba(0,123,255,0.1);border:1px solid rgba(0,123,255,0.25);color:var(--blue);}
+/* NAVBAR */
+#nav{position:fixed;top:0;left:0;right:0;z-index:9000;transition:all .3s var(--ease);}
+#nav.sc .ni{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);padding-top:12px;padding-bottom:12px;}
+.ni{max-width:1160px;margin:0 auto;padding:18px clamp(20px,5vw,56px);display:flex;align-items:center;justify-content:space-between;transition:padding .3s;}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--fh);font-weight:800;font-size:1.15rem;color:var(--white);}
+.logo svg{width:36px;height:36px;flex-shrink:0;}
+.navl{display:none;list-style:none;gap:32px;}
+@media(min-width:900px){.navl{display:flex;}}
+.navl a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative;}
+.navl a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--blue);transform:scaleX(0);transition:transform .2s;}
+.navl a:hover{color:var(--white);}
+.navl a:hover::after{transform:scaleX(1);}
+.navr{display:flex;align-items:center;gap:12px;}
+.ncta{display:none;}@media(min-width:600px){.ncta{display:inline-flex;padding:10px 20px;font-size:.88rem;}}
+.ham{background:none;border:1px solid var(--brd);color:var(--light);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.ham:hover{border-color:var(--blue);color:var(--blue);}
+@media(min-width:900px){.ham{display:none;}}
 
+/* DRAWER */
+.dov{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:9001;opacity:0;pointer-events:none;transition:opacity .3s;}
+.dov.on{opacity:1;pointer-events:all;}
+.drw{position:fixed;top:0;right:0;bottom:0;width:min(320px,90vw);background:var(--surf);border-left:1px solid var(--brd);z-index:9002;transform:translateX(100%);transition:transform .35s var(--ease);display:flex;flex-direction:column;padding:28px;}
+.drw.on{transform:translateX(0);}
+.dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;}
+.dcls{background:var(--surf2);border:1px solid var(--brd);color:var(--light);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.dnav{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.dnav a{display:block;padding:13px 16px;font-family:var(--fh);font-size:1rem;font-weight:600;color:var(--muted);border-radius:10px;transition:all .2s;}
+.dnav a:hover{color:var(--white);background:var(--surf2);}
+.dft{margin-top:auto;padding-top:24px;border-top:1px solid var(--brd);display:flex;flex-direction:column;gap:12px;margin-top:auto;padding-top:24px;}
+.dft p{font-size:.78rem;color:var(--muted);font-weight:600;font-family:var(--fh);}
+.dft a{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.9rem;transition:color .2s;}
+.dft a:hover{color:var(--blue);}
+.dft i{color:var(--blue);width:16px;}
 
-    /* ── LOADER ─────────────────────────────────────────── */
-    #ncl-loader{position:fixed;inset:0;z-index:20000;background:#080c14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;animation:ncl-exit 0.8s ease 2.4s forwards;}
-    @keyframes ncl-exit{0%{opacity:1;}100%{opacity:0;visibility:hidden;}}
-    .ncl-hex-wrap{animation:ncl-breathe 1.6s ease-in-out infinite;}
-    @keyframes ncl-breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
-    .ncl-wordmark{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;color:#fff;animation:ncl-up 0.5s ease 0.1s both;}
-    .ncl-wordmark span{color:#007bff;}
-    .ncl-tagline{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#8893a8;animation:ncl-up 0.5s ease 0.25s both;}
-    .ncl-track{width:160px;height:2px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;animation:ncl-up 0.5s ease 0.35s both;}
-    .ncl-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#007bff,#6a1b9a);animation:ncl-progress 2s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;}
-    @keyframes ncl-up{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-    @keyframes ncl-progress{from{width:0%;}to{width:100%;}}
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;overflow:hidden;}
+.hbg{position:absolute;inset:0;z-index:0;}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.04) 1px,transparent 1px);background-size:60px 60px;}
+.hg1{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);background:rgba(0,123,255,.13);top:-100px;left:-180px;}
+.hg2{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(120px);background:rgba(106,27,154,.12);bottom:-80px;right:-120px;}
+.hgrid2{display:grid;gap:60px;align-items:center;}
+@media(min-width:920px){.hgrid2{grid-template-columns:1fr 1fr;gap:80px;}}
+.hpills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.hp{font-family:var(--fm);font-size:.74rem;padding:5px 13px;border-radius:99px;}
+.hp1{background:rgba(0,123,255,.12);border:1px solid rgba(0,123,255,.35);color:#7db8ff;}
+.hp2{background:rgba(106,27,154,.14);border:1px solid rgba(106,27,154,.4);color:#c77dff;}
+.htitle{margin-bottom:22px;}
+.htitle .l1{display:block;color:var(--muted);font-weight:300;font-size:clamp(1.2rem,3vw,1.65rem);font-family:var(--fh);}
+.htitle .l2{display:block;color:var(--white);}
+.htitle .l3{display:block;color:var(--blue);}
+.hsub{font-size:1.06rem;max-width:490px;margin-bottom:34px;}
+.hact{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.hstats{display:flex;gap:36px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--brd);}
+.stn{font-family:var(--fh);font-size:2rem;font-weight:800;color:var(--white);}
+.stn em{color:var(--blue);font-style:normal;}
+.stl{font-size:.8rem;color:var(--muted);margin-top:2px;}
+.term{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,123,255,.1);}
+.tbar{background:var(--surf2);padding:12px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--brd);}
+.td{width:12px;height:12px;border-radius:50%;}
+.td-r{background:#ff5f57;}.td-y{background:#febc2e;}.td-g{background:#28c840;}
+.tt{font-family:var(--fm);font-size:.76rem;color:var(--muted);margin-left:8px;}
+.tb{padding:22px;font-family:var(--fm);font-size:.83rem;line-height:2;}
+.tc{color:#5c6b80;}.tk{color:#79c0ff;}.ts{color:#a5d6ff;}.tv{color:#7ee787;}.tp{color:var(--muted);}
+.tl{display:flex;gap:14px;}.tn{color:#3d4f64;min-width:20px;text-align:right;user-select:none;}
+.cur{display:inline-block;width:8px;height:15px;background:var(--blue);vertical-align:middle;animation:bc 1.2s steps(1) infinite;}
+@keyframes bc{50%{opacity:0}}
 
+/* MARQUEE */
+.mq{background:var(--surf);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:13px 0;overflow:hidden;}
+.mqt{display:flex;gap:52px;animation:mq 24s linear infinite;white-space:nowrap;}
+.mi{display:flex;align-items:center;gap:9px;font-family:var(--fm);font-size:.8rem;color:var(--muted);flex-shrink:0;}
+.mi i{color:var(--blue);}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    /* ── PROJECT FILTER BAR ──────────────────────────────── */
-    .proj-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;}
-    .pf-btn{font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;padding:8px 20px;border-radius:99px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.22s;font-family:var(--font-body);}
-    .pf-btn:hover{border-color:var(--border2);color:var(--blue);}
-    .pf-btn.active{background:var(--blue);border-color:var(--blue);color:white;}
-    .proj-card-sm{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;transition:all 0.28s var(--ease);display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;text-decoration:none;}
-    .proj-card-sm::before{content:'';position:absolute;inset:0;background:radial-gradient(350px at var(--mx,50%) var(--my,50%),rgba(0,123,255,0.06),transparent 70%);opacity:0;transition:opacity 0.3s;}
-    .proj-card-sm:hover::before{opacity:1;}
-    .proj-card-sm:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.3);}
-    .proj-card-sm[data-hidden]{display:none;}
-    .pc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
-    .pc-icon{width:42px;height:42px;border-radius:11px;background:var(--blue-dim);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:16px;flex-shrink:0;}
-    .pc-ext{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;flex-shrink:0;transition:all 0.2s;}
-    .proj-card-sm:hover .pc-ext{border-color:var(--blue);color:var(--blue);}
-    .pc-cat{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:2px;}
-    .proj-card-sm h4{font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);line-height:1.2;}
-    .proj-card-sm p{font-size:0.85rem;color:var(--muted);line-height:1.65;flex:1;}
-    .pc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
-    .pc-tag{font-family:var(--font-mono);font-size:0.68rem;padding:3px 9px;border-radius:6px;background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--muted);}
-    .projects-grid-sm{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;}
-    .feat-projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:24px;margin-bottom:48px;}
-    .feat-proj-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.32s var(--ease);display:flex;flex-direction:column;text-decoration:none;}
-    .feat-proj-card:hover{border-color:var(--blue);transform:translateY(-6px);box-shadow:0 25px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(0,123,255,0.15);}
+/* SERVICES */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px;margin-top:56px;}
+.sc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:32px;transition:all .3s var(--ease);position:relative;overflow:hidden;}
+.sc::before{content:'';position:absolute;inset:0;background:radial-gradient(400px at var(--mx,50%) var(--my,50%),rgba(0,123,255,.07),transparent 70%);opacity:0;transition:opacity .3s;}
+.sc:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.35);}
+.sc:hover::before{opacity:1;}
+.sc.nfc{background:linear-gradient(135deg,rgba(255,110,40,.09),rgba(0,123,255,.05));border-color:rgba(255,110,40,.25);}
+.sc.nfc:hover{border-color:rgba(255,110,40,.5);}
+.si{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;background:rgba(0,123,255,.1);color:var(--blue);border:1px solid rgba(0,123,255,.3);}
+.si.nfi{background:rgba(255,110,40,.12);color:var(--nf);border-color:rgba(255,110,40,.4);}
+.sc h3{font-size:1.12rem;margin-bottom:10px;}
+.sc p{font-size:.92rem;line-height:1.7;}
+.stags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;}
+.stag{font-family:var(--fm);font-size:.69rem;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid var(--brd);color:var(--muted);}
+.nfb{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;color:var(--nf);background:rgba(255,110,40,.1);border:1px solid rgba(255,110,40,.32);padding:5px 13px;border-radius:99px;margin-top:16px;text-decoration:none;transition:background .2s;}
+.nfb:hover{background:rgba(255,110,40,.2);}
 
-    /* NAVBAR */
-    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.35s var(--ease);}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:18px clamp(20px,5vw,60px);transition:all 0.35s var(--ease);}
-    #navbar.scrolled .nav-inner{background:rgba(8,12,20,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding-top:12px;padding-bottom:12px;}
-    .logo-placeholder-full{width:120px;height:38px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.85rem;font-weight:700;letter-spacing:0.04em;font-family:var(--font-mono);flex-shrink:0;}
-    .nav-links{display:none;list-style:none;gap:30px;}
-    @media(min-width:960px){.nav-links{display:flex;}}
-    .nav-links a{font-size:0.88rem;font-weight:500;color:var(--muted);transition:color 0.2s;position:relative;}
-    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1.5px;background:var(--blue);transform:scaleX(0);transition:transform 0.2s;}
-    .nav-links a:hover{color:var(--white);} .nav-links a:hover::after{transform:scaleX(1);}
-    .nav-actions{display:flex;align-items:center;gap:12px;}
-    .nav-cta{display:none;} @media(min-width:640px){.nav-cta{display:inline-flex;}}
-    .hamburger{background:none;border:1px solid var(--border);color:var(--text);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;}
-    .hamburger:hover{border-color:var(--blue);color:var(--blue);} @media(min-width:960px){.hamburger{display:none;}}
-    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:10000;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(6px);}
-    .mobile-overlay.open{opacity:1;pointer-events:all;}
-    .mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:min(340px,90vw);background:var(--surface);border-left:1px solid var(--border);z-index:10001;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;padding:28px;}
-    .mobile-drawer.open{transform:translateX(0);}
-    .mobile-drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;}
-    .close-drawer{background:var(--surface2);border:1px solid var(--border);color:var(--text);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
-    .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:4px;}
-    .mobile-nav-links a{display:block;padding:11px 16px;font-family:var(--font-head);font-size:0.97rem;font-weight:600;color:var(--muted);border-radius:10px;transition:all 0.2s;}
-    .mobile-nav-links a:hover{color:var(--white);background:var(--surface2);}
-    .mobile-drawer-footer{margin-top:auto;padding-top:24px;border-top:1px solid var(--border);}
-    .mobile-contact-links{display:flex;flex-direction:column;gap:12px;margin-top:16px;}
-    .mobile-contact-links a{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:0.9rem;}
-    .mobile-contact-links a i{color:var(--blue);width:16px;}
+/* PROJECTS */
+.ptop{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:40px;}
+.frow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
+.fb{font-size:.82rem;font-weight:500;padding:8px 18px;border-radius:99px;border:1px solid var(--brd);background:transparent;color:var(--muted);transition:all .22s;font-family:var(--fb);}
+.fb:hover{border-color:var(--brd2);color:var(--blue);}
+.fb.on{background:var(--blue);border-color:var(--blue);color:#fff;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px;}
+.pc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column;transition:all .3s var(--ease);}
+.pc:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
+.pth{height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0;}
+.ptg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.06) 1px,transparent 1px);background-size:28px 28px;}
+.pic{width:68px;height:68px;background:var(--bg);border:1px solid var(--brd);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;position:relative;z-index:1;box-shadow:0 8px 28px rgba(0,0,0,.45);}
+.pb{padding:24px;flex:1;display:flex;flex-direction:column;}
+.pcat{font-family:var(--fm);font-size:.68rem;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
+.pb h3{font-size:1.05rem;margin-bottom:8px;}
+.pb p{font-size:.87rem;flex:1;margin-bottom:18px;}
+.ptags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.ptag{font-family:var(--fm);font-size:.67rem;padding:3px 9px;border-radius:6px;background:rgba(0,123,255,.08);color:#7db8ff;border:1px solid rgba(0,123,255,.2);}
+.plink{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:600;color:var(--blue);transition:gap .2s;margin-top:auto;}
+.plink:hover{gap:11px;}
+.th-e{background:linear-gradient(135deg,#001f3f,#003d7a);}
+.th-s{background:linear-gradient(135deg,#0a1f0a,#1a4a1a);}
+.th-sc{background:linear-gradient(135deg,#0d0d2e,#1a1a5e);}
+.th-n{background:linear-gradient(135deg,#1a0800,#3a1000);}
+.th-w{background:linear-gradient(135deg,#001428,#003366);}
+.th-f{background:linear-gradient(135deg,#141408,#282810);}
+.th-6{background:linear-gradient(135deg,#141414,#282828);}
+.th-d{background:linear-gradient(135deg,#0a1a08,#142814);}
+.th-p{background:linear-gradient(135deg,#14080a,#281018);}
+.th-c{background:linear-gradient(135deg,#081428,#103060);}
+.th-g{background:linear-gradient(135deg,#1a0a28,#300a50);}
 
-    /* HERO */
-    #hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;background:var(--bg);}
-    .hero-grid{display:grid;grid-template-columns:1fr;gap:60px;align-items:center;}
-    @media(min-width:960px){.hero-grid{grid-template-columns:1fr 1fr;gap:80px;}}
-    .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;flex-wrap:wrap;}
-    .hero-pill{background:var(--blue-dim);border:1px solid var(--border2);color:var(--blue);font-family:var(--font-mono);font-size:0.78rem;padding:5px 12px;border-radius:99px;white-space:nowrap;}
-    .hero-pill.purple{background:rgba(106,27,154,0.18);border-color:rgba(106,27,154,0.4);color:#c77dff;}
-    .hero-title{margin-bottom:22px;} .hero-title .line{display:block;} .hero-title .accent{color:var(--blue);} .hero-title .accent-purple{color:#c77dff;}
-    .hero-desc{font-size:1.08rem;max-width:520px;margin-bottom:38px;color:var(--muted);}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-    .hero-stats{display:flex;gap:36px;margin-top:52px;flex-wrap:wrap;}
-    .stat-num{font-family:var(--font-head);font-size:1.9rem;font-weight:800;color:var(--white);} .stat-num span{color:var(--blue);}
-    .stat-label{font-size:0.82rem;color:var(--muted);margin-top:2px;}
-    .hero-terminal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(0,123,255,0.1);}
-    .terminal-bar{background:var(--surface2);padding:12px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);}
-    .dot{width:12px;height:12px;border-radius:50%;} .dot-r{background:#ff5f57;} .dot-y{background:#febc2e;} .dot-g{background:#28c840;}
-    .terminal-title{font-family:var(--font-mono);font-size:0.78rem;color:var(--muted);margin-left:8px;}
-    .terminal-body{padding:24px;font-family:var(--font-mono);font-size:0.85rem;line-height:1.9;}
-    .t-comment{color:#5c6b80;} .t-keyword{color:#79c0ff;} .t-fn{color:#d2a8ff;} .t-string{color:#a5d6ff;} .t-val{color:#7ee787;} .t-punct{color:var(--muted);}
-    .t-line{display:flex;gap:16px;} .t-num{color:#3d4f64;min-width:20px;text-align:right;user-select:none;}
-    .terminal-cursor{display:inline-block;width:8px;height:16px;background:var(--blue);vertical-align:middle;animation:cursor-blink 1.2s steps(1) infinite;}
-    @keyframes cursor-blink{50%{opacity:0}}
+/* CTA BANNER */
+#ctab{background:linear-gradient(135deg,rgba(0,123,255,.12),rgba(106,27,154,.12));border-top:1px solid rgba(0,123,255,.18);border-bottom:1px solid rgba(106,27,154,.18);padding:clamp(56px,8vw,96px) 0;}
+.ctai{display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px;}
+.ctai h2{max-width:660px;}
+.ctai>p{max-width:500px;}
+.ctaa{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.ctas{display:flex;gap:44px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+.csn{font-family:var(--fh);font-size:2rem;font-weight:800;color:var(--white);}
+.csn em{color:var(--blue);font-style:normal;}
+.csl{font-size:.8rem;color:var(--muted);}
 
-    /* MARQUEE */
-    .marquee-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden;}
-    .marquee-track{display:flex;gap:60px;animation:marquee 22s linear infinite;white-space:nowrap;}
-    .marquee-item{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:0.82rem;color:var(--muted);flex-shrink:0;}
-    .marquee-item i{color:var(--blue);}
-    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ABOUT */
+.agrid{display:grid;gap:60px;align-items:center;}
+@media(min-width:920px){.agrid{grid-template-columns:1fr 1fr;gap:80px;}}
+.at p{margin-bottom:16px;}
+.at h2{margin-bottom:18px;}
+.locs{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.loc{display:flex;align-items:center;gap:8px;background:var(--surf2);border:1px solid var(--brd);border-radius:10px;padding:9px 15px;font-size:.86rem;font-weight:500;}
+.loc i{color:var(--blue);}
+.actas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+.fl{display:flex;flex-direction:column;gap:16px;}
+.feat{background:var(--surf);border:1px solid var(--brd);border-radius:var(--r);padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s;}
+.feat:hover{border-color:var(--brd2);}
+.fi{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.3);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:16px;}
+.fh4{font-size:.93rem;font-weight:700;color:var(--white);margin-bottom:4px;font-family:var(--fh);}
+.fb2{font-size:.86rem;}
 
-    /* SERVICES */
-    .services-intro{max-width:560px;margin-bottom:64px;}
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:24px;}
-    .service-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:34px;transition:all 0.32s var(--ease);position:relative;overflow:hidden;cursor:default;}
-    .service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(400px at var(--mx,50%) var(--my,50%),rgba(0,123,255,0.06),transparent 70%);opacity:0;transition:opacity 0.3s;}
-    .service-card:hover::before{opacity:1;} .service-card:hover{border-color:var(--border2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.35);}
-    .service-card.nf-card{background:linear-gradient(135deg,rgba(139,44,0,0.12),rgba(0,123,255,0.08));border-color:rgba(139,44,0,0.3);}
-    .service-card.nf-card:hover{border-color:rgba(139,44,0,0.5);}
-    .svc-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:22px;background:var(--blue-dim);color:var(--blue);border:1px solid var(--border2);}
-    .svc-icon.purple-icon{background:rgba(139,44,0,0.15);color:#ff7433;border-color:rgba(139,44,0,0.4);}
-    .service-card h3{font-size:1.18rem;margin-bottom:12px;color:var(--white);} .service-card p{font-size:0.95rem;line-height:1.7;}
-    .svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
-    .svc-tag{font-family:var(--font-mono);font-size:0.72rem;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--muted);}
-    .nf-badge{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:#ff7433;background:rgba(139,44,0,0.15);border:1px solid rgba(139,44,0,0.35);padding:4px 12px;border-radius:99px;margin-top:18px;}
-    .nf-badge::before{content:'✦';}
+/* TEAM */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:24px;margin-top:56px;}
+.tc2{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:30px 26px;text-align:center;transition:all .3s var(--ease);}
+.tc2:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.35);}
+.tav{width:76px;height:76px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:1.7rem;font-weight:800;color:#fff;border:3px solid var(--brd);}
+.ta-r{background:linear-gradient(135deg,#007bff,#6a1b9a);}
+.ta-n{background:linear-gradient(135deg,#6a1b9a,#ff6e28);}
+.ta-h{background:var(--surf2);}
+.tc2 h3{font-size:1.05rem;margin-bottom:5px;}
+.trole{font-family:var(--fm);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;}
+.tr-b{color:var(--blue);}.tr-n{color:var(--nf);}
+.tc2>p{font-size:.86rem;line-height:1.65;}
+.tsoc{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+.ts{width:32px;height:32px;border-radius:8px;background:var(--surf2);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;transition:all .2s;}
+.ts:hover{background:var(--blue);border-color:var(--blue);color:#fff;}
 
-    /* PROCESS */
-    #process{background:var(--bg2);}
-    .process-header{text-align:center;max-width:540px;margin:0 auto 70px;}
-    .process-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:0;position:relative;}
-    .process-steps::before{content:'';position:absolute;top:36px;left:calc(10% + 36px);right:calc(10% + 36px);height:1px;background:linear-gradient(90deg,var(--blue),var(--purple));opacity:0.25;z-index:0;}
-    @media(max-width:768px){.process-steps::before{display:none;}}
-    .process-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 16px 40px;position:relative;z-index:1;}
-    .step-num{width:72px;height:72px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:22px;transition:all 0.3s;box-shadow:0 0 0 6px var(--bg2);}
-    .process-step:hover .step-num{background:var(--blue);color:var(--white);border-color:var(--blue);box-shadow:0 0 0 6px var(--bg2),0 0 30px var(--blue-glow);}
-    .step-icon{font-size:1.3rem;margin-bottom:16px;display:block;}
-    .process-step h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--white);}
-    .process-step p{font-size:0.87rem;line-height:1.65;}
+/* PRICING */
+.priceg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px;margin-top:56px;}
+.prc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:34px 30px;display:flex;flex-direction:column;position:relative;transition:all .3s var(--ease);}
+.prc:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.3);}
+.prc.hot{border-color:var(--blue);background:linear-gradient(135deg,rgba(0,123,255,.1),rgba(106,27,154,.07));box-shadow:0 0 40px rgba(0,123,255,.14);}
+.hb{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-family:var(--fm);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;}
+.ptier{font-family:var(--fm);font-size:.74rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.pprice{font-family:var(--fh);font-size:2.1rem;font-weight:800;color:var(--white);margin-bottom:4px;}
+.pprice sub{font-size:.9rem;font-weight:400;color:var(--muted);vertical-align:baseline;}
+.pdesc{font-size:.87rem;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--brd);}
+.pfts{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex:1;}
+.pfts li{display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:var(--light);}
+.pfts li i{color:var(--blue);margin-top:3px;flex-shrink:0;font-size:.8rem;}
+.pbtn{width:100%;justify-content:center;}
+.pnote{text-align:center;font-size:.82rem;color:var(--muted);margin-top:22px;}
 
-    /* PROJECTS */
-    #projects{background:var(--bg);}
-    .projects-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;gap:24px;flex-wrap:wrap;}
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:28px;}
-    .project-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.32s var(--ease);display:flex;flex-direction:column;}
-    .project-card:hover{border-color:var(--border2);transform:translateY(-6px);box-shadow:0 25px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(0,123,255,0.1);}
-    .project-thumb{height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-    .project-thumb .thumb-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.06) 1px,transparent 1px);background-size:30px 30px;}
-    .project-thumb-icon{width:72px;height:72px;background:var(--bg);border:1px solid var(--border);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;position:relative;z-index:1;box-shadow:0 8px 30px rgba(0,0,0,0.4);}
-    .project-body{padding:28px;flex:1;display:flex;flex-direction:column;}
-    .project-type{font-family:var(--font-mono);font-size:0.72rem;color:var(--blue);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;}
-    .project-body h3{font-size:1.15rem;color:var(--white);margin-bottom:10px;} .project-body p{font-size:0.92rem;color:var(--muted);flex:1;margin-bottom:22px;}
-    .project-link{display:inline-flex;align-items:center;gap:8px;font-size:0.88rem;font-weight:600;color:var(--blue);transition:gap 0.2s;} .project-link:hover{gap:12px;}
-    .project-stack{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
-    .stack-tag{font-family:var(--font-mono);font-size:0.7rem;padding:3px 9px;border-radius:6px;background:rgba(0,123,255,0.08);color:var(--blue);border:1px solid rgba(0,123,255,0.2);}
-    .thumb-examora{background:linear-gradient(135deg,#001f3f,#003d7a);}
-    .thumb-skylight{background:linear-gradient(135deg,#0a1f0a,#1a4a1a);}
-    .thumb-scath{background:linear-gradient(135deg,#0d0d2e,#1a1a5e);}
+/* TESTIMONIALS */
+.testg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px;margin-top:56px;}
+.tcc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:30px;display:flex;flex-direction:column;gap:18px;transition:all .3s var(--ease);position:relative;overflow:hidden;}
+.tcc::before{content:'"';position:absolute;top:-8px;right:18px;font-family:Georgia,serif;font-size:7rem;color:rgba(0,123,255,.05);line-height:1;pointer-events:none;}
+.tcc:hover{border-color:var(--brd2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3);}
+.tstars{color:#fbbf24;font-size:.88rem;display:flex;gap:3px;}
+.ttxt{font-size:.93rem;line-height:1.75;color:var(--light);font-style:italic;flex:1;}
+.tauth{display:flex;align-items:center;gap:12px;margin-top:auto;}
+.tav2{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.95rem;font-weight:800;color:#fff;flex-shrink:0;border:2px solid var(--brd);}
+.tname{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--white);}
+.trole2{font-size:.76rem;color:var(--muted);margin-top:2px;}
 
-    /* CTA BANNER */
-    #cta-banner{background:linear-gradient(135deg,rgba(0,123,255,0.12),rgba(106,27,154,0.12));border-top:1px solid rgba(0,123,255,0.18);border-bottom:1px solid rgba(106,27,154,0.18);padding:clamp(60px,8vw,100px) 0;position:relative;overflow:hidden;}
-    .cta-banner-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px;position:relative;z-index:2;}
-    .cta-banner-inner h2{font-size:clamp(1.8rem,4.5vw,3rem);max-width:680px;}
-    .cta-banner-inner > p{font-size:1.05rem;max-width:520px;color:var(--muted);}
-    .cta-banner-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
-    .cta-stat-row{display:flex;gap:48px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
-    .cta-stat{text-align:center;}
-    .cta-stat-num{font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--white);}
-    .cta-stat-num em{color:var(--blue);font-style:normal;}
-    .cta-stat-label{font-size:0.82rem;color:var(--muted);}
+/* CONTACT */
+.cgrid{display:grid;gap:56px;}
+@media(min-width:920px){.cgrid{grid-template-columns:1fr 1fr;gap:80px;}}
+.cms{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+.cm{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--surf);border:1px solid var(--brd);border-radius:var(--r);text-decoration:none;color:var(--light);transition:all .25s;}
+.cm:hover{border-color:var(--brd2);background:var(--surf2);transform:translateX(4px);}
+.cmi{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.ci-b{background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.3);color:var(--blue);}
+.ci-g{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#25d366;}
+.cml{font-size:.78rem;color:var(--muted);margin-bottom:2px;}
+.cmv{font-weight:600;font-size:.93rem;color:var(--white);}
+.fw{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:clamp(26px,5vw,42px);}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:520px){.fr{grid-template-columns:1fr;}}
+.fg{display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
+.fg label{font-size:.8rem;font-weight:600;color:var(--muted);font-family:var(--fh);}
+.fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--brd);border-radius:10px;padding:12px 15px;font-family:var(--fb);font-size:.93rem;color:var(--light);outline:none;transition:border-color .2s;width:100%;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);}
+.fg textarea{resize:vertical;min-height:115px;}
+.fg select option{background:var(--surf);}
+.fmsg{padding:12px 16px;border-radius:10px;font-size:.9rem;margin-bottom:14px;display:none;}
+.fmsg.ok{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#4ade80;display:block;}
+.fmsg.err{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#f87171;display:block;}
+.fsub{width:100%;justify-content:center;margin-top:4px;padding:14px;font-size:.97rem;}
 
-    /* ABOUT */
-    #about{background:var(--bg);}
-    .about-grid{display:grid;grid-template-columns:1fr;gap:60px;align-items:start;}
-    @media(min-width:960px){.about-grid{grid-template-columns:1fr 1fr;gap:80px;align-items:center;}}
-    .about-text h2{margin-bottom:20px;} .about-text p{margin-bottom:18px;}
-    .about-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;}
-    .about-cards-stack{display:flex;flex-direction:column;gap:18px;}
-    .about-feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;display:flex;gap:18px;align-items:flex-start;transition:border-color 0.2s;}
-    .about-feature:hover{border-color:var(--border2);}
-    .af-icon{width:44px;height:44px;flex-shrink:0;border-radius:11px;background:var(--blue-dim);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:17px;}
-    .af-body h4{font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:5px;font-family:var(--font-head);} .af-body p{font-size:0.88rem;}
-    .locations-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
-    .location-pill{display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-size:0.88rem;font-weight:500;color:var(--text);}
-    .location-pill i{color:var(--blue);}
+/* FAQ */
+.faqg{display:grid;gap:56px;}
+@media(min-width:920px){.faqg{grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;}}
+.faql{display:flex;flex-direction:column;}
+.faqi{border-bottom:1px solid var(--brd);}
+.faqi:first-child{border-top:1px solid var(--brd);}
+.faqq{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;gap:14px;font-family:var(--fh);font-size:.97rem;font-weight:600;color:var(--white);transition:color .2s;}
+.faqq:hover{color:var(--blue);}
+.faqic{width:26px;height:26px;border-radius:7px;background:var(--surf);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;flex-shrink:0;transition:all .3s;}
+.faqi.open .faqic{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg);}
+.faqa{max-height:0;overflow:hidden;transition:max-height .38s var(--ease);}
+.faqa-in{padding-bottom:18px;font-size:.9rem;color:var(--muted);line-height:1.75;}
+.faqi.open .faqa{max-height:280px;}
 
-    /* TEAM */
-    #team{background:var(--bg2);}
-    .team-header{text-align:center;max-width:520px;margin:0 auto 64px;}
-    .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:28px;}
-    .team-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;text-align:center;transition:all 0.3s var(--ease);}
-    .team-card:hover{border-color:var(--border2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.35);}
-    .team-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:white;border:3px solid var(--border);}
-    .team-card h3{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:6px;}
-    .team-role{font-family:var(--font-mono);font-size:0.75rem;color:var(--blue);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px;}
-    .team-card p{font-size:0.88rem;line-height:1.65;}
-    .team-socials{display:flex;justify-content:center;gap:10px;margin-top:18px;}
-    .team-social{width:34px;height:34px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;transition:all 0.2s;}
-    .team-social:hover{background:var(--blue);border-color:var(--blue);color:white;}
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;}
+.fg2{display:grid;gap:40px;margin-bottom:48px;}
+@media(min-width:600px){.fg2{grid-template-columns:1.5fr 1fr 1fr;}}
+.fbc p{font-size:.87rem;margin:12px 0 20px;max-width:270px;}
+.fsocs{display:flex;gap:8px;}
+.fsoc{width:36px;height:36px;border-radius:8px;background:var(--surf);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;transition:all .2s;}
+.fsoc:hover{background:var(--blue);border-color:var(--blue);color:#fff;}
+.fc h4{font-family:var(--fh);font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:18px;}
+.fl2{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.fl2 a{font-size:.86rem;color:var(--muted);transition:color .2s;}
+.fl2 a:hover{color:var(--blue);}
+.fbtm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid var(--brd);}
+.fbtm p{font-size:.8rem;color:var(--muted);}
+.nfc2{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.nfc2 a{color:var(--nf);font-weight:600;}
 
-    /* TECH */
-    #tech{background:var(--bg);}
-    .tech-header{text-align:center;max-width:560px;margin:0 auto 60px;}
-    .tech-categories{display:flex;flex-direction:column;gap:40px;}
-    .tech-category-label{font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
-    .tech-chips{display:flex;flex-wrap:wrap;gap:12px;}
-    .tech-chip{display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 18px;font-size:0.9rem;font-weight:500;color:var(--text);transition:all 0.22s;}
-    .tech-chip:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-dim);}
-    .tech-chip i{font-size:1rem;color:var(--blue);}
+/* BTT */
+#btt{position:fixed;bottom:26px;right:26px;width:42px;height:42px;background:var(--blue);color:#fff;border:none;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:15px;z-index:500;box-shadow:0 4px 20px rgba(0,123,255,.35);opacity:0;transform:translateY(8px);transition:all .3s var(--ease);pointer-events:none;}
+#btt.show{opacity:1;transform:translateY(0);pointer-events:all;}
+#btt:hover{transform:translateY(-3px);}
+@media(max-width:600px){.hstats{gap:20px;}.stn{font-size:1.55rem;}}
 
-    /* PRICING */
-    #pricing{background:var(--bg2);}
-    .pricing-header{text-align:center;max-width:560px;margin:0 auto 64px;}
-    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px;}
-    .pricing-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 32px;display:flex;flex-direction:column;position:relative;transition:all 0.3s var(--ease);}
-    .pricing-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.3);}
-    .pricing-card.featured{border-color:var(--blue);background:linear-gradient(135deg,rgba(0,123,255,0.1),rgba(106,27,154,0.08));box-shadow:0 0 40px rgba(0,123,255,0.15);}
-    .pricing-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;font-family:var(--font-mono);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 16px;border-radius:99px;}
-    .pricing-tier{font-family:var(--font-mono);font-size:0.78rem;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;}
-    .pricing-price{font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:var(--white);margin-bottom:4px;}
-    .pricing-price sub{font-size:1rem;font-weight:400;color:var(--muted);vertical-align:baseline;}
-    .pricing-desc{font-size:0.88rem;color:var(--muted);margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);}
-    .pricing-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;flex:1;}
-    .pricing-features li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:var(--text);}
-    .pricing-features li i{color:var(--blue);margin-top:3px;flex-shrink:0;font-size:0.85rem;}
-    .pricing-cta{width:100%;justify-content:center;}
-
-    /* TESTIMONIALS */
-    #testimonials{background:var(--bg);}
-    .testimonials-header{text-align:center;max-width:520px;margin:0 auto 64px;}
-    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:24px;}
-    .testi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:20px;transition:all 0.3s var(--ease);position:relative;overflow:hidden;}
-    .testi-card::before{content:'"';position:absolute;top:-10px;right:20px;font-family:Georgia,serif;font-size:8rem;color:rgba(0,123,255,0.06);line-height:1;pointer-events:none;}
-    .testi-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,0.3);}
-    .testi-stars{display:flex;gap:4px;color:#fbbf24;font-size:0.9rem;}
-    .testi-text{font-size:0.95rem;line-height:1.75;color:var(--text);font-style:italic;flex:1;}
-    .testi-author{display:flex;align-items:center;gap:14px;margin-top:auto;}
-    .testi-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1rem;font-weight:800;color:white;flex-shrink:0;border:2px solid var(--border);}
-    .testi-name{font-family:var(--font-head);font-size:0.92rem;font-weight:700;color:var(--white);}
-    .testi-role{font-size:0.78rem;color:var(--muted);margin-top:2px;}
-
-    /* CONTACT */
-    #contact{background:var(--bg2);}
-    .contact-wrapper{display:grid;grid-template-columns:1fr;gap:60px;}
-    @media(min-width:960px){.contact-wrapper{grid-template-columns:1fr 1fr;gap:80px;}}
-    .contact-left h2{margin-bottom:16px;} .contact-left p{margin-bottom:36px;max-width:420px;}
-    .contact-methods{display:flex;flex-direction:column;gap:16px;}
-    .contact-method{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--text);transition:all 0.25s;}
-    .contact-method:hover{border-color:var(--border2);background:var(--surface2);transform:translateX(4px);}
-    .cm-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-    .cm-icon.blue{background:var(--blue-dim);border:1px solid var(--border2);color:var(--blue);}
-    .cm-icon.green{background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);color:#25d366;}
-    .cm-label{font-size:0.8rem;color:var(--muted);margin-bottom:3px;} .cm-value{font-weight:600;font-size:0.95rem;color:var(--white);}
-    .contact-form-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(28px,5vw,44px);}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-    @media(max-width:540px){.form-row{grid-template-columns:1fr;}}
-    .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
-    .form-group label{font-size:0.83rem;font-weight:600;color:var(--muted);letter-spacing:0.02em;font-family:var(--font-head);}
-    .form-group input,.form-group select,.form-group textarea{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:13px 16px;font-family:var(--font-body);font-size:0.95rem;color:var(--text);outline:none;transition:border-color 0.2s;width:100%;}
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);}
-    .form-group textarea{resize:vertical;min-height:120px;} .form-group select option{background:var(--surface);}
-    .form-submit{width:100%;justify-content:center;margin-top:6px;padding:15px;font-size:1rem;}
-    .form-msg{display:none;padding:13px 18px;border-radius:10px;font-size:0.92rem;margin-bottom:18px;}
-    .form-msg.success{background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#4ade80;display:block;}
-    .form-msg.error{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#f87171;display:block;}
-
-    /* BLOG */
-    #blog{background:var(--bg);}
-    .blog-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:24px;flex-wrap:wrap;}
     .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:24px;}
-    .blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.3s var(--ease);display:flex;flex-direction:column;}
-    .blog-card:hover{border-color:var(--border2);transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,0.3);}
-    .blog-thumb{height:160px;display:flex;align-items:flex-end;padding:20px;position:relative;overflow:hidden;}
-    .blog-category{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:99px;font-weight:700;position:relative;z-index:1;}
-    .blog-body{padding:24px;flex:1;display:flex;flex-direction:column;}
-    .blog-meta{font-size:0.78rem;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-    .blog-card h3{font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.4;}
-    .blog-card p{font-size:0.88rem;color:var(--muted);line-height:1.65;flex:1;}
-    .blog-read{display:flex;align-items:center;gap:7px;font-size:0.85rem;font-weight:600;color:var(--blue);margin-top:18px;transition:gap 0.2s;}
-    .coming-soon-ribbon{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;padding:3px 10px;border-radius:6px;margin-left:8px;}
+    .bc{display:flex;flex-direction:column;background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;text-decoration:none;color:inherit;transition:all .3s var(--ease);}
+    .bc:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
+    .bc-top{height:160px;position:relative;overflow:hidden;flex-shrink:0;}
+    .bc-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.07) 1px,transparent 1px);background-size:28px 28px;}
+    .bc-cat{position:absolute;bottom:14px;left:16px;font-family:var(--fm);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#7db8ff;background:rgba(0,0,0,.5);padding:4px 10px;border-radius:99px;border:1px solid rgba(0,123,255,.3);}
+    .bc-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+    .bc-meta{font-family:var(--fm);font-size:.72rem;color:var(--dim);margin-bottom:10px;letter-spacing:.04em;}
+    .bc-body h3{font-size:1.05rem;line-height:1.3;margin-bottom:10px;color:var(--white);}
+    .bc-body p{font-size:.88rem;line-height:1.7;flex:1;margin-bottom:18px;}
+    .bc-link{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:600;color:var(--blue);margin-top:auto;transition:gap .2s;}
+    .bc:hover .bc-link{gap:11px;}
 
-    /* FAQ */
-    #faq{background:var(--bg2);}
-    .faq-wrapper{display:grid;grid-template-columns:1fr;gap:60px;}
-    @media(min-width:960px){.faq-wrapper{grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;}}
-    .faq-left h2{margin-bottom:16px;} .faq-left p{margin-bottom:28px;}
-    .faq-list{display:flex;flex-direction:column;gap:0;}
-    .faq-item{border-bottom:1px solid var(--border);} .faq-item:first-child{border-top:1px solid var(--border);}
-    .faq-question{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:16px;font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white);list-style:none;transition:color 0.2s;}
-    .faq-question:hover{color:var(--blue);}
-    .faq-icon{width:28px;height:28px;border-radius:8px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;flex-shrink:0;transition:all 0.3s;}
-    .faq-item.open .faq-icon{background:var(--blue);border-color:var(--blue);color:white;transform:rotate(45deg);}
-    .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease);}
-    .faq-answer-inner{padding:0 0 20px;font-size:0.92rem;color:var(--muted);line-height:1.75;}
-    .faq-item.open .faq-answer{max-height:300px;}
-
-    /* FOOTER */
-    footer{background:var(--bg);border-top:1px solid var(--border);padding:60px 0 30px;}
-    .footer-grid{display:grid;grid-template-columns:1fr;gap:44px;margin-bottom:52px;}
-    @media(min-width:640px){.footer-grid{grid-template-columns:1.6fr 1fr 1fr;}}
-    .footer-brand p{font-size:0.9rem;margin:14px 0 22px;max-width:280px;}
-    .footer-socials{display:flex;gap:10px;}
-    .social-btn{width:38px;height:38px;border-radius:9px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all 0.2s;}
-    .social-btn:hover{background:var(--blue);border-color:var(--blue);color:white;}
-    .footer-col h4{font-family:var(--font-head);font-size:0.9rem;font-weight:700;color:var(--white);margin-bottom:20px;}
-    .footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
-    .footer-links a{font-size:0.88rem;color:var(--muted);transition:color 0.2s;}
-    .footer-links a:hover{color:var(--blue);}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:28px;border-top:1px solid var(--border);}
-    .footer-bottom p{font-size:0.82rem;color:var(--muted);} .footer-bottom a{color:var(--blue);}
-    .nf-footer-credit{font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:6px;}
-    .nf-footer-credit strong{color:#ff7433;}
-
-    /* BTT */
-    #btt{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--blue);color:white;border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;z-index:500;box-shadow:0 4px 20px var(--blue-glow);opacity:0;transform:translateY(10px);transition:all 0.3s var(--ease);pointer-events:none;}
-    #btt.visible{opacity:1;transform:translateY(0);pointer-events:all;}
-    #btt:hover{transform:translateY(-3px);}
-    @media(max-width:640px){.hero-stats{gap:20px;}.stat-num{font-size:1.4rem;}#btt{bottom:20px;right:20px;}.hero-desc{font-size:0.97rem;}.hero-actions{gap:10px;}}
-
-    /* ── LOADER ─────────────────────────────────────────── */
-
-  </style>
+</style>
 </head>
 <body>
-<div id="ncl-loader" aria-hidden="true">
-  <div class="ncl-hex-wrap">
-    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="42,5 75,23 75,61 42,79 9,61 9,23" stroke="#007bff" stroke-width="3" fill="none"/>
-      <polygon points="42,16 65,29 65,55 42,68 19,55 19,29" stroke="#007bff" stroke-width="2" fill="none" opacity="0.5"/>
-      <polygon points="42,27 58,36 58,48 42,57 26,48 26,36" fill="#003d7a" opacity="0.9"/>
-      <circle cx="42" cy="42" r="7.5" fill="#007bff"/>
-      <circle cx="42" cy="42" r="3.5" fill="#cce5ff"/>
-    </svg>
-  </div>
-  <div class="ncl-wordmark">Nexa<span>Core</span> Labs</div>
-  <div class="ncl-tagline">Technology · Innovation · Impact</div>
-  <div class="ncl-track"><div class="ncl-fill"></div></div>
-</div>
 
-<!-- WELCOME POPUP -->
-<div id="ncl-popup-overlay"></div>
-<div id="ncl-popup">
-  <div class="popup-glow"></div>
-  <button class="popup-close" id="popupClose" aria-label="Close"><i class="fas fa-times"></i></button>
-  <div class="popup-icon">🚀</div>
-  <h3>Welcome to NexaCore Labs</h3>
-  <p>We build high-performance digital products, AI tools, and custom platforms from Dublin & Lagos. Let's build something exceptional together.</p>
-  <div class="popup-pills">
-    <span class="popup-pill">🇮🇪 Dublin, Ireland</span>
-    <span class="popup-pill">🇳🇬 Lagos, Nigeria</span>
-    <span class="popup-pill">AI · Web · EdTech</span>
-  </div>
-  <div class="popup-actions">
-    <a href="#contact" class="btn btn-primary" id="popupCTA" style="font-size:0.92rem;padding:12px 24px;"><i class="fas fa-rocket"></i> Start a Project</a>
-    <a href="#projects" class="btn btn-ghost" id="popupWork" style="font-size:0.92rem;padding:12px 24px;">View Our Work</a>
-  </div>
-</div>
-
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="#"><div class="logo-placeholder-full" style="background:none;width:auto;"><img src="nexacore_logo_dark.png" alt="NexaCore Labs" style="height:38px;width:auto;" onerror="this.style.display='none'"></div></a>
-    <ul class="nav-links">
+<!-- NAV -->
+<nav id="nav">
+  <div class="ni">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 36 36" fill="none"><polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="#007bff" stroke-width="2.2" fill="none"/><polygon points="18,8 27,13 27,23 18,28 9,23 9,13" stroke="#007bff" stroke-width="1.5" fill="none" opacity=".5"/><polygon points="18,14 22,16.5 22,21.5 18,24 14,21.5 14,16.5" fill="#003080" opacity=".9"/><circle cx="18" cy="18" r="3.5" fill="#007bff"/><circle cx="18" cy="18" r="1.6" fill="#cce5ff"/></svg>
+      NexaCore Labs
+    </a>
+    <ul class="navl">
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#blog">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-actions">
-      <a href="#contact" class="btn btn-primary nav-cta" style="padding:10px 20px;font-size:0.88rem;"><i class="fas fa-paper-plane"></i> Get In Touch</a>
-      <button class="hamburger" id="menuOpen"><i class="fas fa-bars"></i></button>
+    <div class="navr">
+      <a href="#contact" class="btn bp ncta"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+      <button class="ham" id="hamBtn"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </nav>
-
-<div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-drawer" id="mobileDrawer">
-  <div class="mobile-drawer-head">
-    <div class="logo-placeholder-full" style="background:none;width:auto;"><img src="nexacore_logo_dark.png" alt="NexaCore Labs" style="height:38px;width:auto;" onerror="this.style.display='none'"></div>
-    <button class="close-drawer" id="menuClose"><i class="fas fa-times"></i></button>
+<div class="dov" id="dov"></div>
+<div class="drw" id="drw">
+  <div class="dh">
+    <span class="logo" style="font-size:1rem;">
+      <svg viewBox="0 0 36 36" fill="none" style="width:28px;height:28px;"><polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="#007bff" stroke-width="2.2" fill="none"/><circle cx="18" cy="18" r="3.5" fill="#007bff"/><circle cx="18" cy="18" r="1.6" fill="#cce5ff"/></svg>
+      NexaCore Labs
+    </span>
+    <button class="dcls" id="drwClose"><i class="fas fa-times"></i></button>
   </div>
-  <ul class="mobile-nav-links">
-    <li><a href="#services" class="drawer-link">Services</a></li>
-    <li><a href="#projects" class="drawer-link">Projects</a></li>
-    <li><a href="#pricing" class="drawer-link">Pricing</a></li>
-    <li><a href="#about" class="drawer-link">About</a></li>
-    <li><a href="#team" class="drawer-link">Team</a></li>
-    <li><a href="#testimonials" class="drawer-link">Testimonials</a></li>
-    <li><a href="#faq" class="drawer-link">FAQ</a></li>
-    <li><a href="#contact" class="drawer-link">Contact</a></li>
+  <ul class="dnav">
+    <li><a href="#services" class="dl">Services</a></li>
+    <li><a href="#projects" class="dl">Projects</a></li>
+    <li><a href="#pricing" class="dl">Pricing</a></li>
+    <li><a href="#about" class="dl">About</a></li>
+    <li><a href="#team" class="dl">Team</a></li>
+    <li><a href="#blog" class="dl">Insights</a></li>
+    <li><a href="#faq" class="dl">FAQ</a></li>
+    <li><a href="#contact" class="dl">Contact</a></li>
   </ul>
-  <div class="mobile-drawer-footer">
-    <p style="font-size:0.8rem;color:var(--muted);font-weight:600;">Contact Us</p>
-    <div class="mobile-contact-links">
-      <a href="mailto:hello@nexacorelabs.site"><i class="fas fa-envelope"></i> <span class="ncl-email">[email protected]</span></a>
-      <a href="https://wa.me/2348187017489"><i class="fab fa-whatsapp"></i> +234 818 701 7489</a>
-    </div>
+  <div class="dft">
+    <p>Get in touch</p>
+    <a href="/cdn-cgi/l/email-protection#0e666b6262614e606b766f6d617c6b626f6c7d207d677a6b"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="e28a878e8e8da28c879a83818d90878e838091cc918b9687">[email&#160;protected]</span></a>
+    <a href="https://wa.me/2348187017489" target="_blank"><i class="fab fa-whatsapp"></i> +234 818 701 7489</a>
   </div>
 </div>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="grid-bg"></div>
-  <div class="orb orb-blue" style="width:650px;height:650px;top:-120px;left:-200px;"></div>
-  <div class="orb orb-purple" style="width:550px;height:550px;bottom:-100px;right:-150px;"></div>
-  <div class="container">
-    <div class="hero-grid">
+  <div class="hbg"><div class="hgrid"></div><div class="hg1"></div><div class="hg2"></div></div>
+  <div class="wrap">
+    <div class="hgrid2">
       <div>
-        <div class="hero-eyebrow"><span class="hero-pill">🇮🇪 Dublin, Ireland</span><span class="hero-pill purple">🇳🇬 Lagos, Nigeria</span></div>
-        <h1 class="hero-title"><span class="line">We Build</span><span class="line accent">Digital Products</span><span class="line">That <span class="accent-purple">Scale.</span></span></h1>
-        <p class="hero-desc">NexaCore Labs is a technology studio crafting high-performance web platforms, AI-powered tools, and custom software — for businesses that demand excellence.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Our Work</a>
-          <a href="#contact" class="btn btn-ghost">Start a Project <i class="fas fa-arrow-right"></i></a>
+        <div class="hpills">
+          <span class="hp hp1">🇮🇪 Dublin, Ireland</span>
+          <span class="hp hp2">🇳🇬 Lagos, Nigeria</span>
         </div>
-        <div class="hero-stats">
-          <div><div class="stat-num">3<span>+</span></div><div class="stat-label">Live Products</div></div>
-          <div><div class="stat-num">2<span>+</span></div><div class="stat-label">Countries</div></div>
-          <div><div class="stat-num">5<span>+</span></div><div class="stat-label">Industries</div></div>
-          <div><div class="stat-num">100<span>%</span></div><div class="stat-label">Client Focus</div></div>
+        <h1 class="htitle">
+          <span class="l1">We build digital</span>
+          <span class="l2">products that</span>
+          <span class="l3">actually work.</span>
+        </h1>
+        <p class="hsub">Websites, apps, AI tools and EdTech platforms crafted for businesses that demand excellence — from our studios in Dublin and Lagos.</p>
+        <div class="hact">
+          <a href="#projects" class="btn bp"><i class="fas fa-rocket"></i> View Our Work</a>
+          <a href="#contact" class="btn bg">Start a Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hstats">
+          <div><div class="stn">8<em>+</em></div><div class="stl">Live Projects</div></div>
+          <div><div class="stn">2<em>+</em></div><div class="stl">Countries</div></div>
+          <div><div class="stn">5<em>+</em></div><div class="stl">Industries</div></div>
+          <div><div class="stn">24<em>hr</em></div><div class="stl">Response Time</div></div>
         </div>
       </div>
       <div>
-        <div class="hero-terminal">
-          <div class="terminal-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span class="terminal-title">nexacore-labs ~ main</span></div>
-          <div class="terminal-body">
-            <div class="t-line"><span class="t-num">1</span><span><span class="t-comment">// NexaCore Labs — Building Tomorrow</span></span></div>
-            <div class="t-line"><span class="t-num">2</span><span></span></div>
-            <div class="t-line"><span class="t-num">3</span><span><span class="t-keyword">const</span> <span class="t-val">studio</span> <span class="t-punct">=</span> <span class="t-punct">{</span></span></div>
-            <div class="t-line"><span class="t-num">4</span><span>&nbsp;&nbsp;name<span class="t-punct">:</span> <span class="t-string">"NexaCore Labs"</span><span class="t-punct">,</span></span></div>
-            <div class="t-line"><span class="t-num">5</span><span>&nbsp;&nbsp;base<span class="t-punct">:</span> <span class="t-string">["Dublin 🇮🇪","Lagos 🇳🇬"]</span><span class="t-punct">,</span></span></div>
-            <div class="t-line"><span class="t-num">6</span><span>&nbsp;&nbsp;expertise<span class="t-punct">:</span> <span class="t-punct">[</span></span></div>
-            <div class="t-line"><span class="t-num">7</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"Web Development"</span><span class="t-punct">,</span></span></div>
-            <div class="t-line"><span class="t-num">8</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"AI Solutions"</span><span class="t-punct">,</span></span></div>
-            <div class="t-line"><span class="t-num">9</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"EdTech Platforms"</span></span></div>
-            <div class="t-line"><span class="t-num">10</span><span>&nbsp;&nbsp;<span class="t-punct">],</span></span></div>
-            <div class="t-line"><span class="t-num">11</span><span>&nbsp;&nbsp;status<span class="t-punct">:</span> <span class="t-val">true</span></span></div>
-            <div class="t-line"><span class="t-num">12</span><span><span class="t-punct">};</span></span></div>
-            <div class="t-line"><span class="t-num">13</span><span></span></div>
-            <div class="t-line"><span class="t-num">14</span><span><span class="t-fn">launch</span><span class="t-punct">(</span>studio<span class="t-punct">);</span> <span class="terminal-cursor"></span></span></div>
+        <div class="term">
+          <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="tt">nexacore-labs ~ main</span></div>
+          <div class="tb">
+            <div class="tl"><span class="tn">1</span><span><span class="tc">// NexaCore Labs — Building Tomorrow</span></span></div>
+            <div class="tl"><span class="tn">2</span><span></span></div>
+            <div class="tl"><span class="tn">3</span><span><span class="tk">const</span> <span class="tv">studio</span> <span class="tp">=</span> <span class="tp">{</span></span></div>
+            <div class="tl"><span class="tn">4</span><span>&nbsp;&nbsp;name<span class="tp">:</span> <span class="ts">"NexaCore Labs"</span><span class="tp">,</span></span></div>
+            <div class="tl"><span class="tn">5</span><span>&nbsp;&nbsp;base<span class="tp">:</span> <span class="ts">["Dublin 🇮🇪","Lagos 🇳🇬"]</span><span class="tp">,</span></span></div>
+            <div class="tl"><span class="tn">6</span><span>&nbsp;&nbsp;builds<span class="tp">:</span> <span class="tp">[</span></span></div>
+            <div class="tl"><span class="tn">7</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts">"Web &amp; Mobile Apps"</span><span class="tp">,</span></span></div>
+            <div class="tl"><span class="tn">8</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts">"AI Solutions"</span><span class="tp">,</span></span></div>
+            <div class="tl"><span class="tn">9</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts">"EdTech Platforms"</span></span></div>
+            <div class="tl"><span class="tn">10</span><span>&nbsp;&nbsp;<span class="tp">],</span></span></div>
+            <div class="tl"><span class="tn">11</span><span>&nbsp;&nbsp;quality<span class="tp">:</span> <span class="tv">true</span></span></div>
+            <div class="tl"><span class="tn">12</span><span><span class="tp">};</span></span></div>
+            <div class="tl"><span class="tn">13</span><span></span></div>
+            <div class="tl"><span class="tn">14</span><span><span class="tv">launch</span><span class="tp">(</span>studio<span class="tp">);</span> <span class="cur"></span></span></div>
           </div>
         </div>
       </div>
@@ -512,715 +415,370 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-strip"><div class="marquee-track">
-  <div class="marquee-item"><i class="fab fa-react"></i> React</div><div class="marquee-item"><i class="fas fa-fire"></i> Firebase</div><div class="marquee-item"><i class="fab fa-python"></i> Python</div><div class="marquee-item"><i class="fas fa-robot"></i> AI Integration</div><div class="marquee-item"><i class="fab fa-js"></i> JavaScript</div><div class="marquee-item"><i class="fas fa-mobile-alt"></i> PWA</div><div class="marquee-item"><i class="fab fa-node-js"></i> Node.js</div><div class="marquee-item"><i class="fas fa-cloud"></i> Cloud Infra</div><div class="marquee-item"><i class="fas fa-graduation-cap"></i> EdTech</div><div class="marquee-item"><i class="fas fa-chart-line"></i> Analytics</div>
-  <div class="marquee-item"><i class="fab fa-react"></i> React</div><div class="marquee-item"><i class="fas fa-fire"></i> Firebase</div><div class="marquee-item"><i class="fab fa-python"></i> Python</div><div class="marquee-item"><i class="fas fa-robot"></i> AI Integration</div><div class="marquee-item"><i class="fab fa-js"></i> JavaScript</div><div class="marquee-item"><i class="fas fa-mobile-alt"></i> PWA</div><div class="marquee-item"><i class="fab fa-node-js"></i> Node.js</div><div class="marquee-item"><i class="fas fa-cloud"></i> Cloud Infra</div><div class="marquee-item"><i class="fas fa-graduation-cap"></i> EdTech</div><div class="marquee-item"><i class="fas fa-chart-line"></i> Analytics</div>
+<div class="mq"><div class="mqt">
+  <div class="mi"><i class="fab fa-react"></i>React</div><div class="mi"><i class="fas fa-fire"></i>Firebase</div><div class="mi"><i class="fab fa-python"></i>Python</div><div class="mi"><i class="fas fa-robot"></i>AI Integration</div><div class="mi"><i class="fab fa-js"></i>JavaScript</div><div class="mi"><i class="fas fa-mobile-alt"></i>PWA</div><div class="mi"><i class="fab fa-node-js"></i>Node.js</div><div class="mi"><i class="fas fa-cloud"></i>Cloud Infra</div><div class="mi"><i class="fas fa-graduation-cap"></i>EdTech</div><div class="mi"><i class="fas fa-chart-line"></i>Analytics</div>
+  <div class="mi"><i class="fab fa-react"></i>React</div><div class="mi"><i class="fas fa-fire"></i>Firebase</div><div class="mi"><i class="fab fa-python"></i>Python</div><div class="mi"><i class="fas fa-robot"></i>AI Integration</div><div class="mi"><i class="fab fa-js"></i>JavaScript</div><div class="mi"><i class="fas fa-mobile-alt"></i>PWA</div><div class="mi"><i class="fab fa-node-js"></i>Node.js</div><div class="mi"><i class="fas fa-cloud"></i>Cloud Infra</div><div class="mi"><i class="fas fa-graduation-cap"></i>EdTech</div><div class="mi"><i class="fas fa-chart-line"></i>Analytics</div>
 </div></div>
-<div class="gradient-divider"></div>
+<div class="divider"></div>
 
 <!-- SERVICES -->
 <section id="services">
-  <div class="container">
-    <div class="services-intro reveal"><div class="section-badge">What We Do</div><h2>Solutions Built<br>for the Real World</h2><p style="margin-top:14px;">From idea to deployment, NexaCore Labs delivers full-cycle digital products — performant, beautiful, and built to grow.</p></div>
-    <div class="services-grid">
-      <div class="service-card reveal reveal-delay-1"><div class="svc-icon"><i class="fas fa-globe"></i></div><h3>Web Design & Development</h3><p>Modern, responsive websites and web applications that convert visitors into clients. From landing pages to complex portals.</p><div class="svc-tags"><span class="svc-tag">React</span><span class="svc-tag">Next.js</span><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">WordPress</span></div></div>
-      <div class="service-card reveal reveal-delay-2"><div class="svc-icon"><i class="fas fa-mobile-screen"></i></div><h3>Mobile & PWA Development</h3><p>Cross-platform apps and Progressive Web Apps that deliver native experiences — fast, offline-capable, and seamlessly installed.</p><div class="svc-tags"><span class="svc-tag">React Native</span><span class="svc-tag">PWA</span><span class="svc-tag">Flutter</span></div></div>
-      <div class="service-card reveal reveal-delay-3"><div class="svc-icon"><i class="fas fa-robot"></i></div><h3>AI & Automation Solutions</h3><p>Integrate intelligent automation and AI capabilities into your workflows — chatbots, smart dashboards, recommendation engines and more.</p><div class="svc-tags"><span class="svc-tag">LLM Integration</span><span class="svc-tag">OpenAI</span><span class="svc-tag">Automation</span></div></div>
-      <div class="service-card reveal reveal-delay-1"><div class="svc-icon"><i class="fas fa-graduation-cap"></i></div><h3>EdTech Platform Development</h3><p>Purpose-built educational platforms: exam prep systems, LMS tools, AI-assisted tutoring, and interactive curricula.</p><div class="svc-tags"><span class="svc-tag">LMS</span><span class="svc-tag">Quiz Engines</span><span class="svc-tag">Firebase</span></div></div>
-      <div class="service-card reveal reveal-delay-2"><div class="svc-icon"><i class="fas fa-database"></i></div><h3>Backend & API Engineering</h3><p>Robust, scalable server-side systems, REST APIs, and real-time database architectures that power high-traffic applications.</p><div class="svc-tags"><span class="svc-tag">Node.js</span><span class="svc-tag">Firebase</span><span class="svc-tag">Supabase</span><span class="svc-tag">REST</span></div></div>
-      <div class="service-card nf-card reveal reveal-delay-3"><div class="svc-icon purple-icon"><i class="fas fa-bullhorn"></i></div><h3>Digital Marketing & Brand Growth</h3><p>Strategic digital marketing, social media management, content creation, and brand development — powered by our marketing partner.</p><div class="svc-tags"><span class="svc-tag">Social Media</span><span class="svc-tag">SEO</span><span class="svc-tag">Brand Strategy</span></div><a href="https://nurfuturamarketing.com" target="_blank" class="nf-badge">In partnership with Nur Futura Marketing <i class="fas fa-arrow-up-right-from-square" style="font-size:0.65rem;"></i></a></div>
+  <div class="wrap">
+    <div class="badge">What We Do</div>
+    <h2>Solutions built<br>for the real world</h2>
+    <p style="margin-top:12px;max-width:520px;">From idea to deployment — performant, beautiful products built to grow with your business.</p>
+    <div class="sgrid">
+      <div class="sc"><div class="si"><i class="fas fa-globe"></i></div><h3>Web Design &amp; Development</h3><p>Modern, responsive websites and web applications that convert visitors into clients — from landing pages to complex platforms.</p><div class="stags"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">HTML/CSS</span><span class="stag">WordPress</span></div></div>
+      <div class="sc"><div class="si"><i class="fas fa-mobile-screen"></i></div><h3>Mobile &amp; PWA Development</h3><p>Cross-platform apps and Progressive Web Apps — fast, offline-capable, and seamlessly installed on any device.</p><div class="stags"><span class="stag">React Native</span><span class="stag">PWA</span><span class="stag">Flutter</span></div></div>
+      <div class="sc"><div class="si"><i class="fas fa-robot"></i></div><h3>AI &amp; Automation Solutions</h3><p>Connect AI to your business workflows — chatbots, smart dashboards, recommendation engines and automation tools.</p><div class="stags"><span class="stag">OpenAI</span><span class="stag">Claude AI</span><span class="stag">LLM Tools</span><span class="stag">Automation</span></div></div>
+      <div class="sc"><div class="si"><i class="fas fa-graduation-cap"></i></div><h3>EdTech Platform Development</h3><p>Exam prep systems, LMS tools and AI tutoring platforms — built for JAMB, WAEC, NECO and beyond.</p><div class="stags"><span class="stag">CBT App</span><span class="stag">LMS</span><span class="stag">Quiz Engine</span><span class="stag">Firebase</span></div></div>
+      <div class="sc"><div class="si"><i class="fas fa-database"></i></div><h3>Backend &amp; API Engineering</h3><p>Scalable server-side systems, REST APIs and real-time database architectures that power high-traffic applications.</p><div class="stags"><span class="stag">Node.js</span><span class="stag">Firebase</span><span class="stag">Supabase</span><span class="stag">REST</span></div></div>
+      <div class="sc nfc"><div class="si nfi"><i class="fas fa-bullhorn"></i></div><h3>Digital Marketing &amp; Branding</h3><p>Brand strategy, social media, campaigns and content creation — delivered through our dedicated marketing partner.</p><div class="stags"><span class="stag">Social Media</span><span class="stag">SEO</span><span class="stag">Branding</span><span class="stag">Campaigns</span></div><a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="nfb"><i class="fas fa-external-link-alt" style="font-size:.65rem;"></i> Nur Futura Marketing</a></div>
     </div>
   </div>
 </section>
+<div class="divider"></div>
 
-<section id="projects">
-  <div class="container">
-    <div class="projects-header">
-      <div class="reveal">
-        <div class="section-badge">Our Work</div>
-        <h2>Products &amp; Projects<br>We&#39;ve Shipped</h2>
-        <p style="margin-top:12px;max-width:520px;">From flagship platforms to precision tools — every project built with purpose.</p>
-      </div>
-      <a href="#contact" class="btn btn-ghost reveal" style="flex-shrink:0;">Start a Project <i class="fas fa-arrow-right"></i></a>
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="ptop">
+      <div><div class="badge">Our Work</div><h2>4+ products<br>shipped &amp; live</h2></div>
+      <a href="#contact" class="btn bg">Start a Project <i class="fas fa-arrow-right"></i></a>
     </div>
-
-    <!-- FILTER BAR -->
-    <div class="proj-filter reveal">
-      <button class="pf-btn active" data-filter="all">All Projects</button>
-      <button class="pf-btn" data-filter="flagship">Flagship</button>
-      <button class="pf-btn" data-filter="business">Business</button>
-      <button class="pf-btn" data-filter="tools">Tools</button>
-      <button class="pf-btn" data-filter="web">Web</button>
+    <div class="frow">
+      <button class="fb on" data-f="all">All Projects</button>
+      <button class="fb" data-f="flagship">Flagship</button>
+      <button class="fb" data-f="business">Business</button>
+      <button class="fb" data-f="web">Web</button>
     </div>
-
-    <!-- ALL PROJECTS GRID — using proven .project-card structure -->
-    <div class="projects-grid" id="projGrid">
-
-      <!-- EXAMORA (flagship) -->
-      <div class="project-card reveal reveal-delay-1" data-cat="flagship">
-        <div class="project-thumb thumb-examora"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#001a3a;font-size:28px;">&#x1F4DA;</div></div>
-        <div class="project-body">
-          <div class="project-type">EdTech &middot; Nigeria &middot; Flagship &#x1F525;</div>
-          <h3>Examora</h3>
-          <p>Nigeria&#39;s modern CBT exam prep platform — JAMB, WAEC, NECO, Post-UTME and beyond. Real past questions, AI-powered practice, and real-time analytics.</p>
-          <div class="project-stack"><span class="stack-tag">Firebase</span><span class="stack-tag">JavaScript</span><span class="stack-tag">AI</span><span class="stack-tag">CBT</span></div>
-          <a href="https://examora.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit Examora <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- SKYLIGHT -->
-      <div class="project-card reveal reveal-delay-2" data-cat="business">
-        <div class="project-thumb thumb-skylight"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#0a1a0a;font-size:28px;">&#x1F3EB;</div></div>
-        <div class="project-body">
-          <div class="project-type">Education &middot; Nigeria</div>
-          <h3>Sky-Light Model Schools</h3>
-          <p>Government-approved school website for a K–College institution — admissions, academics, parent portal, and results checking.</p>
-          <div class="project-stack"><span class="stack-tag">Web Design</span><span class="stack-tag">CMS</span><span class="stack-tag">Responsive</span></div>
-          <a href="https://skylightmodelschools.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit Skylight <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- SCATH -->
-      <div class="project-card reveal reveal-delay-3" data-cat="flagship">
-        <div class="project-thumb thumb-scath"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#0a0a2a;font-size:28px;">&#x1F326;</div></div>
-        <div class="project-body">
-          <div class="project-type">PWA &middot; Ireland &middot; Flagship</div>
-          <h3>Sc&aacute;th &mdash; Dublin Weather PWA</h3>
-          <p>Hyper-local Dublin weather, AI chat insights, and community features for Irish users. A beautifully crafted progressive web app.</p>
-          <div class="project-stack"><span class="stack-tag">PWA</span><span class="stack-tag">AI Chat</span><span class="stack-tag">Firebase</span></div>
-          <a href="https://scath.ie.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Sc&aacute;th <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- NUR FUTURA -->
-      <div class="project-card reveal reveal-delay-1" data-cat="business">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#1a0800,#3a1000)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#120500;font-size:26px;"><i class="fas fa-bullhorn" style="color:#ff7433;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Marketing &middot; Agency</div>
-          <h3>Nur Futura Marketing</h3>
-          <p>Full-service marketing &amp; music distribution agency — brand management, artist development, global PR, and digital campaigns.</p>
-          <div class="project-stack"><span class="stack-tag">Marketing</span><span class="stack-tag">Music</span><span class="stack-tag">Agency</span></div>
-          <a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit Nur Futura <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- WOLACH -->
-      <div class="project-card reveal reveal-delay-2" data-cat="business">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#001a28,#003348)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#001020;font-size:26px;"><i class="fas fa-hands-holding-child" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">NGO &middot; Welfare</div>
-          <h3>WOLACH Foundation</h3>
-          <p>Website for a registered welfare foundation providing inclusive education, physiotherapy, and vocational training for persons with disabilities.</p>
-          <div class="project-stack"><span class="stack-tag">NGO</span><span class="stack-tag">Welfare</span><span class="stack-tag">Web</span></div>
-          <a href="https://wolach.com.ng" target="_blank" rel="noopener noreferrer" class="project-link">Visit WOLACH <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- FINETOUCH -->
-      <div class="project-card reveal reveal-delay-3" data-cat="business">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#141408,#282810)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#101008;font-size:26px;"><i class="fas fa-wrench" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Business &middot; Web</div>
-          <h3>Finetouch Maintenance</h3>
-          <p>Contracting company site with service listings, team pages, and enquiry forms.</p>
-          <div class="project-stack"><span class="stack-tag">Business</span><span class="stack-tag">Web</span><span class="stack-tag">Responsive</span></div>
-          <a href="https://finetouchmaintainance.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- 6TH AVE -->
-      <div class="project-card reveal reveal-delay-1" data-cat="business">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#141414,#282828)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#101010;font-size:26px;"><i class="fas fa-hard-hat" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Construction &middot; Web</div>
-          <h3>6th Ave Construction</h3>
-          <p>Roofing &amp; exterior services website with a clean quote request workflow and service showcase.</p>
-          <div class="project-stack"><span class="stack-tag">Construction</span><span class="stack-tag">Web</span></div>
-          <a href="https://6thavenueconstruction.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- IN THE DOG HOUSE -->
-      <div class="project-card reveal reveal-delay-2" data-cat="web">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#0a1a08,#142814)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#081208;font-size:26px;"><i class="fas fa-dog" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Web &middot; Pets</div>
-          <h3>In the Dog House</h3>
-          <p>Pet boarding site with gallery, booking info and service listings.</p>
-          <div class="project-stack"><span class="stack-tag">Pets</span><span class="stack-tag">Web</span><span class="stack-tag">Booking</span></div>
-          <a href="https://inthedoghouse.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- POMOCHII -->
-      <div class="project-card reveal reveal-delay-3" data-cat="tools">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#14080a,#281018)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#100608;font-size:26px;"><i class="fas fa-clock" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Tool &middot; Productivity</div>
-          <h3>Pomochii</h3>
-          <p>Pomodoro-style focus timer to help track and protect deep work sessions.</p>
-          <div class="project-stack"><span class="stack-tag">Productivity</span><span class="stack-tag">App</span><span class="stack-tag">Timer</span></div>
-          <a href="https://pomochii.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Pomochii <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- CURRENCY CONVERTER -->
-      <div class="project-card reveal reveal-delay-1" data-cat="tools">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-money-bill-transfer" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Tool &middot; Finance</div>
-          <h3>Currency Converter</h3>
-          <p>Real-time exchange rates and multi-currency conversion tool for global users.</p>
-          <div class="project-stack"><span class="stack-tag">Finance</span><span class="stack-tag">Utility</span><span class="stack-tag">Real-time</span></div>
-          <a href="https://nexacoregloball.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- FEES CALCULATOR -->
-      <div class="project-card reveal reveal-delay-2" data-cat="tools">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-calculator" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Tool &middot; Finance</div>
-          <h3>Fees Calculator</h3>
-          <p>Calculate payment gateway fees with precision across multiple processors.</p>
-          <div class="project-stack"><span class="stack-tag">Finance</span><span class="stack-tag">Calc</span></div>
-          <a href="https://nexafeescalculator.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- SIMPLE INVOICE -->
-      <div class="project-card reveal reveal-delay-3" data-cat="tools">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-file-invoice-dollar" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Tool &middot; Finance</div>
-          <h3>Simple Invoice</h3>
-          <p>Minimal invoice generator built for freelancers and solo operators.</p>
-          <div class="project-stack"><span class="stack-tag">Finance</span><span class="stack-tag">Tool</span><span class="stack-tag">Freelance</span></div>
-          <a href="https://nexinvoice.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- GRADIENT GENERATOR -->
-      <div class="project-card reveal reveal-delay-1" data-cat="tools">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#1a0a28,#300a50)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#12061e;font-size:26px;"><i class="fas fa-palette" style="color:#c77dff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Tool &middot; Design</div>
-          <h3>Gradient Generator</h3>
-          <p>Create and export beautiful CSS gradients instantly for any web project.</p>
-          <div class="project-stack"><span class="stack-tag">Design</span><span class="stack-tag">Tool</span><span class="stack-tag">CSS</span></div>
-          <a href="https://nexgradient.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-      <!-- QR GENERATOR -->
-      <div class="project-card reveal reveal-delay-2" data-cat="tools">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#081428,#103060)"><div class="thumb-grid"></div><div class="project-thumb-icon" style="background:#061020;font-size:26px;"><i class="fas fa-qrcode" style="color:#007bff;"></i></div></div>
-        <div class="project-body">
-          <div class="project-type">Tool &middot; Utility</div>
-          <h3>QR &amp; Barcode Generator</h3>
-          <p>Responsive QR code generation with instant one-click download.</p>
-          <div class="project-stack"><span class="stack-tag">Utility</span><span class="stack-tag">Tool</span><span class="stack-tag">QR</span></div>
-          <a href="https://nexagenn.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">Visit Tool <i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-
-    </div>
+    <div class="pgrid" id="pg">
+      <div class="pc" data-cat="flagship"><div class="pth th-e"><div class="ptg"></div><div class="pic" style="background:#001a3a;">📚</div></div><div class="pb"><div class="pcat">EdTech · Nigeria · Flagship 🔥</div><h3>Examora</h3><p>Nigeria's modern CBT exam prep — JAMB, WAEC, NECO, Post-UTME with AI-powered practice.</p><div class="ptags"><span class="ptag">Firebase</span><span class="ptag">AI</span><span class="ptag">CBT</span></div><a href="https://examora.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Examora <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+      <div class="pc" data-cat="business"><div class="pth th-s"><div class="ptg"></div><div class="pic" style="background:#0a1a0a;">🏫</div></div><div class="pb"><div class="pcat">Education · Nigeria</div><h3>Sky-Light Model Schools</h3><p>K–College institution website with admissions, academics and parent portal.</p><div class="ptags"><span class="ptag">Web Design</span><span class="ptag">CMS</span></div><a href="https://skylightmodelschools.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Skylight <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+      <div class="pc" data-cat="flagship"><div class="pth th-sc"><div class="ptg"></div><div class="pic" style="background:#0a0a2a;">🌦️</div></div><div class="pb"><div class="pcat">PWA · Ireland · Flagship</div><h3>Scáth — Dublin Weather PWA</h3><p>Hyper-local Dublin weather with AI chat insights and community features.</p><div class="ptags"><span class="ptag">PWA</span><span class="ptag">AI Chat</span><span class="ptag">Firebase</span></div><a href="https://scathire.netlify.app" target="_blank" rel="noopener noreferrer" class="plink">Visit Scáth <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+      <div class="pc" data-cat="business"><div class="pth th-n"><div class="ptg"></div><div class="pic" style="background:#120500;"><i class="fas fa-bullhorn" style="color:#ff7433;font-size:26px;"></i></div></div><div class="pb"><div class="pcat">Marketing · Agency</div><h3>Nur Futura Marketing</h3><p>Full-service marketing agency — brand, music distribution, PR and digital campaigns.</p><div class="ptags"><span class="ptag">Marketing</span><span class="ptag">Music</span><span class="ptag">Agency</span></div><a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Nur Futura <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+      <div class="pc" data-cat="business"><div class="pth th-w"><div class="ptg"></div><div class="pic" style="background:#061020;"><i class="fas fa-hands-holding-child" style="color:#007bff;font-size:24px;"></i></div></div><div class="pb"><div class="pcat">NGO · Welfare</div><h3>WOLACH Foundation</h3><p>Welfare foundation for inclusive education and disability support services.</p><div class="ptags"><span class="ptag">NGO</span><span class="ptag">Welfare</span><span class="ptag">Web</span></div><a href="https://wolach.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit WOLACH <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+      <div class="pc" data-cat="business"><div class="pth th-f"><div class="ptg"></div><div class="pic" style="background:#101008;"><i class="fas fa-wrench" style="color:#007bff;font-size:24px;"></i></div></div><div class="pb"><div class="pcat">Business · Web</div><h3>Finetouch Maintenance</h3><p>Contracting company website with services, team and enquiry forms.</p><div class="ptags"><span class="ptag">Business</span><span class="ptag">Web</span></div><a href="https://finetouchmaintainance.netlify.app" target="_blank" rel="noopener noreferrer" class="plink">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+      <div class="pc" data-cat="business"><div class="pth th-6"><div class="ptg"></div><div class="pic" style="background:#101010;"><i class="fas fa-hard-hat" style="color:#007bff;font-size:24px;"></i></div></div><div class="pb"><div class="pcat">Construction · Web</div><h3>6th Ave Construction</h3><p>Roofing and exterior services website with quote request workflow.</p><div class="ptags"><span class="ptag">Construction</span><span class="ptag">Web</span></div><a href="https://6thavenueconstruction.netlify.app" target="_blank" rel="noopener noreferrer" class="plink">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+      <div class="pc" data-cat="web"><div class="pth th-d"><div class="ptg"></div><div class="pic" style="background:#081208;"><i class="fas fa-dog" style="color:#007bff;font-size:24px;"></i></div></div><div class="pb"><div class="pcat">Web · Pets</div><h3>In the Dog House</h3><p>Pet boarding site with gallery, booking info and service listings.</p><div class="ptags"><span class="ptag">Pets</span><span class="ptag">Web</span></div><a href="https://inthedoghouse.netlify.app" target="_blank" rel="noopener noreferrer" class="plink">Visit Site <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
   </div>
 </section>
-<div class="gradient-divider"></div>
+<div class="divider"></div>
 
-<!-- MID-PAGE CTA BANNER -->
-<section id="cta-banner">
-  <div class="orb orb-blue" style="width:500px;height:500px;top:50%;left:5%;transform:translateY(-50%);"></div>
-  <div class="orb orb-purple" style="width:400px;height:400px;top:50%;right:0%;transform:translateY(-50%);"></div>
-  <div class="container">
-    <div class="cta-banner-inner">
-      <div class="section-badge">Ready to Build?</div>
-      <h2>Got a Project in Mind?<br>Let's Make It Real.</h2>
-      <p>Whether you're a startup launching your first product, an enterprise modernising legacy systems, or a school building the future of education — we're the team to call.</p>
-      <div class="cta-banner-actions">
-        <a href="#contact" class="btn btn-primary" style="font-size:1rem;padding:15px 32px;"><i class="fas fa-rocket"></i> Start Your Project</a>
-        <a href="https://wa.me/2348187017489" target="_blank" class="btn btn-ghost" style="font-size:1rem;padding:15px 32px;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+<!-- CTA BANNER -->
+<section id="ctab">
+  <div class="wrap">
+    <div class="ctai">
+      <div class="badge">Ready to Build?</div>
+      <h2>Got a project in mind?<br>Let's make it real.</h2>
+      <p>Whether you're launching your first product or scaling an existing one — we're the team to call.</p>
+      <div class="ctaa">
+        <a href="#contact" class="btn bp" style="padding:15px 32px;font-size:1rem;"><i class="fas fa-rocket"></i> Start Your Project</a>
+        <a href="https://wa.me/2348187017489" target="_blank" class="btn bg" style="padding:15px 32px;font-size:1rem;"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
       </div>
-      <div class="cta-stat-row">
-        <div class="cta-stat"><div class="cta-stat-num">24<em>hr</em></div><div class="cta-stat-label">Response Time</div></div>
-        <div class="cta-stat"><div class="cta-stat-num">3<em>+</em></div><div class="cta-stat-label">Live Products</div></div>
-        <div class="cta-stat"><div class="cta-stat-num">2<em>+</em></div><div class="cta-stat-label">Global Markets</div></div>
+      <div class="ctas">
+        <div class="cs"><div class="csn">24<em>hr</em></div><div class="csl">Response Time</div></div>
+        <div class="cs"><div class="csn">14<em>+</em></div><div class="csl">Live Products</div></div>
+        <div class="cs"><div class="csn">2<em>+</em></div><div class="csl">Global Markets</div></div>
       </div>
     </div>
   </div>
 </section>
-<div class="gradient-divider"></div>
+<div class="divider"></div>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <div class="section-badge">About Us</div>
-        <h2>Technology Studio With Global Ambition</h2>
-        <p style="margin-top:16px;">NexaCore Labs is an independent technology studio founded to bridge the gap between ambitious ideas and production-ready digital products. We operate across two vibrant tech ecosystems — Dublin, Ireland and Lagos, Nigeria — giving us a unique perspective on both Western and African digital markets.</p>
-        <p>We work with startups, schools, enterprises and entrepreneurs to design, build and deploy software that's fast, reliable and genuinely impactful. Every project we take on is treated as our own.</p>
-        <div class="locations-row"><div class="location-pill"><i class="fas fa-location-dot"></i> Dublin, Ireland</div><div class="location-pill"><i class="fas fa-location-dot"></i> Lagos, Nigeria</div></div>
-        <div class="about-ctas"><a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Work With Us</a><a href="mailto:hello@nexacorelabs.site" class="btn btn-ghost"><i class="fas fa-envelope"></i> <span class="ncl-email">[email protected]</span></a></div>
+  <div class="wrap">
+    <div class="agrid">
+      <div class="at">
+        <div class="badge">About Us</div>
+        <h2>Technology studio<br>with global ambition</h2>
+        <p style="margin-top:16px;">NexaCore Labs bridges ambitious ideas and production-ready digital products. Operating across two vibrant ecosystems — Dublin and Lagos — we bring a perspective most agencies simply don't have.</p>
+        <p>We work with startups, schools, enterprises and entrepreneurs to build software that's fast, reliable and genuinely impactful.</p>
+        <div class="locs">
+          <div class="loc"><i class="fas fa-location-dot"></i> Dublin, Ireland</div>
+          <div class="loc"><i class="fas fa-location-dot"></i> Lagos, Nigeria</div>
+        </div>
+        <div class="actas">
+          <a href="#contact" class="btn bp"><i class="fas fa-handshake"></i> Work With Us</a>
+          <a href="/cdn-cgi/l/email-protection#acc4c9c0c0c3ecc2c9d4cdcfc3dec9c0cdcedf82dfc5d8c9" class="btn bg"><i class="fas fa-envelope"></i> Email Us</a>
+        </div>
       </div>
-      <div class="about-cards-stack reveal reveal-delay-2">
-        <div class="about-feature"><div class="af-icon"><i class="fas fa-layer-group"></i></div><div class="af-body"><h4>Full-Cycle Delivery</h4><p>From wireframe to deployment and beyond — we own the entire product lifecycle with no handoff confusion.</p></div></div>
-        <div class="about-feature"><div class="af-icon"><i class="fas fa-globe"></i></div><div class="af-body"><h4>Dual-Market Expertise</h4><p>Built for both developed and emerging markets — we understand context-specific UX, infrastructure, and user behaviour.</p></div></div>
-        <div class="about-feature"><div class="af-icon"><i class="fas fa-robot"></i></div><div class="af-body"><h4>AI-First Approach</h4><p>We integrate intelligent tooling and AI-assisted features as standard — not as an afterthought.</p></div></div>
-        <div class="about-feature"><div class="af-icon"><i class="fas fa-graduation-cap"></i></div><div class="af-body"><h4>Education & Community</h4><p>We invest in tech education through curriculum development, coding instruction, and community programs.</p></div></div>
+      <div class="fl">
+        <div class="feat"><div class="fi"><i class="fas fa-layer-group"></i></div><div><div class="fh4">Full-Cycle Delivery</div><p class="fb2">From wireframe to deployment — no handoff confusion, no excuses.</p></div></div>
+        <div class="feat"><div class="fi"><i class="fas fa-globe"></i></div><div><div class="fh4">Dual-Market Expertise</div><p class="fb2">We understand UX context for both Western and African digital markets.</p></div></div>
+        <div class="feat"><div class="fi"><i class="fas fa-robot"></i></div><div><div class="fh4">AI-First Approach</div><p class="fb2">Intelligent tooling and AI features integrated as standard — not an afterthought.</p></div></div>
+        <div class="feat"><div class="fi"><i class="fas fa-graduation-cap"></i></div><div><div class="fh4">Education &amp; Community</div><p class="fb2">We invest in tech education through coding instruction and community programs.</p></div></div>
       </div>
     </div>
   </div>
 </section>
-<div class="gradient-divider"></div>
+<div class="divider"></div>
 
 <!-- TEAM -->
-<section id="team">
-  <div class="container">
-    <div class="team-header reveal"><div class="section-badge">Our Team</div><h2>The Builders Behind<br>NexaCore Labs</h2><p style="margin-top:14px;">A focused, sharp team with deep expertise and a relentless bias toward shipping great work.</p></div>
-    <div class="team-grid">
-      <div class="team-card reveal reveal-delay-1">
-        <div class="team-avatar">R</div>
-        <h3>Ralph</h3>
-        <div class="team-role">Creative & Tech Strategist</div>
-        <p>Leads product strategy, creative direction, and technical architecture. Bridges the gap between beautiful design and solid engineering across every NexaCore product.</p>
-        <div class="team-socials"><a href="#" class="team-social"><i class="fab fa-linkedin-in"></i></a><a href="#" class="team-social"><i class="fab fa-github"></i></a><a href="#" class="team-social"><i class="fab fa-x-twitter"></i></a></div>
-      </div>
-      <div class="team-card reveal reveal-delay-2">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#6a1b9a,#007bff);">N</div>
-        <a href="https://nurfuturamarketing.com" target="_blank" style="text-decoration:none;"><h3 style="color:white;">Nur Futura</h3></a>
-        <div class="team-role">Marketing Partner</div>
-        <p>Our dedicated marketing partner handles growth strategy, brand identity, social media, and digital campaigns — bringing NexaCore products and clients to life.</p>
-        <div class="team-socials"><a href="#" class="team-social"><i class="fab fa-instagram"></i></a><a href="#" class="team-social"><i class="fab fa-linkedin-in"></i></a></div>
-      </div>
-      <div class="team-card reveal reveal-delay-3" style="border-style:dashed;">
-        <div class="team-avatar" style="background:var(--surface2);color:var(--muted);font-size:1.4rem;">+</div>
-        <h3>We're Hiring</h3>
-        <div class="team-role">Open Roles</div>
-        <p>We're always looking for talented developers, designers, and creatives who love building things that matter. Sound like you?</p>
-        <div style="margin-top:18px;"><a href="mailto:hello@nexacorelabs.site" class="btn btn-ghost" style="padding:9px 18px;font-size:0.85rem;"><i class="fas fa-paper-plane"></i> Get In Touch</a></div>
-      </div>
+<section id="team" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="badge">Our Team</div>
+    <h2>The builders behind<br>NexaCore Labs</h2>
+    <div class="tgrid">
+      <div class="tc2"><div class="tav ta-r">R</div><h3>Ralph</h3><div class="trole tr-b">Founder &amp; Creative Tech Strategist</div><p>Leads product strategy, creative direction and technical architecture across every NexaCore product.</p><div class="tsoc"><a href="https://github.com/ralphlawal" target="_blank" class="ts"><i class="fab fa-github"></i></a><a href="https://linkedin.com/in/ralph-lawal" target="_blank" class="ts"><i class="fab fa-linkedin-in"></i></a><a href="https://x.com/RalphLawal_" target="_blank" class="ts"><i class="fab fa-x-twitter"></i></a></div></div>
+      <div class="tc2"><div class="tav ta-n">N</div><h3>Nur Futura</h3><div class="trole tr-n">Marketing Partner</div><p>Handles brand strategy, social media, campaigns and creative direction. Bringing NexaCore and clients' brands to life.</p><div class="tsoc"><a href="https://nurfuturamarketing.com.ng" target="_blank" class="ts"><i class="fas fa-external-link-alt"></i></a><a href="https://instagram.com/nurfuturamarketing" target="_blank" class="ts"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="tc2" style="border-style:dashed;"><div class="tav ta-h" style="color:var(--muted);font-size:1.4rem;">+</div><h3>We're Hiring</h3><div class="trole tr-b">Open Roles</div><p>Always looking for talented developers, designers and creatives who love building things that matter.</p><a href="/cdn-cgi/l/email-protection#8de5e8e1e1e2cde3e8f5eceee2ffe8e1eceffea3fee4f9e8" class="btn bg" style="padding:9px 18px;font-size:.83rem;margin-top:16px;"><i class="fas fa-paper-plane"></i> Get In Touch</a></div>
     </div>
   </div>
 </section>
+<div class="divider"></div>
 
+<!-- PRICING -->
 <section id="pricing">
-  <div class="container">
-    <div class="pricing-header reveal"><div class="section-badge">Pricing</div><h2>Transparent Pricing.<br>No Hidden Costs.</h2><p style="margin-top:14px;">Every project is unique — but here's a clear starting point. All plans include full source code delivery and 30-day post-launch support.</p></div>
-    <div class="pricing-grid">
-      <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-price">€499 <sub>/ starting from</sub></div>
-        <p class="pricing-desc">Perfect for small businesses, personal brands, and landing pages needing a polished online presence fast.</p>
-        <ul class="pricing-features">
-          <li><i class="fas fa-check-circle"></i> Up to 5-page responsive website</li>
-          <li><i class="fas fa-check-circle"></i> Mobile-first design</li>
-          <li><i class="fas fa-check-circle"></i> Contact form integration</li>
-          <li><i class="fas fa-check-circle"></i> Basic SEO setup</li>
-          <li><i class="fas fa-check-circle"></i> 30-day post-launch support</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost pricing-cta">Get Started <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="pricing-card featured reveal reveal-delay-2">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Growth</div>
-        <div class="pricing-price">€1,499 <sub>/ starting from</sub></div>
-        <p class="pricing-desc">For growing businesses that need a full-featured web application, custom functionality, and backend integration.</p>
-        <ul class="pricing-features">
-          <li><i class="fas fa-check-circle"></i> Custom web app or platform</li>
-          <li><i class="fas fa-check-circle"></i> Firebase / Supabase backend</li>
-          <li><i class="fas fa-check-circle"></i> User authentication & dashboard</li>
-          <li><i class="fas fa-check-circle"></i> AI feature integration</li>
-          <li><i class="fas fa-check-circle"></i> Admin panel & analytics</li>
-          <li><i class="fas fa-check-circle"></i> 60-day support</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary pricing-cta">Get Started <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="pricing-card reveal reveal-delay-3">
-        <div class="pricing-tier">Enterprise</div>
-        <div class="pricing-price">Custom</div>
-        <p class="pricing-desc">Large-scale platforms, EdTech systems, multi-tenant apps, or anything that demands full engineering depth and ongoing partnership.</p>
-        <ul class="pricing-features">
-          <li><i class="fas fa-check-circle"></i> Fully scoped & custom built</li>
-          <li><i class="fas fa-check-circle"></i> Dedicated project manager</li>
-          <li><i class="fas fa-check-circle"></i> Advanced AI & automation</li>
-          <li><i class="fas fa-check-circle"></i> Scalable cloud architecture</li>
-          <li><i class="fas fa-check-circle"></i> Ongoing retainer available</li>
-          <li><i class="fas fa-check-circle"></i> Priority support & SLA</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost pricing-cta">Let's Talk <i class="fas fa-arrow-right"></i></a>
-      </div>
+  <div class="wrap">
+    <div class="badge">Pricing</div>
+    <h2>Transparent pricing.<br>No hidden costs.</h2>
+    <p style="margin-top:12px;max-width:520px;">Every project is unique — here's a clear starting point. All plans include full source code and 30-day post-launch support.</p>
+    <div class="priceg">
+      <div class="prc"><div class="ptier">Starter</div><div class="pprice">€499 <sub>from</sub></div><p class="pdesc">For small businesses, personal brands and landing pages that need a polished presence fast.</p><ul class="pfts"><li><i class="fas fa-check-circle"></i>Up to 5-page responsive website</li><li><i class="fas fa-check-circle"></i>Mobile-first design</li><li><i class="fas fa-check-circle"></i>Contact form integration</li><li><i class="fas fa-check-circle"></i>Basic SEO setup</li><li><i class="fas fa-check-circle"></i>30-day support</li></ul><a href="#contact" class="btn bg pbtn">Get Started <i class="fas fa-arrow-right"></i></a></div>
+      <div class="prc hot"><div class="hb">Most Popular</div><div class="ptier">Growth</div><div class="pprice">€1,499 <sub>from</sub></div><p class="pdesc">For growing businesses needing a full-featured web application with backend integration.</p><ul class="pfts"><li><i class="fas fa-check-circle"></i>Custom web app or platform</li><li><i class="fas fa-check-circle"></i>Firebase / Supabase backend</li><li><i class="fas fa-check-circle"></i>User auth &amp; dashboard</li><li><i class="fas fa-check-circle"></i>AI feature integration</li><li><i class="fas fa-check-circle"></i>Admin panel &amp; analytics</li><li><i class="fas fa-check-circle"></i>60-day support</li></ul><a href="#contact" class="btn bp pbtn">Get Started <i class="fas fa-arrow-right"></i></a></div>
+      <div class="prc"><div class="ptier">Enterprise</div><div class="pprice">Custom</div><p class="pdesc">Large-scale platforms, EdTech systems or anything that demands full engineering depth.</p><ul class="pfts"><li><i class="fas fa-check-circle"></i>Fully scoped &amp; custom built</li><li><i class="fas fa-check-circle"></i>Dedicated project manager</li><li><i class="fas fa-check-circle"></i>Advanced AI &amp; automation</li><li><i class="fas fa-check-circle"></i>Scalable cloud architecture</li><li><i class="fas fa-check-circle"></i>Ongoing retainer available</li><li><i class="fas fa-check-circle"></i>Priority support &amp; SLA</li></ul><a href="#contact" class="btn bg pbtn">Let's Talk <i class="fas fa-arrow-right"></i></a></div>
     </div>
-    <p style="text-align:center;font-size:0.85rem;margin-top:28px;color:var(--muted);">All prices in EUR. Nigerian Naira equivalent available on request. Final price varies by project scope.</p>
+    <p class="pnote">Prices in EUR. Nigerian Naira equivalent available on request.</p>
   </div>
 </section>
-<div class="gradient-divider"></div>
+<div class="divider"></div>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="testimonials-header reveal"><div class="section-badge">Testimonials</div><h2>What Clients Say<br>About Working With Us</h2><p style="margin-top:14px;">We let the results speak — but our clients are kind enough to do so too.</p></div>
-    <div class="testimonials-grid">
-      <div class="testi-card reveal reveal-delay-1">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"NexaCore Labs delivered Examora beyond what we imagined. The platform is fast, intuitive, and students genuinely love using it. The AI features have set us apart from every competitor in the Nigerian exam prep market."</p>
-        <div class="testi-author"><div class="testi-avatar">AO</div><div><div class="testi-name">Adebayo Okonkwo</div><div class="testi-role">Founder, Examora · Lagos, Nigeria</div></div></div>
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:56px;">
+      <div>
+        <div class="badge">Insights</div>
+        <h2>What we&#39;re<br>thinking about</h2>
+        <p style="margin-top:12px;max-width:500px;">Practical writing on building software, growing a tech business, and working across markets.</p>
       </div>
-      <div class="testi-card reveal reveal-delay-2">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"The website they built for Skylight Model Schools elevated our entire brand. Parents tell us it was a deciding factor in choosing us. Professional, clean, and completely mobile-friendly — exactly what we needed."</p>
-        <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#1a4a1a,#2d8a2d);">SK</div><div><div class="testi-name">Sarah Kayode</div><div class="testi-role">Director, Skylight Model Schools · Nigeria</div></div></div>
-      </div>
-      <div class="testi-card reveal reveal-delay-3">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Working with NexaCore on Scáth was a seamless experience. They understood the Irish market perfectly and delivered a PWA that locals actually use daily. The attention to detail and speed of delivery were genuinely impressive."</p>
-        <div class="testi-author"><div class="testi-avatar" style="background:linear-gradient(135deg,#0d0d2e,#1a1a5e);">CM</div><div><div class="testi-name">Ciarán Murphy</div><div class="testi-role">Beta User Lead, Scáth · Dublin, Ireland</div></div></div>
-      </div>
+      <a href="/blog" class="btn bg">Read All Articles <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="blog-grid">
+
+      <a href="/blog/why-nigerian-businesses-need-a-real-website.html" class="bc">
+        <div class="bc-top" style="background:linear-gradient(135deg,#001f3f,#003d7a);">
+          <div class="bc-grid"></div>
+          <span class="bc-cat">Business</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta">March 2026 · 4 min read</div>
+          <h3>Why Most Nigerian Business Websites Don&#39;t Convert — And What to Do About It</h3>
+          <p>A slow, untrustworthy website isn&#39;t neutral. It actively costs you clients. Here&#39;s what we see most often and how to fix it.</p>
+          <div class="bc-link">Read Article <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <a href="/blog/what-is-a-pwa.html" class="bc">
+        <div class="bc-top" style="background:linear-gradient(135deg,#0d0d2e,#1a1a5e);">
+          <div class="bc-grid"></div>
+          <span class="bc-cat">Technology</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta">March 2026 · 5 min read</div>
+          <h3>What Is a PWA and Why Should Your Business Care?</h3>
+          <p>Progressive Web Apps sit between a website and a native app. They&#39;re faster, cheaper, and often the smarter choice — especially in markets like Nigeria.</p>
+          <div class="bc-link">Read Article <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <a href="/blog/how-we-built-examora.html" class="bc">
+        <div class="bc-top" style="background:linear-gradient(135deg,#001428,#003366);">
+          <div class="bc-grid"></div>
+          <span class="bc-cat">Case Study</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta">February 2026 · 6 min read</div>
+          <h3>How We Built Examora: Nigeria&#39;s Modern CBT Exam Platform</h3>
+          <p>From a conversation about JAMB prep to a live platform with AI-assisted practice. The decisions, challenges and lessons from building Examora.</p>
+          <div class="bc-link">Read Article <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
-<div class="gradient-divider"></div>
+
+<div class="divider"></div>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="container">
-    <div class="contact-wrapper">
-      <div class="contact-left reveal">
-        <div class="section-badge">Contact</div>
-        <h2>Let's Build Something Exceptional</h2>
-        <p>Have a project in mind? Reach out — we respond within 24 hours and love interesting challenges.</p>
-        <div class="contact-methods">
-          <a href="mailto:hello@nexacorelabs.site" class="contact-method"><div class="cm-icon blue"><i class="fas fa-envelope"></i></div><div><div class="cm-label">Email Us</div><div class="cm-value"><span class="ncl-email">[email protected]</span></div></div></a>
-          <a href="https://wa.me/2348187017489" target="_blank" class="contact-method"><div class="cm-icon green"><i class="fab fa-whatsapp"></i></div><div><div class="cm-label">WhatsApp</div><div class="cm-value">+234 818 701 7489</div></div></a>
-          <div class="contact-method" style="cursor:default;"><div class="cm-icon blue"><i class="fas fa-location-dot"></i></div><div><div class="cm-label">Locations</div><div class="cm-value">Dublin, Ireland · Lagos, Nigeria</div></div></div>
+  <div class="wrap">
+    <div class="cgrid">
+      <div>
+        <div class="badge">Contact</div>
+        <h2>Let's build something<br>exceptional</h2>
+        <p style="margin-top:14px;max-width:400px;">Have a project in mind? We respond within 24 hours and love an interesting challenge.</p>
+        <div class="cms">
+          <a href="/cdn-cgi/l/email-protection#a1c9c4cdcdcee1cfc4d9c0c2ced3c4cdc0c3d28fd2c8d5c4" class="cm"><div class="cmi ci-b"><i class="fas fa-envelope"></i></div><div><div class="cml">Email Us</div><div class="cmv"><span class="__cf_email__" data-cfemail="432b262f2f2c032d263b22202c31262f2221306d302a3726">[email&#160;protected]</span></div></div></a>
+          <a href="https://wa.me/2348187017489" target="_blank" rel="noopener noreferrer" class="cm"><div class="cmi ci-g"><i class="fab fa-whatsapp"></i></div><div><div class="cml">WhatsApp</div><div class="cmv">+234 818 701 7489</div></div></a>
+          <div class="cm" style="cursor:default;"><div class="cmi ci-b"><i class="fas fa-location-dot"></i></div><div><div class="cml">Locations</div><div class="cmv">Dublin, Ireland · Nigeria</div></div></div>
         </div>
       </div>
-      <div class="contact-form-wrap reveal reveal-delay-2">
-        <div id="formMsg" class="form-msg"></div>
-        <form id="contactForm" action="https://formspree.io/f/xjkvrdya" method="POST">
-          <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="John" required></div>
-            <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Doe" required></div>
+      <div class="fw">
+        <div id="fmsg" class="fmsg"></div>
+        <form id="cf" action="https://formspree.io/f/xjkvrdya" method="POST">
+          <div class="fr">
+            <div class="fg"><label>First Name</label><input type="text" name="firstName" placeholder="John" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" name="lastName" placeholder="Doe" required></div>
           </div>
-          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required></div>
-          <div class="form-group"><label>Service Interested In</label>
-            <select name="service"><option value="">Select a service...</option><option>Web Design & Development</option><option>Mobile / PWA Development</option><option>AI & Automation Solutions</option><option>EdTech Platform Development</option><option>Backend & API Engineering</option><option>Digital Marketing (via Nur Futura)</option><option>Other / General Inquiry</option></select>
-          </div>
-          <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project..." required></textarea></div>
-          <button type="submit" class="btn btn-primary form-submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
+          <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@company.com" required></div>
+          <div class="fg"><label>Service</label><select name="service"><option value="">Select a service...</option><option>Web Design &amp; Development</option><option>Mobile / PWA Development</option><option>AI &amp; Automation Solutions</option><option>EdTech Platform Development</option><option>Backend &amp; API Engineering</option><option>Digital Marketing (via Nur Futura)</option><option>Other / General Inquiry</option></select></div>
+          <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your project..." required></textarea></div>
+          <button type="submit" class="btn bp fsub" id="fBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
       </div>
     </div>
   </div>
 </section>
+<div class="divider"></div>
 
-<section id="faq">
-  <div class="container">
-    <div class="faq-wrapper">
-      <div class="faq-left reveal">
-        <div class="section-badge">FAQ</div>
-        <h2>Questions<br>Answered.</h2>
-        <p>Everything you need to know before starting a project with us. Don't see your question? Just ask.</p>
-        <a href="mailto:hello@nexacorelabs.site" class="btn btn-primary" style="margin-top:28px;"><i class="fas fa-envelope"></i> Ask Us Directly</a>
+<!-- FAQ -->
+<section id="faq" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="faqg">
+      <div>
+        <div class="badge">FAQ</div>
+        <h2>Questions<br>answered.</h2>
+        <p style="margin-top:14px;margin-bottom:28px;">Everything you need to know before starting. Don't see yours? Just ask.</p>
+        <a href="/cdn-cgi/l/email-protection#c2aaa7aeaead82aca7baa3a1adb0a7aea3a0b1ecb1abb6a7" class="btn bp"><i class="fas fa-envelope"></i> Ask Us Directly</a>
       </div>
-      <div class="faq-list reveal reveal-delay-2">
-        <div class="faq-item"><div class="faq-question">How long does a typical project take? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">It depends on scope, but as a guide: landing pages take 1–2 weeks, full web applications take 4–10 weeks, and complex platforms like Examora take 3–6 months. We'll give you a realistic timeline during our discovery call before any work begins.</div></div></div>
-        <div class="faq-item"><div class="faq-question">Do you work with international clients? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">Absolutely. We're fully remote-capable and have worked with clients in Ireland, Nigeria, the UK, and beyond. We communicate clearly via email, WhatsApp, and video calls — timezone differences are manageable.</div></div></div>
-        <div class="faq-item"><div class="faq-question">What do you need from me to get started? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">Just a clear idea of what you want to build. We'll handle the rest — from scoping to design to launch. If you have a brief, brand assets, or existing materials, even better. We'll guide you through our discovery process from day one.</div></div></div>
-        <div class="faq-item"><div class="faq-question">Do you offer ongoing support after launch? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">Yes. Every project comes with 30–60 days of post-launch support depending on your plan. For enterprise clients, we offer monthly retainer agreements that cover updates, new features, and priority bug fixes.</div></div></div>
-        <div class="faq-item"><div class="faq-question">Can you work within a fixed budget? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">Yes. Tell us your budget upfront and we'll design a scope that delivers maximum value within it. We'd rather be transparent about what's achievable than overpromise and underdeliver.</div></div></div>
-        <div class="faq-item"><div class="faq-question">What makes NexaCore Labs different? <div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-answer"><div class="faq-answer-inner">We're not an agency with 50 clients on a conveyor belt. We're a focused studio that treats every project like our own product — with strategic thinking, AI-first architecture, and a dual-market perspective that most agencies simply don't have.</div></div></div>
+      <div class="faql">
+        <div class="faqi"><div class="faqq">How long does a typical project take?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Landing pages take 1–2 weeks, full web apps take 4–10 weeks, complex platforms take 3–6 months. We give a realistic timeline at our discovery call before any work begins.</div></div></div>
+        <div class="faqi"><div class="faqq">Do you work with international clients?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Absolutely. We're fully remote-capable and work with clients in Ireland, Nigeria, the UK and beyond via email, WhatsApp and video calls.</div></div></div>
+        <div class="faqi"><div class="faqq">What do I need to get started?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Just a clear idea of what you want to build. We handle everything from scoping to design to launch. Brand assets are a bonus if you have them.</div></div></div>
+        <div class="faqi"><div class="faqq">Do you offer post-launch support?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Yes. Every project includes 30–60 days of post-launch support. Enterprise clients can access monthly retainer agreements for ongoing updates and priority fixes.</div></div></div>
+        <div class="faqi"><div class="faqq">Can you work within a fixed budget?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Yes — tell us your budget upfront and we'll design a scope that delivers maximum value within it. We'd rather be transparent than overpromise.</div></div></div>
+        <div class="faqi"><div class="faqq">What makes NexaCore Labs different?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">We're a focused studio — not a conveyor-belt agency. Every project gets strategic thinking, AI-first architecture and a dual-market perspective most agencies simply don't have.</div></div></div>
       </div>
     </div>
   </div>
 </section>
-<div class="gradient-divider"></div>
+<div class="divider"></div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo-placeholder-full" style="background:none;width:auto;"><img src="nexacore_logo_dark.png" alt="NexaCore Labs" style="height:38px;width:auto;" onerror="this.style.display='none'"></div>
-        <p>A technology studio building digital products, AI solutions, and web platforms from Ireland & Nigeria.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+  <div class="wrap">
+    <div class="fg2">
+      <div class="fbc">
+        <div class="logo"><svg viewBox="0 0 36 36" fill="none" style="width:30px;height:30px;"><polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="#007bff" stroke-width="2.2" fill="none"/><circle cx="18" cy="18" r="3.5" fill="#007bff"/><circle cx="18" cy="18" r="1.6" fill="#cce5ff"/></svg>NexaCore Labs</div>
+        <p>A technology studio building digital products, AI solutions and web platforms from Ireland &amp; Nigeria.</p>
+        <div class="fsocs">
+          <a href="https://instagram.com/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-github"></i></a>
         </div>
       </div>
-      <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile & PWA</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#services">EdTech Platforms</a></li><li><a href="#services">Digital Marketing</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul class="footer-links"><li><a href="#about">About Us</a></li><li><a href="#team">Team</a></li><li><a href="#projects">Projects</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="mailto:hello@nexacorelabs.site"><span class="ncl-email">[email protected]</span></a></li></ul></div>
+      <div class="fc"><h4>Services</h4><ul class="fl2"><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile &amp; PWA</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#services">EdTech Platforms</a></li><li><a href="#services">Digital Marketing</a></li></ul></div>
+      <div class="fc"><h4>Company</h4><ul class="fl2"><li><a href="#about">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#team">Team</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 NexaCore Labs. All rights reserved. Based in <a href="#">Dublin 🇮🇪</a> & <a href="#">Lagos 🇳🇬</a>.</p>
-      <div class="nf-footer-credit"><i class="fas fa-bullhorn" style="color:#ff7433;font-size:12px;"></i> Marketing by <a href="https://nurfuturamarketing.com" target="_blank" style="color:#ff7433;font-weight:700;text-decoration:none;">Nur Futura Marketing</a></div>
+    <div class="fbtm">
+      <p>© 2026 NexaCore Labs. All rights reserved. Dublin, Ireland &amp; Nigeria</p>
+      <div class="nfc2"><i class="fas fa-bullhorn" style="color:var(--nf);font-size:11px;"></i> Marketing by <a href="https://nurfuturamarketing.com.ng" target="_blank">Nur Futura Marketing</a></div>
     </div>
   </div>
 </footer>
-
 <button id="btt"><i class="fas fa-arrow-up"></i></button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
-  'use strict';
+  // NAVBAR
+  var nav = document.getElementById('nav');
+  var btt = document.getElementById('btt');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('sc', window.scrollY > 50);
+    btt.classList.toggle('show', window.scrollY > 500);
+  },{passive:true});
+  btt.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 
-  /* ── LOADER: remove from DOM after animation so it can NEVER block clicks ── */
-  (function(){
-    var L = document.getElementById('ncl-loader');
-    if(L){
-      // Remove from DOM entirely after the CSS animation finishes (2.4s + 0.8s = 3.2s)
-      setTimeout(function(){ if(L && L.parentNode){ L.parentNode.removeChild(L); } }, 3300);
-    }
-  })();
+  // DRAWER
+  var dov = document.getElementById('dov');
+  var drw = document.getElementById('drw');
+  function openD(){ dov.classList.add('on'); drw.classList.add('on'); document.body.style.overflow='hidden'; }
+  function closeD(){ dov.classList.remove('on'); drw.classList.remove('on'); document.body.style.overflow=''; }
+  document.getElementById('hamBtn').addEventListener('click', openD);
+  document.getElementById('drwClose').addEventListener('click', closeD);
+  dov.addEventListener('click', closeD);
+  document.querySelectorAll('.dl').forEach(function(a){ a.addEventListener('click', closeD); });
 
-  /* ── REVEAL: immediately show anything already in viewport ─────────── */
-  function initReveal(){
-    try {
-      var els = document.querySelectorAll('.reveal');
-      if(!els.length) return;
-      var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting){
-            e.target.classList.add('in-view');
-            obs.unobserve(e.target);
-          }
-        });
-      }, {threshold:0.06, rootMargin:'0px 0px -20px 0px'});
-      els.forEach(function(el){ obs.observe(el); });
-    } catch(err){
-      // If IntersectionObserver fails, just show everything
-      document.querySelectorAll('.reveal').forEach(function(el){
-        el.classList.add('in-view');
-      });
-    }
-  }
-  // Run immediately + on DOMContentLoaded to catch both cases
-  initReveal();
-  document.addEventListener('DOMContentLoaded', initReveal);
-
-  /* ── WELCOME POPUP ─────────────────────────────────────────────────── */
-  try {
-    var visited = false;
-    try { visited = !!sessionStorage.getItem('ncl-visited'); } catch(e){}
-    if(!visited){
-      var ov = document.getElementById('ncl-popup-overlay');
-      var pp = document.getElementById('ncl-popup');
-      if(ov && pp){
-        function showPopup(){ ov.classList.add('show'); pp.classList.add('show'); }
-        function hidePopup(){
-          ov.classList.remove('show'); pp.classList.remove('show');
-          try { sessionStorage.setItem('ncl-visited','1'); } catch(e){}
-        }
-        setTimeout(showPopup, 3500);
-        ['popupClose','popupCTA','popupWork'].forEach(function(id){
-          var el = document.getElementById(id);
-          if(el) el.addEventListener('click', hidePopup);
-        });
-        ov.addEventListener('click', hidePopup);
-      }
-    }
-  } catch(err){}
-
-  /* ── NAVBAR SCROLL + BTT ───────────────────────────────────────────── */
-  try {
-    var navbar = document.getElementById('navbar');
-    var btt    = document.getElementById('btt');
-    window.addEventListener('scroll', function(){
-      if(navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
-      if(btt)    btt.classList.toggle('visible', window.scrollY > 400);
-    }, {passive:true});
-  } catch(err){}
-
-  /* ── MOBILE DRAWER ─────────────────────────────────────────────────── */
-  try {
-    var ov2    = document.getElementById('mobileOverlay');
-    var drawer = document.getElementById('mobileDrawer');
-    var menuOpen  = document.getElementById('menuOpen');
-    var menuClose = document.getElementById('menuClose');
-    function openDrawer(){
-      if(ov2) ov2.classList.add('open');
-      if(drawer) drawer.classList.add('open');
-      document.body.style.overflow='hidden';
-      document.body.style.position='fixed';
-      document.body.style.width='100%';
-    }
-    function closeDrawer(){
-      if(ov2) ov2.classList.remove('open');
-      if(drawer) drawer.classList.remove('open');
-      document.body.style.overflow='';
-      document.body.style.position='';
-      document.body.style.width='';
-    }
-    if(menuOpen)  menuOpen.addEventListener('click', openDrawer);
-    if(menuClose) menuClose.addEventListener('click', closeDrawer);
-    if(ov2)       ov2.addEventListener('click', closeDrawer);
-    document.querySelectorAll('.drawer-link').forEach(function(l){
-      l.addEventListener('click', closeDrawer);
+  // SMOOTH SCROLL with navbar offset
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id = a.getAttribute('href');
+      if(!id || id==='#') return;
+      var el = document.querySelector(id);
+      if(!el) return;
+      e.preventDefault();
+      closeD();
+      setTimeout(function(){
+        var off = (nav.offsetHeight || 70) + 10;
+        window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - off, behavior:'smooth'});
+      }, 60);
     });
-  } catch(err){}
-
-  /* ── BACK TO TOP ───────────────────────────────────────────────────── */
-  try {
-    var bttBtn = document.getElementById('btt');
-    if(bttBtn) bttBtn.addEventListener('click', function(){
-      window.scrollTo({top:0, behavior:'smooth'});
-    });
-  } catch(err){}
-
-  /* ── SMOOTH SCROLL — offset for fixed navbar ───────────────────────── */
-  try {
-    document.querySelectorAll('a[href^="#"]').forEach(function(a){
-      a.addEventListener('click', function(e){
-        var id = a.getAttribute('href');
-        if(!id || id==='#') return;
-        var target = document.querySelector(id);
-        if(!target) return;
-        e.preventDefault();
-        // Close drawer first
-        var ov2    = document.getElementById('mobileOverlay');
-        var drawer = document.getElementById('mobileDrawer');
-        if(ov2)    ov2.classList.remove('open');
-        if(drawer) drawer.classList.remove('open');
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width    = '';
-        // Scroll with navbar offset after drawer closes
-        setTimeout(function(){
-          var navH = document.getElementById('navbar').offsetHeight || 72;
-          var top  = target.getBoundingClientRect().top + window.pageYOffset - navH - 12;
-          window.scrollTo({top: top, behavior: 'smooth'});
-        }, 80);
-      });
-    });
-  } catch(err){}
-
-  /* ── SERVICE CARD GLOW ─────────────────────────────────────────────── */
-  try {
-    document.querySelectorAll('.service-card').forEach(function(card){
-      card.addEventListener('mousemove', function(e){
-        var r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
-        card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
-      });
-    });
-  } catch(err){}
-
-  /* ── FAQ ACCORDION ─────────────────────────────────────────────────── */
-  try {
-    document.querySelectorAll('.faq-item').forEach(function(item){
-      var q = item.querySelector('.faq-question');
-      if(q) q.addEventListener('click', function(){
-        var was = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-        if(!was) item.classList.add('open');
-      });
-    });
-  } catch(err){}
-
-  /* ── CONTACT FORM ──────────────────────────────────────────────────── */
-  try {
-    var form      = document.getElementById('contactForm');
-    var formMsg   = document.getElementById('formMsg');
-    var submitBtn = document.getElementById('submitBtn');
-    if(form && formMsg && submitBtn){
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        formMsg.className = 'form-msg';
-        fetch(form.action, {method:'POST', body:new FormData(form), headers:{Accept:'application/json'}})
-          .then(function(res){
-            if(res.ok){
-              formMsg.textContent = "\u2713 Message sent! We'll be in touch within 24 hours.";
-              formMsg.className = 'form-msg success';
-              form.reset();
-              setTimeout(function(){ formMsg.className='form-msg'; }, 6000);
-            } else { throw new Error(); }
-          })
-          .catch(function(){
-            formMsg.textContent = '\u2717 Something went wrong. Email us at hello@nexacorelabs.site';
-            formMsg.className = 'form-msg error';
-          })
-          .finally(function(){
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-            submitBtn.disabled = false;
-          });
-      });
-    }
-  } catch(err){}
-
-
-  /* ── PROJECT FILTER ─────────────────────────────────────────────────── */
-  try {
-    document.querySelectorAll('.pf-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        document.querySelectorAll('.pf-btn').forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active');
-        var filter = btn.getAttribute('data-filter');
-        document.querySelectorAll('#projGrid .proj-card-sm, .feat-projects .feat-proj-card').forEach(function(card){
-          var cat = card.getAttribute('data-cat') || '';
-          if(filter === 'all' || cat === filter){
-            card.removeAttribute('data-hidden');
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-    // mouse glow on small cards
-    document.querySelectorAll('.proj-card-sm').forEach(function(card){
-      card.addEventListener('mousemove', function(e){
-        var r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
-        card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
-      });
-    });
-  } catch(err){}
-
-})();
-</script>
-<script>
-(function(){
-  var u='hello',d='nexacorelabs',t='site';
-  var e=u+'@'+d+'.'+t;
-  document.querySelectorAll('.ncl-email').forEach(function(el){
-    if(el.tagName==='A') el.href='mailto:'+e;
-    else el.textContent=e;
   });
 
-  /* ── PROJECT FILTER ─────────────────────────────────────────────────── */
-  try {
-    document.querySelectorAll('.pf-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        document.querySelectorAll('.pf-btn').forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active');
-        var filter = btn.getAttribute('data-filter');
-        document.querySelectorAll('#projGrid .proj-card-sm, .feat-projects .feat-proj-card').forEach(function(card){
-          var cat = card.getAttribute('data-cat') || '';
-          if(filter === 'all' || cat === filter){
-            card.removeAttribute('data-hidden');
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
+  // SERVICE CARD GLOW
+  document.querySelectorAll('.sc').forEach(function(c){
+    c.addEventListener('mousemove',function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+      c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
     });
-    // mouse glow on small cards
-    document.querySelectorAll('.proj-card-sm').forEach(function(card){
-      card.addEventListener('mousemove', function(e){
-        var r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100)+'%');
-        card.style.setProperty('--my', ((e.clientY-r.top)/r.height*100)+'%');
-      });
-    });
-  } catch(err){}
+  });
 
+  // PROJECT FILTER
+  document.querySelectorAll('.fb').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.fb').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on');
+      var f = btn.getAttribute('data-f');
+      document.querySelectorAll('#pg .pc').forEach(function(c){
+        c.style.display = (f==='all' || c.getAttribute('data-cat')===f) ? '' : 'none';
+      });
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll('.faqi').forEach(function(item){
+    item.querySelector('.faqq').addEventListener('click',function(){
+      var was = item.classList.contains('open');
+      document.querySelectorAll('.faqi').forEach(function(i){ i.classList.remove('open'); });
+      if(!was) item.classList.add('open');
+    });
+  });
+
+  // CONTACT FORM
+  var form = document.getElementById('cf');
+  var fmsg = document.getElementById('fmsg');
+  var fBtn = document.getElementById('fBtn');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      fBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
+      fBtn.disabled=true;
+      fmsg.className='fmsg';
+      fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+        .then(function(r){
+                    if(r.ok){
+            fmsg.textContent='\u2713 Message sent! We\'ll be in touch within 24 hours.';
+            fmsg.className='fmsg ok';
+            form.reset();
+            setTimeout(function(){ fmsg.className='fmsg'; },6000);
+          } else { throw new Error(); }
+        })
+        .catch(function(){
+          fmsg.textContent='\u2717 Something went wrong. Email us at hello@nexacorelabs.site';
+          fmsg.className='fmsg err';
+        })
+        .finally(function(){
+          fBtn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message';
+          fBtn.disabled=false;
+        });
+    });
+  }
 })();
 </script>
 </body>

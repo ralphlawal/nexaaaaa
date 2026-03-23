@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is a PWA and Why Should Your Business Care? — NexaCore Labs</title>
+<meta name="description" content="Progressive Web Apps sit between a website and a native app. They're faster, cheaper, and often the smarter choice — especially in markets like Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:#07090f;color:#e8eef8;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:#007bff;}a:hover{text-decoration:underline;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:#007bff;border-radius:4px;}
+.nav{position:sticky;top:0;background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0;z-index:100;}
+.nav-in{max-width:760px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#fff;}
+.back{font-size:.85rem;color:#8a9ab8;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.back:hover{color:#fff;text-decoration:none;}
+.hero-art{background:linear-gradient(135deg,#0d0d2e,#1a1a5e);height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hero-art .bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.07) 1px,transparent 1px);background-size:32px 32px;}
+.hero-art .cat{position:relative;z-index:1;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#7db8ff;background:rgba(0,0,0,.5);padding:8px 18px;border-radius:99px;border:1px solid rgba(0,123,255,.3);}
+.wrap{max-width:720px;margin:0 auto;padding:56px 24px 80px;}
+.meta{display:flex;align-items:center;gap:16px;font-size:.82rem;color:#8a9ab8;margin-bottom:32px;flex-wrap:wrap;}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:#3d4f6a;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:24px;}
+.intro{font-size:1.15rem;line-height:1.8;color:#c8d5ea;margin-bottom:40px;border-left:3px solid #007bff;padding-left:20px;}
+h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin:44px 0 14px;letter-spacing:-.01em;}
+p{font-size:1.02rem;line-height:1.85;color:#b8c8de;margin-bottom:22px;}
+strong{color:#e8eef8;font-weight:600;}
+ul{margin:0 0 22px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+ul li{display:flex;align-items:flex-start;gap:12px;font-size:1.02rem;line-height:1.75;color:#b8c8de;}
+ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:#007bff;flex-shrink:0;margin-top:10px;}
+.table{width:100%;border-collapse:collapse;margin:24px 0 32px;border-radius:12px;overflow:hidden;}
+.table th{background:#111827;padding:12px 16px;text-align:left;font-size:.82rem;font-weight:600;color:#8a9ab8;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;border-bottom:1px solid rgba(255,255,255,.08);}
+.table td{padding:13px 16px;font-size:.92rem;color:#b8c8de;border-bottom:1px solid rgba(255,255,255,.05);}
+.table tr:last-child td{border-bottom:none;}
+.table .yes{color:#4ade80;font-weight:600;}
+.table .no{color:#f87171;}
+.table .part{color:#fbbf24;}
+.callout{background:#111827;border:1px solid rgba(0,123,255,.2);border-left:3px solid #007bff;border-radius:12px;padding:22px 24px;margin:32px 0;}
+.callout p{color:#c8d5ea;margin:0;font-size:.97rem;line-height:1.8;}
+.divider{height:1px;background:rgba(255,255,255,.08);margin:40px 0;}
+.author{display:flex;align-items:center;gap:14px;padding:24px;background:#111827;border-radius:14px;border:1px solid rgba(255,255,255,.08);}
+.av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#007bff,#6a1b9a);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0;}
+.author-name{font-weight:600;color:#fff;font-size:.95rem;}
+.author-role{font-size:.82rem;color:#8a9ab8;margin-top:2px;}
+.cta-strip{background:linear-gradient(135deg,rgba(0,123,255,.12),rgba(106,27,154,.1));border:1px solid rgba(0,123,255,.2);border-radius:16px;padding:32px;text-align:center;margin-top:56px;}
+.cta-strip h3{font-family:'Syne',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:10px;}
+.cta-strip p{font-size:.93rem;color:#8a9ab8;margin-bottom:22px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:99px;border:none;cursor:pointer;background:#007bff;color:#fff;transition:all .25s;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,123,255,.35);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in"><a href="/" class="logo">NexaCore Labs</a><a href="/#blog" class="back">← Back to Insights</a></div></nav>
+
+<div class="hero-art"><div class="bg-grid"></div><span class="cat">Technology · 5 min read</span></div>
+
+<div class="wrap">
+  <div class="meta"><span>March 2026</span><div class="meta-dot"></div><span>5 min read</span><div class="meta-dot"></div><span>Ralph, NexaCore Labs</span></div>
+
+  <h1>What Is a PWA and Why Should Your Business Care?</h1>
+
+  <p class="intro">Progressive Web Apps sit in an interesting position — they look and feel like an app, but they live on the web. No App Store. No Play Store. No installation required. For the right type of business, they're a significantly smarter investment than building a native app.</p>
+
+  <h2>The plain English explanation</h2>
+  <p>A Progressive Web App is a website that has been built to behave like a native mobile application. When a user visits your PWA, they can add it to their home screen directly from the browser. From that point on, it opens full screen, loads instantly, and works even with a poor internet connection.</p>
+  <p>The user experience is indistinguishable from an app — but you only built one thing, not separate iOS and Android versions.</p>
+
+  <h2>How it compares to your other options</h2>
+
+  <table class="table">
+    <tr><th>Feature</th><th>Website</th><th>PWA</th><th>Native App</th></tr>
+    <tr><td>Works offline</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+    <tr><td>Installable from browser</td><td class="no">No</td><td class="yes">Yes</td><td class="no">No</td></tr>
+    <tr><td>App Store required</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td></tr>
+    <tr><td>Push notifications</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+    <tr><td>Single codebase</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
+    <tr><td>Relative build cost</td><td class="yes">Low</td><td class="part">Medium</td><td class="no">High</td></tr>
+    <tr><td>SEO indexed by Google</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
+  </table>
+
+  <h2>Why this matters specifically in Nigeria</h2>
+  <p>Asking Nigerian users to download a native app creates significant friction. App download sizes, storage space on devices, mobile data costs — these are real concerns for a large portion of your market. A PWA solves all of them.</p>
+  <p>The user visits your link, it loads fast, they tap "Add to Home Screen" if they want to, and it's done. No download. No update notifications. No App Store review delays when you ship a new feature.</p>
+
+  <div class="callout">
+    <p>Scáth, our Dublin weather PWA, can be installed directly from a link. No App Store. No download. It opens full screen, caches data for offline use, and sends local weather alerts. That's a native app experience with a fraction of the build cost.</p>
+  </div>
+
+  <h2>When a PWA is the right choice</h2>
+  <p>A PWA makes sense when:</p>
+  <ul>
+    <li>You want an app-like experience but can't justify the cost of building for both iOS and Android separately</li>
+    <li>Your users are primarily on mobile and often on unreliable connections</li>
+    <li>You need your product to be discoverable via search engines — native apps aren't indexed</li>
+    <li>You want to ship updates instantly without waiting for App Store approval</li>
+    <li>Your product is primarily informational, service-based or tool-based rather than hardware-dependent</li>
+  </ul>
+
+  <h2>When it isn't the right choice</h2>
+  <p>PWAs have limitations. If your product needs deep hardware access — camera with advanced processing, Bluetooth, NFC, AR features — a native app may still be necessary. For most business applications though, these limitations rarely apply.</p>
+
+  <div class="divider"></div>
+
+  <div class="author"><div class="av">R</div><div><div class="author-name">Ralph — NexaCore Labs</div><div class="author-role">Founder & Creative Tech Strategist · Dublin, Ireland & Nigeria</div></div></div>
+
+  <div class="cta-strip">
+    <h3>Thinking about building an app?</h3>
+    <p>Tell us what you're building and we'll help you figure out whether a PWA, a web app, or a native app is the right call for your specific situation.</p>
+    <a href="/#contact" class="btn">Talk to Us</a>
+  </div>
+</div>
+</body>
+</html>

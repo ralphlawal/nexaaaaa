@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Most Nigerian Business Websites Don't Convert — NexaCore Labs</title>
+<meta name="description" content="A slow, untrustworthy website isn't neutral. It actively costs you clients. Here's what we see most often and how to fix it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:#07090f;color:#e8eef8;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:#007bff;}
+a:hover{text-decoration:underline;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:#007bff;border-radius:4px;}
+.nav{position:sticky;top:0;background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0;z-index:100;}
+.nav-in{max-width:760px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#fff;}
+.back{font-size:.85rem;color:#8a9ab8;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.back:hover{color:#fff;text-decoration:none;}
+.hero-art{background:linear-gradient(135deg,#001f3f,#003d7a);height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hero-art .bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.06) 1px,transparent 1px);background-size:32px 32px;}
+.hero-art .cat{position:relative;z-index:1;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#7db8ff;background:rgba(0,0,0,.5);padding:8px 18px;border-radius:99px;border:1px solid rgba(0,123,255,.3);}
+.wrap{max-width:720px;margin:0 auto;padding:56px 24px 80px;}
+.meta{display:flex;align-items:center;gap:16px;font-size:.82rem;color:#8a9ab8;margin-bottom:32px;flex-wrap:wrap;}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:#3d4f6a;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:24px;}
+.intro{font-size:1.15rem;line-height:1.8;color:#c8d5ea;margin-bottom:40px;border-left:3px solid #007bff;padding-left:20px;}
+.body-content h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin:44px 0 14px;letter-spacing:-.01em;}
+.body-content p{font-size:1.02rem;line-height:1.85;color:#b8c8de;margin-bottom:22px;}
+.body-content strong{color:#e8eef8;font-weight:600;}
+.body-content ul{margin:0 0 22px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.body-content ul li{display:flex;align-items:flex-start;gap:12px;font-size:1.02rem;line-height:1.75;color:#b8c8de;}
+.body-content ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:#007bff;flex-shrink:0;margin-top:10px;}
+.callout{background:#111827;border:1px solid rgba(0,123,255,.2);border-left:3px solid #007bff;border-radius:12px;padding:22px 24px;margin:32px 0;}
+.callout p{color:#c8d5ea;margin:0;font-size:.97rem;line-height:1.8;}
+.divider{height:1px;background:rgba(255,255,255,.08);margin:40px 0;}
+.author{display:flex;align-items:center;gap:14px;padding:24px;background:#111827;border-radius:14px;border:1px solid rgba(255,255,255,.08);}
+.av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#007bff,#6a1b9a);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0;}
+.author-name{font-weight:600;color:#fff;font-size:.95rem;}
+.author-role{font-size:.82rem;color:#8a9ab8;margin-top:2px;}
+.cta-strip{background:linear-gradient(135deg,rgba(0,123,255,.12),rgba(106,27,154,.1));border:1px solid rgba(0,123,255,.2);border-radius:16px;padding:32px;text-align:center;margin-top:56px;}
+.cta-strip h3{font-family:'Syne',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:10px;}
+.cta-strip p{font-size:.93rem;color:#8a9ab8;margin-bottom:22px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:99px;border:none;cursor:pointer;background:#007bff;color:#fff;transition:all .25s;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,123,255,.35);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/" class="logo">NexaCore Labs</a>
+    <a href="/#blog" class="back">← Back to Insights</a>
+  </div>
+</nav>
+
+<div class="hero-art">
+  <div class="bg-grid"></div>
+  <span class="cat">Business · 4 min read</span>
+</div>
+
+<div class="wrap">
+  <div class="meta">
+    <span>March 2026</span>
+    <div class="meta-dot"></div>
+    <span>4 min read</span>
+    <div class="meta-dot"></div>
+    <span>Ralph, NexaCore Labs</span>
+  </div>
+
+  <h1>Why Most Nigerian Business Websites Don't Convert — And What to Do About It</h1>
+
+  <p class="intro">A slow, untrustworthy website isn't neutral. It actively costs you clients. After building websites for businesses across Nigeria and Ireland, here's what we see most often — and how to fix it.</p>
+
+  <div class="body-content">
+
+    <h2>The problem most owners don't see</h2>
+    <p>Most business owners judge their website the same way they judge their office — by how it looks to them. But your website isn't for you. It's for the person who just heard your name for the first time and opened their phone to check if you're real.</p>
+    <p>That person makes a decision in about <strong>3 seconds</strong>. If your site takes 6 seconds to load, they've already left. If it looks like it was built in 2014, they've already decided you're not serious. If they can't tell what you do in 5 seconds of reading, you've lost them.</p>
+
+    <h2>What we see most often</h2>
+    <p>These are the patterns we encounter repeatedly when clients come to us after trying cheaper solutions:</p>
+    <ul>
+      <li><strong>Slow loading on mobile networks.</strong> Most Nigerian users are on mobile data, often on 4G. A website optimised for fibre broadband will feel broken to them. Large uncompressed images are usually the culprit.</li>
+      <li><strong>No clear call to action.</strong> The website shows what the business does, but never tells the visitor what to do next. No phone number prominent on the page. No "book a call" button. No WhatsApp link. The visitor has to work to contact you.</li>
+      <li><strong>Template sites with no real identity.</strong> When you use a generic template, your website looks identical to 200 other businesses. There is no reason for a visitor to trust you over anyone else.</li>
+      <li><strong>Contact forms that go nowhere.</strong> We've seen businesses lose weeks of leads because their contact form was broken and they didn't know. Submissions were going to a spam folder or a disconnected email.</li>
+      <li><strong>No social proof.</strong> Nigerians research before they buy. If a visitor can't find a single reference to your real clients or results, they don't move forward.</li>
+    </ul>
+
+    <div class="callout">
+      <p>A useful test: open your website on your phone, on mobile data, at 9am. Time how long it takes to load. Then find your phone number. If either of those took more than 3 seconds, you have a problem.</p>
+    </div>
+
+    <h2>What a conversion-focused website actually needs</h2>
+    <p>This isn't about design trends or colour palettes. It's about reducing the distance between "I found this business" and "I contacted them."</p>
+    <ul>
+      <li><strong>Load in under 3 seconds</strong> on mobile data. This is non-negotiable in 2026.</li>
+      <li><strong>Clear headline above the fold.</strong> A visitor should know exactly what you do before they scroll. Not a slogan. A clear sentence.</li>
+      <li><strong>One dominant call to action.</strong> WhatsApp works better than email for most Nigerian businesses. Put it where it's impossible to miss.</li>
+      <li><strong>Real evidence.</strong> Photos of your work, names of clients who've agreed to be mentioned, specific results if you have them.</li>
+      <li><strong>Works on every screen.</strong> If your website breaks on an older Android, you're losing a significant portion of your audience.</li>
+    </ul>
+
+    <h2>The business case</h2>
+    <p>A well-built website is not a cost. It's the best salesperson you have — one that works 24 hours a day, never calls in sick, and reaches people you'll never meet in person.</p>
+    <p>Most of the businesses we work with see a meaningful increase in enquiries within the first month of launching a properly built site. Not because we did anything magical. Because the previous site was actively sending people away.</p>
+
+    <div class="callout">
+      <p>If your current website is costing you clients, the cost of fixing it is much smaller than the cost of keeping it broken.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="author">
+      <div class="av">R</div>
+      <div>
+        <div class="author-name">Ralph — NexaCore Labs</div>
+        <div class="author-role">Founder & Creative Tech Strategist · Dublin, Ireland & Nigeria</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-strip">
+    <h3>Your website should be working for you.</h3>
+    <p>If it isn't, we can help. We build fast, professional websites that convert visitors into clients.</p>
+    <a href="/#contact" class="btn">Start a Conversation</a>
+  </div>
+
+</div>
+</body>
+</html>

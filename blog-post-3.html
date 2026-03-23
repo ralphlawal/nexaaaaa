@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Built Examora — NexaCore Labs</title>
+<meta name="description" content="From a conversation about JAMB prep to a live platform. The decisions, challenges and lessons from building Examora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:#07090f;color:#e8eef8;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:#007bff;}a:hover{text-decoration:underline;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:#007bff;border-radius:4px;}
+.nav{position:sticky;top:0;background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0;z-index:100;}
+.nav-in{max-width:760px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#fff;}
+.back{font-size:.85rem;color:#8a9ab8;}
+.back:hover{color:#fff;text-decoration:none;}
+.hero-art{background:linear-gradient(135deg,#001428,#003366);height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.07) 1px,transparent 1px);background-size:32px 32px;}
+.cat{position:relative;z-index:1;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#7db8ff;background:rgba(0,0,0,.5);padding:8px 18px;border-radius:99px;border:1px solid rgba(0,123,255,.3);}
+.wrap{max-width:720px;margin:0 auto;padding:56px 24px 80px;}
+.meta{display:flex;align-items:center;gap:16px;font-size:.82rem;color:#8a9ab8;margin-bottom:32px;flex-wrap:wrap;}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:#3d4f6a;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:24px;}
+.intro{font-size:1.15rem;line-height:1.8;color:#c8d5ea;margin-bottom:40px;border-left:3px solid #007bff;padding-left:20px;}
+h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin:44px 0 14px;}
+p{font-size:1.02rem;line-height:1.85;color:#b8c8de;margin-bottom:22px;}
+strong{color:#e8eef8;font-weight:600;}
+ul{margin:0 0 22px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+ul li{display:flex;align-items:flex-start;gap:12px;font-size:1.02rem;line-height:1.75;color:#b8c8de;}
+ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:#007bff;flex-shrink:0;margin-top:10px;}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin:28px 0;}
+.stat{background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;text-align:center;}
+.stat-n{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#007bff;}
+.stat-l{font-size:.8rem;color:#8a9ab8;margin-top:4px;}
+.callout{background:#111827;border:1px solid rgba(0,123,255,.2);border-left:3px solid #007bff;border-radius:12px;padding:22px 24px;margin:32px 0;}
+.callout p{color:#c8d5ea;margin:0;font-size:.97rem;line-height:1.8;}
+.stack-row{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 28px;}
+.stag{font-family:'JetBrains Mono',monospace;font-size:.72rem;padding:5px 12px;border-radius:8px;background:rgba(0,123,255,.1);color:#7db8ff;border:1px solid rgba(0,123,255,.25);}
+.divider{height:1px;background:rgba(255,255,255,.08);margin:40px 0;}
+.author{display:flex;align-items:center;gap:14px;padding:24px;background:#111827;border-radius:14px;border:1px solid rgba(255,255,255,.08);}
+.av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#007bff,#6a1b9a);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0;}
+.author-name{font-weight:600;color:#fff;}
+.author-role{font-size:.82rem;color:#8a9ab8;margin-top:2px;}
+.cta-strip{background:linear-gradient(135deg,rgba(0,123,255,.12),rgba(106,27,154,.1));border:1px solid rgba(0,123,255,.2);border-radius:16px;padding:32px;text-align:center;margin-top:56px;}
+.cta-strip h3{font-family:'Syne',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:10px;}
+.cta-strip p{font-size:.93rem;color:#8a9ab8;margin-bottom:22px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:600;padding:13px 26px;border-radius:99px;border:none;cursor:pointer;background:#007bff;color:#fff;transition:all .25s;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,123,255,.35);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in"><a href="/" class="logo">NexaCore Labs</a><a href="/#blog" class="back">← Back to Insights</a></div></nav>
+
+<div class="hero-art"><div class="bg-grid"></div><span class="cat">Case Study · 6 min read</span></div>
+
+<div class="wrap">
+  <div class="meta"><span>February 2026</span><div class="meta-dot"></div><span>6 min read</span><div class="meta-dot"></div><span>Ralph, NexaCore Labs</span></div>
+
+  <h1>How We Built Examora: Nigeria's Modern CBT Exam Platform</h1>
+
+  <p class="intro">From a conversation about JAMB prep to a live platform with AI-assisted practice. Here's an honest account of the decisions, challenges and lessons from building Examora — one of our most complex and rewarding projects.</p>
+
+  <h2>The problem we were solving</h2>
+  <p>Students preparing for JAMB, WAEC and NECO in Nigeria face a fragmented landscape. Practice materials are scattered, outdated, or locked behind expensive textbooks. Existing digital platforms were either poorly built, unreliable, or felt like they hadn't been updated since 2012.</p>
+  <p>The brief was direct: build a modern, fast, AI-assisted CBT platform that feels as polished as what students see in international products — but built for the Nigerian context, on Nigerian connections, for Nigerian exams.</p>
+
+  <h2>What we built</h2>
+  <p>Examora is a full-stack web application. It handles user authentication, exam simulation with timed sessions, real past questions, performance tracking across subjects, and an AI layer that helps students understand why an answer is correct — not just what the correct answer is.</p>
+
+  <div class="stack-row">
+    <span class="stag">Firebase</span><span class="stag">Vanilla JavaScript</span><span class="stag">Firestore</span><span class="stag">OpenRouter AI</span><span class="stag">Service Workers</span><span class="stag">Formspree</span>
+  </div>
+
+  <p>We chose Firebase and vanilla JavaScript deliberately. We've seen complex Nigerian EdTech platforms fail because the infrastructure became too expensive to maintain. Firebase's free tier is generous, scales gracefully, and the real-time database means question loading feels instant even on 4G.</p>
+
+  <h2>The decisions that mattered</h2>
+
+  <p><strong>No native app.</strong> Students shouldn't have to download anything. The barrier to access needed to be as low as possible. Examora loads in the browser and can be added to the home screen as a PWA if the student wants.</p>
+
+  <p><strong>Offline tolerance.</strong> Nigerian internet is real. We built the platform to cache questions locally so that a momentary loss of connection doesn't interrupt a practice session. Service workers handle this transparently.</p>
+
+  <p><strong>AI as a teaching tool, not a crutch.</strong> The AI on Examora doesn't just tell you if you got the answer right. It explains the reasoning — the same way a good teacher would. This was the most technically challenging part of the build and the one we're most proud of.</p>
+
+  <div class="callout">
+    <p>The toughest engineering decision was how to handle the AI feature within Firebase's free tier. We route through OpenRouter to access capable models at a cost that keeps the platform free for students. Getting that balance right took several iterations.</p>
+  </div>
+
+  <h2>What we learned</h2>
+  <ul>
+    <li><strong>Performance is a product feature in Nigeria.</strong> A 400ms improvement in load time is not a nice-to-have. It's the difference between a student using your product or abandoning it.</li>
+    <li><strong>Build for the real device, not your MacBook.</strong> We tested on older Android phones on mobile data throughout the build. The experience you get there is the one that matters.</li>
+    <li><strong>Content is a technical problem too.</strong> Sourcing and structuring accurate past questions at scale required a proper admin system. We built a question management dashboard before we built anything public-facing.</li>
+    <li><strong>Users will find bugs your testing never imagined.</strong> Real students interact with software in ways you never anticipate. Ship early, watch closely, fix fast.</li>
+  </ul>
+
+  <h2>Where it is now</h2>
+  <p>Examora is live at <a href="https://examora.com.ng" target="_blank">examora.com.ng</a>. It covers JAMB, WAEC, NECO, Post-UTME and has an expanding question bank across subjects. The AI practice feature is active and the admin panel allows continuous content expansion without touching the codebase.</p>
+  <p>It remains one of the products we're most invested in — because the impact is direct and measurable. A student who practises on Examora is better prepared for their exam. That matters.</p>
+
+  <div class="divider"></div>
+
+  <div class="author"><div class="av">R</div><div><div class="author-name">Ralph — NexaCore Labs</div><div class="author-role">Founder & Creative Tech Strategist · Dublin, Ireland & Nigeria</div></div></div>
+
+  <div class="cta-strip">
+    <h3>Building something in EdTech?</h3>
+    <p>We've learned a lot building Examora. If you're working on an educational platform, we'd enjoy a conversation about it.</p>
+    <a href="/#contact" class="btn">Get in Touch</a>
+  </div>
+</div>
+</body>
+</html>
