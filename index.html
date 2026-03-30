@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexaCore Labs — Technology Studio | Dublin & Lagos</title>
-<meta name="description" content="NexaCore Labs builds high-performance websites, apps, AI tools and EdTech platforms. Based in Dublin, Ireland and Nigeria.">
+<title>NexaCore Labs — Technology Studio | Dublin &amp; Nigeria</title>
+<meta name="description" content="NexaCore Labs builds websites, apps, AI tools and EdTech platforms for businesses that demand excellence. Based in Dublin, Ireland and Nigeria.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nexacorelabs.site">
+<meta property="og:title" content="NexaCore Labs — Technology Studio">
+<meta property="og:description" content="We build websites, apps, AI tools and EdTech platforms. Dublin, Ireland and Nigeria.">
+<meta property="og:image" content="https://nexacorelabs.site/og-cover.png">
+<meta property="og:site_name" content="NexaCore Labs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@nexacorelabs">
+<meta name="twitter:title" content="NexaCore Labs — Technology Studio">
+<meta name="twitter:description" content="We build websites, apps, AI tools and EdTech platforms. Dublin, Ireland and Nigeria.">
+<meta name="twitter:image" content="https://nexacorelabs.site/og-cover.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"NexaCore Labs","description":"Technology studio building websites, web applications, AI tools and EdTech platforms.","url":"https://nexacorelabs.site","email":"hello@nexacorelabs.site","areaServed":["Ireland","Nigeria"],"sameAs":["https://instagram.com/nexacorelabs","https://x.com/nexacorelabs","https://linkedin.com/company/nexacorelabs","https://threads.net/@nexacorelabs"]}</script>
+<link rel="canonical" href="https://nexacorelabs.site">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,19 +25,19 @@
 <style>
 :root{
   --bg:#07090f;--bg2:#0c0f1a;--surf:#111827;--surf2:#1a2235;
-  --blue:#007bff;--bd:rgba(0,123,255,.12);--bg2:rgba(0,123,255,.25);
+  --blue:#007bff;--blue-d:rgba(0,123,255,.12);--blue-g:rgba(0,123,255,.28);
   --purple:#6a1b9a;--nf:#ff6e28;
   --white:#fff;--light:#e8eef8;--muted:#8a9ab8;--dim:#3d4f6a;
   --brd:rgba(255,255,255,.08);--brd2:rgba(0,123,255,.3);
-  --r:14px;--rl:22px;
-  --ease:cubic-bezier(.25,.46,.45,.94);
-  --fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace;
+  --r:14px;--rl:22px;--ease:cubic-bezier(.25,.46,.45,.94);
+  --fh:"Syne",sans-serif;--fb:"DM Sans",sans-serif;--fm:"JetBrains Mono",monospace;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:var(--fb);background:var(--bg);color:var(--light);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
 button{cursor:pointer;font-family:inherit;}
+img{display:block;max-width:100%;}
 ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:4px;}
 h1,h2,h3,h4{font-family:var(--fh);line-height:1.1;letter-spacing:-.02em;color:var(--white);}
 h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:800;}
@@ -33,35 +46,35 @@ h3{font-size:clamp(1.05rem,2.5vw,1.3rem);font-weight:600;}
 p{color:var(--muted);line-height:1.75;font-size:1rem;}
 .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,56px);position:relative;z-index:2;}
 section{padding:clamp(72px,9vw,120px) 0;position:relative;}
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,123,255,.3),transparent);}
-.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.3);padding:6px 14px;border-radius:99px;margin-bottom:20px;}
-.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;animation:pulse 2s infinite;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--brd2),transparent);}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-d);border:1px solid var(--brd2);padding:6px 14px;border-radius:99px;margin-bottom:20px;}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fb);font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:99px;border:none;transition:all .28s var(--ease);white-space:nowrap;}
-.bp{background:var(--blue);color:#fff;box-shadow:0 0 28px rgba(0,123,255,.3);}
-.bp:hover{transform:translateY(-2px);box-shadow:0 4px 32px rgba(0,123,255,.45);}
+.bp{background:var(--blue);color:#fff;box-shadow:0 0 28px var(--blue-g);}
+.bp:hover{transform:translateY(-2px);box-shadow:0 4px 36px var(--blue-g);}
 .bg{background:transparent;color:var(--light);border:1px solid var(--brd);}
 .bg:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
-
-/* NAVBAR */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+.rv.in{opacity:1;transform:none;}
+.rv.d1{transition-delay:.1s;}.rv.d2{transition-delay:.2s;}.rv.d3{transition-delay:.3s;}.rv.d4{transition-delay:.4s;}
+</style>
+<style>
 #nav{position:fixed;top:0;left:0;right:0;z-index:9000;transition:all .3s var(--ease);}
-#nav.sc .ni{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);padding-top:12px;padding-bottom:12px;}
+#nav.sc .ni{background:rgba(7,9,15,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);padding-top:12px;padding-bottom:12px;}
 .ni{max-width:1160px;margin:0 auto;padding:18px clamp(20px,5vw,56px);display:flex;align-items:center;justify-content:space-between;transition:padding .3s;}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--fh);font-weight:800;font-size:1.15rem;color:var(--white);}
 .logo svg{width:36px;height:36px;flex-shrink:0;}
-.navl{display:none;list-style:none;gap:32px;}
+.navl{display:none;list-style:none;gap:28px;}
 @media(min-width:900px){.navl{display:flex;}}
 .navl a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative;}
-.navl a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--blue);transform:scaleX(0);transition:transform .2s;}
-.navl a:hover{color:var(--white);}
-.navl a:hover::after{transform:scaleX(1);}
+.navl a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--blue);transform:scaleX(0);transition:transform .2s;}
+.navl a:hover{color:var(--white);}.navl a:hover::after{transform:scaleX(1);}
 .navr{display:flex;align-items:center;gap:12px;}
 .ncta{display:none;}@media(min-width:600px){.ncta{display:inline-flex;padding:10px 20px;font-size:.88rem;}}
 .ham{background:none;border:1px solid var(--brd);color:var(--light);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
 .ham:hover{border-color:var(--blue);color:var(--blue);}
 @media(min-width:900px){.ham{display:none;}}
-
-/* DRAWER */
 .dov{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:9001;opacity:0;pointer-events:none;transition:opacity .3s;}
 .dov.on{opacity:1;pointer-events:all;}
 .drw{position:fixed;top:0;right:0;bottom:0;width:min(320px,90vw);background:var(--surf);border-left:1px solid var(--brd);z-index:9002;transform:translateX(100%);transition:transform .35s var(--ease);display:flex;flex-direction:column;padding:28px;}
@@ -71,20 +84,20 @@ section{padding:clamp(72px,9vw,120px) 0;position:relative;}
 .dnav{list-style:none;display:flex;flex-direction:column;gap:4px;}
 .dnav a{display:block;padding:13px 16px;font-family:var(--fh);font-size:1rem;font-weight:600;color:var(--muted);border-radius:10px;transition:all .2s;}
 .dnav a:hover{color:var(--white);background:var(--surf2);}
-.dft{margin-top:auto;padding-top:24px;border-top:1px solid var(--brd);display:flex;flex-direction:column;gap:12px;margin-top:auto;padding-top:24px;}
-.dft p{font-size:.78rem;color:var(--muted);font-weight:600;font-family:var(--fh);}
-.dft a{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.9rem;transition:color .2s;}
+.dft{margin-top:auto;padding-top:24px;border-top:1px solid var(--brd);}
+.dft p{font-size:.78rem;color:var(--muted);font-weight:600;font-family:var(--fh);margin-bottom:12px;}
+.dft a{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.9rem;transition:color .2s;margin-bottom:10px;}
 .dft a:hover{color:var(--blue);}
 .dft i{color:var(--blue);width:16px;}
-
-/* HERO */
+</style>
+<style>
 #hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;overflow:hidden;}
 .hbg{position:absolute;inset:0;z-index:0;}
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.04) 1px,transparent 1px);background-size:60px 60px;}
 .hg1{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);background:rgba(0,123,255,.13);top:-100px;left:-180px;}
 .hg2{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(120px);background:rgba(106,27,154,.12);bottom:-80px;right:-120px;}
-.hgrid2{display:grid;gap:60px;align-items:center;}
-@media(min-width:920px){.hgrid2{grid-template-columns:1fr 1fr;gap:80px;}}
+.hinner{display:grid;gap:60px;align-items:center;}
+@media(min-width:920px){.hinner{grid-template-columns:1fr 1fr;gap:80px;}}
 .hpills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
 .hp{font-family:var(--fm);font-size:.74rem;padding:5px 13px;border-radius:99px;}
 .hp1{background:rgba(0,123,255,.12);border:1px solid rgba(0,123,255,.35);color:#7db8ff;}
@@ -109,43 +122,35 @@ section{padding:clamp(72px,9vw,120px) 0;position:relative;}
 .tl{display:flex;gap:14px;}.tn{color:#3d4f64;min-width:20px;text-align:right;user-select:none;}
 .cur{display:inline-block;width:8px;height:15px;background:var(--blue);vertical-align:middle;animation:bc 1.2s steps(1) infinite;}
 @keyframes bc{50%{opacity:0}}
-
-/* MARQUEE */
 .mq{background:var(--surf);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);padding:13px 0;overflow:hidden;}
-.mqt{display:flex;gap:52px;animation:mq 24s linear infinite;white-space:nowrap;}
+.mqt{display:flex;gap:52px;animation:mqa 24s linear infinite;white-space:nowrap;}
 .mi{display:flex;align-items:center;gap:9px;font-family:var(--fm);font-size:.8rem;color:var(--muted);flex-shrink:0;}
 .mi i{color:var(--blue);}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* SERVICES */
+@keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+<style>
 .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px;margin-top:56px;}
 .sc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:32px;transition:all .3s var(--ease);position:relative;overflow:hidden;}
-.sc::before{content:'';position:absolute;inset:0;background:radial-gradient(400px at var(--mx,50%) var(--my,50%),rgba(0,123,255,.07),transparent 70%);opacity:0;transition:opacity .3s;}
+.sc::before{content:"";position:absolute;inset:0;background:radial-gradient(400px at var(--mx,50%) var(--my,50%),rgba(0,123,255,.07),transparent 70%);opacity:0;transition:opacity .3s;}
 .sc:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.35);}
 .sc:hover::before{opacity:1;}
 .sc.nfc{background:linear-gradient(135deg,rgba(255,110,40,.09),rgba(0,123,255,.05));border-color:rgba(255,110,40,.25);}
 .sc.nfc:hover{border-color:rgba(255,110,40,.5);}
-.si{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;background:rgba(0,123,255,.1);color:var(--blue);border:1px solid rgba(0,123,255,.3);}
+.si{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;background:var(--blue-d);color:var(--blue);border:1px solid var(--brd2);}
 .si.nfi{background:rgba(255,110,40,.12);color:var(--nf);border-color:rgba(255,110,40,.4);}
 .sc h3{font-size:1.12rem;margin-bottom:10px;}
 .sc p{font-size:.92rem;line-height:1.7;}
 .stags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;}
 .stag{font-family:var(--fm);font-size:.69rem;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.04);border:1px solid var(--brd);color:var(--muted);}
-.nfb{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;color:var(--nf);background:rgba(255,110,40,.1);border:1px solid rgba(255,110,40,.32);padding:5px 13px;border-radius:99px;margin-top:16px;text-decoration:none;transition:background .2s;}
+.nfb{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;color:var(--nf);background:rgba(255,110,40,.1);border:1px solid rgba(255,110,40,.32);padding:5px 13px;border-radius:99px;margin-top:16px;transition:background .2s;}
 .nfb:hover{background:rgba(255,110,40,.2);}
-
-/* PROJECTS */
-.ptop{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:40px;}
-.frow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
-.fb{font-size:.82rem;font-weight:500;padding:8px 18px;border-radius:99px;border:1px solid var(--brd);background:transparent;color:var(--muted);transition:all .22s;font-family:var(--fb);}
-.fb:hover{border-color:var(--brd2);color:var(--blue);}
-.fb.on{background:var(--blue);border-color:var(--blue);color:#fff;}
+.ptop{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px;}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px;}
 .pc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column;transition:all .3s var(--ease);}
 .pc:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
 .pth{height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0;}
 .ptg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.06) 1px,transparent 1px);background-size:28px 28px;}
-.pic{width:68px;height:68px;background:var(--bg);border:1px solid var(--brd);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;position:relative;z-index:1;box-shadow:0 8px 28px rgba(0,0,0,.45);}
+.pic{width:68px;height:68px;background:var(--bg);border:1px solid var(--brd);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;position:relative;z-index:1;box-shadow:0 8px 28px rgba(0,0,0,.45);}
 .pb{padding:24px;flex:1;display:flex;flex-direction:column;}
 .pcat{font-family:var(--fm);font-size:.68rem;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
 .pb h3{font-size:1.05rem;margin-bottom:8px;}
@@ -154,34 +159,29 @@ section{padding:clamp(72px,9vw,120px) 0;position:relative;}
 .ptag{font-family:var(--fm);font-size:.67rem;padding:3px 9px;border-radius:6px;background:rgba(0,123,255,.08);color:#7db8ff;border:1px solid rgba(0,123,255,.2);}
 .plink{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:600;color:var(--blue);transition:gap .2s;margin-top:auto;}
 .plink:hover{gap:11px;}
-.th-e{background:linear-gradient(135deg,#001f3f,#003d7a);}
-.th-s{background:linear-gradient(135deg,#0a1f0a,#1a4a1a);}
-.th-sc{background:linear-gradient(135deg,#0d0d2e,#1a1a5e);}
-.th-n{background:linear-gradient(135deg,#1a0800,#3a1000);}
-.th-w{background:linear-gradient(135deg,#001428,#003366);}
-.th-f{background:linear-gradient(135deg,#141408,#282810);}
-.th-6{background:linear-gradient(135deg,#141414,#282828);}
-.th-d{background:linear-gradient(135deg,#0a1a08,#142814);}
-.th-p{background:linear-gradient(135deg,#14080a,#281018);}
-.th-c{background:linear-gradient(135deg,#081428,#103060);}
-.th-g{background:linear-gradient(135deg,#1a0a28,#300a50);}
-
-/* CTA BANNER */
+</style>
+<style>
 #ctab{background:linear-gradient(135deg,rgba(0,123,255,.12),rgba(106,27,154,.12));border-top:1px solid rgba(0,123,255,.18);border-bottom:1px solid rgba(106,27,154,.18);padding:clamp(56px,8vw,96px) 0;}
 .ctai{display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px;}
 .ctai h2{max-width:660px;}
 .ctai>p{max-width:500px;}
 .ctaa{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 .ctas{display:flex;gap:44px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
-.csn{font-family:var(--fh);font-size:2rem;font-weight:800;color:var(--white);}
+.csn{font-family:var(--fh);font-size:1.9rem;font-weight:800;color:var(--white);}
 .csn em{color:var(--blue);font-style:normal;}
 .csl{font-size:.8rem;color:var(--muted);}
-
-/* ABOUT */
+#process{background:var(--bg2);}
+.proc-inner{display:grid;gap:60px;align-items:start;}
+@media(min-width:920px){.proc-inner{grid-template-columns:1fr 1fr;gap:80px;}}
+.steps{display:flex;flex-direction:column;}
+.step{display:flex;gap:22px;padding:28px 0;border-bottom:1px solid var(--brd);}
+.step:last-child{border-bottom:none;}
+.step-n{width:44px;height:44px;border-radius:11px;background:var(--blue-d);border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.78rem;color:var(--blue);flex-shrink:0;margin-top:2px;}
+.step-b h3{font-size:1.06rem;margin-bottom:7px;}
+.step-b p{font-size:.9rem;}
 .agrid{display:grid;gap:60px;align-items:center;}
 @media(min-width:920px){.agrid{grid-template-columns:1fr 1fr;gap:80px;}}
-.at p{margin-bottom:16px;}
-.at h2{margin-bottom:18px;}
+.at p{margin-bottom:16px;}.at h2{margin-bottom:18px;}
 .locs{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
 .loc{display:flex;align-items:center;gap:8px;background:var(--surf2);border:1px solid var(--brd);border-radius:10px;padding:9px 15px;font-size:.86rem;font-weight:500;}
 .loc i{color:var(--blue);}
@@ -189,32 +189,49 @@ section{padding:clamp(72px,9vw,120px) 0;position:relative;}
 .fl{display:flex;flex-direction:column;gap:16px;}
 .feat{background:var(--surf);border:1px solid var(--brd);border-radius:var(--r);padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s;}
 .feat:hover{border-color:var(--brd2);}
-.fi{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.3);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:16px;}
-.fh4{font-size:.93rem;font-weight:700;color:var(--white);margin-bottom:4px;font-family:var(--fh);}
-.fb2{font-size:.86rem;}
-
-/* TEAM */
+.fti{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:var(--blue-d);border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:16px;}
+.ftb h4{font-size:.93rem;font-weight:700;color:var(--white);margin-bottom:4px;font-family:var(--fh);}
+.ftb p{font-size:.86rem;}
+.cs-inner{display:grid;gap:56px;align-items:center;margin-top:56px;}
+@media(min-width:920px){.cs-inner{grid-template-columns:1fr 1fr;gap:80px;}}
+.cs-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+.cs-stat{background:var(--surf);border:1px solid var(--brd);border-radius:var(--r);padding:18px 20px;}
+.cs-sn{font-family:var(--fh);font-size:1.6rem;font-weight:800;color:var(--blue);}
+.cs-sl{font-size:.8rem;color:var(--muted);margin-top:3px;}
+.cs-vis{background:linear-gradient(135deg,#001f3f,#003d7a);border-radius:var(--rl);padding:36px;border:1px solid rgba(0,123,255,.2);position:relative;overflow:hidden;}
+.cs-vbg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.06) 1px,transparent 1px);background-size:28px 28px;}
+.cs-vin{position:relative;z-index:1;}
+.cs-pn{font-family:var(--fh);font-size:2.8rem;font-weight:800;color:var(--white);margin-bottom:8px;}
+.cs-ps{font-size:.9rem;color:var(--muted);margin-bottom:24px;}
+.cs-ptags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+.cs-ptag{font-family:var(--fm);font-size:.7rem;padding:4px 12px;border-radius:8px;background:rgba(0,123,255,.12);color:#7db8ff;border:1px solid rgba(0,123,255,.25);}
+.cs-live{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:var(--blue);transition:gap .2s;}
+.cs-live:hover{gap:12px;}
+.cs-dot{width:8px;height:8px;border-radius:50%;background:#28c840;flex-shrink:0;}
+.brands-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(24px,4vw,56px);margin-top:36px;}
+.brand-name{font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--muted);opacity:.5;transition:opacity .25s;cursor:default;}
+.brand-name:hover{opacity:1;}
+</style>
+<style>
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:24px;margin-top:56px;}
 .tc2{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:30px 26px;text-align:center;transition:all .3s var(--ease);}
 .tc2:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.35);}
 .tav{width:76px;height:76px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:1.7rem;font-weight:800;color:#fff;border:3px solid var(--brd);}
 .ta-r{background:linear-gradient(135deg,#007bff,#6a1b9a);}
 .ta-n{background:linear-gradient(135deg,#6a1b9a,#ff6e28);}
-.ta-h{background:var(--surf2);}
+.ta-p{background:var(--surf2);}
 .tc2 h3{font-size:1.05rem;margin-bottom:5px;}
 .trole{font-family:var(--fm);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;}
 .tr-b{color:var(--blue);}.tr-n{color:var(--nf);}
 .tc2>p{font-size:.86rem;line-height:1.65;}
 .tsoc{display:flex;justify-content:center;gap:8px;margin-top:16px;}
-.ts{width:32px;height:32px;border-radius:8px;background:var(--surf2);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;transition:all .2s;}
-.ts:hover{background:var(--blue);border-color:var(--blue);color:#fff;}
-
-/* PRICING */
+.tsb{width:32px;height:32px;border-radius:8px;background:var(--surf2);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;transition:all .2s;}
+.tsb:hover{background:var(--blue);border-color:var(--blue);color:#fff;}
 .priceg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px;margin-top:56px;}
 .prc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:34px 30px;display:flex;flex-direction:column;position:relative;transition:all .3s var(--ease);}
 .prc:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.3);}
 .prc.hot{border-color:var(--blue);background:linear-gradient(135deg,rgba(0,123,255,.1),rgba(106,27,154,.07));box-shadow:0 0 40px rgba(0,123,255,.14);}
-.hb{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-family:var(--fm);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;}
+.hbadge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-family:var(--fm);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;}
 .ptier{font-family:var(--fm);font-size:.74rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
 .pprice{font-family:var(--fh);font-size:2.1rem;font-weight:800;color:var(--white);margin-bottom:4px;}
 .pprice sub{font-size:.9rem;font-weight:400;color:var(--muted);vertical-align:baseline;}
@@ -224,27 +241,25 @@ section{padding:clamp(72px,9vw,120px) 0;position:relative;}
 .pfts li i{color:var(--blue);margin-top:3px;flex-shrink:0;font-size:.8rem;}
 .pbtn{width:100%;justify-content:center;}
 .pnote{text-align:center;font-size:.82rem;color:var(--muted);margin-top:22px;}
-
-/* TESTIMONIALS */
-.testg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px;margin-top:56px;}
-.tcc{background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);padding:30px;display:flex;flex-direction:column;gap:18px;transition:all .3s var(--ease);position:relative;overflow:hidden;}
-.tcc::before{content:'"';position:absolute;top:-8px;right:18px;font-family:Georgia,serif;font-size:7rem;color:rgba(0,123,255,.05);line-height:1;pointer-events:none;}
-.tcc:hover{border-color:var(--brd2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3);}
-.tstars{color:#fbbf24;font-size:.88rem;display:flex;gap:3px;}
-.ttxt{font-size:.93rem;line-height:1.75;color:var(--light);font-style:italic;flex:1;}
-.tauth{display:flex;align-items:center;gap:12px;margin-top:auto;}
-.tav2{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.95rem;font-weight:800;color:#fff;flex-shrink:0;border:2px solid var(--brd);}
-.tname{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--white);}
-.trole2{font-size:.76rem;color:var(--muted);margin-top:2px;}
-
-/* CONTACT */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:24px;margin-top:56px;}
+.bc{display:flex;flex-direction:column;background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;color:inherit;transition:all .3s var(--ease);}
+.bc:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
+.bc-top{height:160px;position:relative;overflow:hidden;flex-shrink:0;}
+.bc-tgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.07) 1px,transparent 1px);background-size:28px 28px;}
+.bc-cat{position:absolute;bottom:14px;left:16px;font-family:var(--fm);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#7db8ff;background:rgba(0,0,0,.5);padding:4px 10px;border-radius:99px;border:1px solid rgba(0,123,255,.3);}
+.bc-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+.bc-meta{font-family:var(--fm);font-size:.72rem;color:var(--dim);margin-bottom:10px;letter-spacing:.04em;}
+.bc-body h3{font-size:1.05rem;line-height:1.3;margin-bottom:10px;color:var(--white);}
+.bc-body p{font-size:.88rem;line-height:1.7;flex:1;margin-bottom:18px;}
+.bc-link{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:600;color:var(--blue);margin-top:auto;transition:gap .2s;}
+.bc:hover .bc-link{gap:11px;}
 .cgrid{display:grid;gap:56px;}
 @media(min-width:920px){.cgrid{grid-template-columns:1fr 1fr;gap:80px;}}
 .cms{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
-.cm{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--surf);border:1px solid var(--brd);border-radius:var(--r);text-decoration:none;color:var(--light);transition:all .25s;}
+.cm{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--surf);border:1px solid var(--brd);border-radius:var(--r);color:var(--light);transition:all .25s;}
 .cm:hover{border-color:var(--brd2);background:var(--surf2);transform:translateX(4px);}
 .cmi{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
-.ci-b{background:rgba(0,123,255,.1);border:1px solid rgba(0,123,255,.3);color:var(--blue);}
+.ci-b{background:var(--blue-d);border:1px solid var(--brd2);color:var(--blue);}
 .ci-g{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#25d366;}
 .cml{font-size:.78rem;color:var(--muted);margin-bottom:2px;}
 .cmv{font-weight:600;font-size:.93rem;color:var(--white);}
@@ -261,8 +276,6 @@ section{padding:clamp(72px,9vw,120px) 0;position:relative;}
 .fmsg.ok{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#4ade80;display:block;}
 .fmsg.err{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#f87171;display:block;}
 .fsub{width:100%;justify-content:center;margin-top:4px;padding:14px;font-size:.97rem;}
-
-/* FAQ */
 .faqg{display:grid;gap:56px;}
 @media(min-width:920px){.faqg{grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;}}
 .faql{display:flex;flex-direction:column;}
@@ -275,8 +288,6 @@ section{padding:clamp(72px,9vw,120px) 0;position:relative;}
 .faqa{max-height:0;overflow:hidden;transition:max-height .38s var(--ease);}
 .faqa-in{padding-bottom:18px;font-size:.9rem;color:var(--muted);line-height:1.75;}
 .faqi.open .faqa{max-height:280px;}
-
-/* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;}
 .fg2{display:grid;gap:40px;margin-bottom:48px;}
 @media(min-width:600px){.fg2{grid-template-columns:1.5fr 1fr 1fr;}}
@@ -292,26 +303,14 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
 .fbtm p{font-size:.8rem;color:var(--muted);}
 .nfc2{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:5px;}
 .nfc2 a{color:var(--nf);font-weight:600;}
-
-/* BTT */
-#btt{position:fixed;bottom:26px;right:26px;width:42px;height:42px;background:var(--blue);color:#fff;border:none;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:15px;z-index:500;box-shadow:0 4px 20px rgba(0,123,255,.35);opacity:0;transform:translateY(8px);transition:all .3s var(--ease);pointer-events:none;}
+#wa-float{position:fixed;bottom:88px;right:24px;z-index:9999;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.45);text-decoration:none;transition:transform .25s var(--ease);}
+#wa-float:hover{transform:scale(1.1);}
+#wa-float::before{content:"";position:absolute;width:100%;height:100%;border-radius:50%;background:#25d366;animation:wap 2.4s ease-out infinite;opacity:.6;}
+@keyframes wap{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(1.55);opacity:0}}
+#btt{position:fixed;bottom:26px;right:26px;width:42px;height:42px;background:var(--blue);color:#fff;border:none;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:15px;z-index:500;box-shadow:0 4px 20px var(--blue-g);opacity:0;transform:translateY(8px);transition:all .3s var(--ease);pointer-events:none;}
 #btt.show{opacity:1;transform:translateY(0);pointer-events:all;}
 #btt:hover{transform:translateY(-3px);}
 @media(max-width:600px){.hstats{gap:20px;}.stn{font-size:1.55rem;}}
-
-    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:24px;}
-    .bc{display:flex;flex-direction:column;background:var(--surf);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;text-decoration:none;color:inherit;transition:all .3s var(--ease);}
-    .bc:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
-    .bc-top{height:160px;position:relative;overflow:hidden;flex-shrink:0;}
-    .bc-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,.07) 1px,transparent 1px);background-size:28px 28px;}
-    .bc-cat{position:absolute;bottom:14px;left:16px;font-family:var(--fm);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#7db8ff;background:rgba(0,0,0,.5);padding:4px 10px;border-radius:99px;border:1px solid rgba(0,123,255,.3);}
-    .bc-body{padding:24px;display:flex;flex-direction:column;flex:1;}
-    .bc-meta{font-family:var(--fm);font-size:.72rem;color:var(--dim);margin-bottom:10px;letter-spacing:.04em;}
-    .bc-body h3{font-size:1.05rem;line-height:1.3;margin-bottom:10px;color:var(--white);}
-    .bc-body p{font-size:.88rem;line-height:1.7;flex:1;margin-bottom:18px;}
-    .bc-link{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:600;color:var(--blue);margin-top:auto;transition:gap .2s;}
-    .bc:hover .bc-link{gap:11px;}
-
 </style>
 </head>
 <body>
@@ -326,6 +325,7 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
     <ul class="navl">
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#blog">Insights</a></li>
@@ -333,7 +333,7 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
     </ul>
     <div class="navr">
       <a href="#contact" class="btn bp ncta"><i class="fas fa-paper-plane"></i> Get In Touch</a>
-      <button class="ham" id="hamBtn"><i class="fas fa-bars"></i></button>
+      <button class="ham" id="hamBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </nav>
@@ -349,6 +349,7 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
   <ul class="dnav">
     <li><a href="#services" class="dl">Services</a></li>
     <li><a href="#projects" class="dl">Projects</a></li>
+    <li><a href="#process" class="dl">Process</a></li>
     <li><a href="#pricing" class="dl">Pricing</a></li>
     <li><a href="#about" class="dl">About</a></li>
     <li><a href="#team" class="dl">Team</a></li>
@@ -367,47 +368,39 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
 <section id="hero">
   <div class="hbg"><div class="hgrid"></div><div class="hg1"></div><div class="hg2"></div></div>
   <div class="wrap">
-    <div class="hgrid2">
+    <div class="hinner">
       <div>
-        <div class="hpills">
-          <span class="hp hp1">🇮🇪 Dublin, Ireland</span>
-          <span class="hp hp2">🇳🇬 Lagos, Nigeria</span>
-        </div>
+        <div class="hpills"><span class="hp hp1">Dublin, Ireland</span><span class="hp hp2">Nigeria</span></div>
         <h1 class="htitle">
           <span class="l1">We build digital</span>
           <span class="l2">products that</span>
           <span class="l3">actually work.</span>
         </h1>
-        <p class="hsub">Websites, apps, AI tools and EdTech platforms crafted for businesses that demand excellence — from our studios in Dublin and Lagos.</p>
+        <p class="hsub">Websites, applications, AI tools and EdTech platforms &mdash; crafted for businesses that demand excellence, from our studios in Dublin and Nigeria.</p>
         <div class="hact">
           <a href="#projects" class="btn bp"><i class="fas fa-rocket"></i> View Our Work</a>
           <a href="#contact" class="btn bg">Start a Project <i class="fas fa-arrow-right"></i></a>
         </div>
-        <div class="hstats">
-          <div><div class="stn">8<em>+</em></div><div class="stl">Live Projects</div></div>
-          <div><div class="stn">2<em>+</em></div><div class="stl">Countries</div></div>
-          <div><div class="stn">5<em>+</em></div><div class="stl">Industries</div></div>
+        <div class="hstats rv">
+          <div><div class="stn"><span class="cnt" data-target="6">0</span><em>+</em></div><div class="stl">Live Products</div></div>
+          <div><div class="stn"><span class="cnt" data-target="2">0</span></div><div class="stl">Countries</div></div>
+          <div><div class="stn"><span class="cnt" data-target="5">0</span><em>+</em></div><div class="stl">Industries</div></div>
           <div><div class="stn">24<em>hr</em></div><div class="stl">Response Time</div></div>
         </div>
       </div>
-      <div>
+      <div class="rv d2">
         <div class="term">
           <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="tt">nexacore-labs ~ main</span></div>
           <div class="tb">
-            <div class="tl"><span class="tn">1</span><span><span class="tc">// NexaCore Labs — Building Tomorrow</span></span></div>
+            <div class="tl"><span class="tn">1</span><span><span class="tc">// NexaCore Labs &mdash; Building Tomorrow</span></span></div>
             <div class="tl"><span class="tn">2</span><span></span></div>
             <div class="tl"><span class="tn">3</span><span><span class="tk">const</span> <span class="tv">studio</span> <span class="tp">=</span> <span class="tp">{</span></span></div>
             <div class="tl"><span class="tn">4</span><span>&nbsp;&nbsp;name<span class="tp">:</span> <span class="ts">"NexaCore Labs"</span><span class="tp">,</span></span></div>
-            <div class="tl"><span class="tn">5</span><span>&nbsp;&nbsp;base<span class="tp">:</span> <span class="ts">["Dublin 🇮🇪","Lagos 🇳🇬"]</span><span class="tp">,</span></span></div>
-            <div class="tl"><span class="tn">6</span><span>&nbsp;&nbsp;builds<span class="tp">:</span> <span class="tp">[</span></span></div>
-            <div class="tl"><span class="tn">7</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts">"Web &amp; Mobile Apps"</span><span class="tp">,</span></span></div>
-            <div class="tl"><span class="tn">8</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts">"AI Solutions"</span><span class="tp">,</span></span></div>
-            <div class="tl"><span class="tn">9</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ts">"EdTech Platforms"</span></span></div>
-            <div class="tl"><span class="tn">10</span><span>&nbsp;&nbsp;<span class="tp">],</span></span></div>
-            <div class="tl"><span class="tn">11</span><span>&nbsp;&nbsp;quality<span class="tp">:</span> <span class="tv">true</span></span></div>
-            <div class="tl"><span class="tn">12</span><span><span class="tp">};</span></span></div>
-            <div class="tl"><span class="tn">13</span><span></span></div>
-            <div class="tl"><span class="tn">14</span><span><span class="tv">launch</span><span class="tp">(</span>studio<span class="tp">);</span> <span class="cur"></span></span></div>
+            <div class="tl"><span class="tn">5</span><span>&nbsp;&nbsp;base<span class="tp">:</span> <span class="ts">["Dublin","Nigeria"]</span><span class="tp">,</span></span></div>
+            <div class="tl"><span class="tn">6</span><span>&nbsp;&nbsp;builds<span class="tp">: [</span><span class="ts">"Web"</span><span class="tp">,</span><span class="ts">"Apps"</span><span class="tp">,</span><span class="ts">"AI"</span><span class="tp">,</span><span class="ts">"EdTech"</span><span class="tp">],</span></span></div>
+            <div class="tl"><span class="tn">7</span><span>&nbsp;&nbsp;quality<span class="tp">:</span> <span class="tv">true</span></span></div>
+            <div class="tl"><span class="tn">8</span><span><span class="tp">};</span></span></div>
+            <div class="tl"><span class="tn">9</span><span><span class="tv">launch</span><span class="tp">(</span>studio<span class="tp">);</span> <span class="cur"></span></span></div>
           </div>
         </div>
       </div>
@@ -416,24 +409,55 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
 </section>
 
 <div class="mq"><div class="mqt">
-  <div class="mi"><i class="fab fa-react"></i>React</div><div class="mi"><i class="fas fa-fire"></i>Firebase</div><div class="mi"><i class="fab fa-python"></i>Python</div><div class="mi"><i class="fas fa-robot"></i>AI Integration</div><div class="mi"><i class="fab fa-js"></i>JavaScript</div><div class="mi"><i class="fas fa-mobile-alt"></i>web application</div><div class="mi"><i class="fab fa-node-js"></i>Node.js</div><div class="mi"><i class="fas fa-cloud"></i>Cloud Infra</div><div class="mi"><i class="fas fa-graduation-cap"></i>EdTech</div><div class="mi"><i class="fas fa-chart-line"></i>Analytics</div>
-  <div class="mi"><i class="fab fa-react"></i>React</div><div class="mi"><i class="fas fa-fire"></i>Firebase</div><div class="mi"><i class="fab fa-python"></i>Python</div><div class="mi"><i class="fas fa-robot"></i>AI Integration</div><div class="mi"><i class="fab fa-js"></i>JavaScript</div><div class="mi"><i class="fas fa-mobile-alt"></i>web application</div><div class="mi"><i class="fab fa-node-js"></i>Node.js</div><div class="mi"><i class="fas fa-cloud"></i>Cloud Infra</div><div class="mi"><i class="fas fa-graduation-cap"></i>EdTech</div><div class="mi"><i class="fas fa-chart-line"></i>Analytics</div>
+  <div class="mi"><i class="fab fa-react"></i>React</div><div class="mi"><i class="fas fa-fire"></i>Firebase</div><div class="mi"><i class="fab fa-python"></i>Python</div><div class="mi"><i class="fas fa-robot"></i>AI Integration</div><div class="mi"><i class="fab fa-js"></i>JavaScript</div><div class="mi"><i class="fas fa-mobile-alt"></i>Applications</div><div class="mi"><i class="fab fa-node-js"></i>Node.js</div><div class="mi"><i class="fas fa-cloud"></i>Cloud Infrastructure</div><div class="mi"><i class="fas fa-graduation-cap"></i>EdTech</div><div class="mi"><i class="fas fa-chart-line"></i>Analytics</div>
+  <div class="mi"><i class="fab fa-react"></i>React</div><div class="mi"><i class="fas fa-fire"></i>Firebase</div><div class="mi"><i class="fab fa-python"></i>Python</div><div class="mi"><i class="fas fa-robot"></i>AI Integration</div><div class="mi"><i class="fab fa-js"></i>JavaScript</div><div class="mi"><i class="fas fa-mobile-alt"></i>Applications</div><div class="mi"><i class="fab fa-node-js"></i>Node.js</div><div class="mi"><i class="fas fa-cloud"></i>Cloud Infrastructure</div><div class="mi"><i class="fas fa-graduation-cap"></i>EdTech</div><div class="mi"><i class="fas fa-chart-line"></i>Analytics</div>
 </div></div>
 <div class="divider"></div>
 
 <!-- SERVICES -->
 <section id="services">
   <div class="wrap">
-    <div class="badge">What We Do</div>
-    <h2>Solutions built<br>for the real world</h2>
-    <p style="margin-top:12px;max-width:520px;">From idea to deployment — performant, beautiful products built to grow with your business.</p>
+    <div class="badge rv">What We Do</div>
+    <h2 class="rv">Solutions built for the real world</h2>
+    <p class="rv" style="margin-top:12px;max-width:520px;">From idea to deployment &mdash; performant, well-crafted products built to grow with your business.</p>
     <div class="sgrid">
-      <div class="sc"><div class="si"><i class="fas fa-globe"></i></div><h3>Web Design &amp; Development</h3><p>Modern, responsive websites and web applications that convert visitors into clients — from landing pages to complex platforms.</p><div class="stags"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">HTML/CSS</span><span class="stag">WordPress</span></div></div>
-      <div class="sc"><div class="si"><i class="fas fa-mobile-screen"></i></div><h3>Mobile &amp; Application Development Development</h3><p>Cross-platform apps and Progressive Web Apps — fast, offline-capable, and seamlessly installed on any device.</p><div class="stags"><span class="stag">React Native</span><span class="stag">web application</span><span class="stag">Flutter</span></div></div>
-      <div class="sc"><div class="si"><i class="fas fa-robot"></i></div><h3>AI &amp; Automation Solutions</h3><p>Connect AI to your business workflows — chatbots, smart dashboards, recommendation engines and automation tools.</p><div class="stags"><span class="stag">OpenAI</span><span class="stag">Claude AI</span><span class="stag">LLM Tools</span><span class="stag">Automation</span></div></div>
-      <div class="sc"><div class="si"><i class="fas fa-graduation-cap"></i></div><h3>EdTech Platform Development</h3><p>Exam prep systems, LMS tools and AI tutoring platforms — built for JAMB, WAEC, NECO and beyond.</p><div class="stags"><span class="stag">CBT App</span><span class="stag">LMS</span><span class="stag">Quiz Engine</span><span class="stag">Firebase</span></div></div>
-      <div class="sc"><div class="si"><i class="fas fa-database"></i></div><h3>Backend &amp; API Engineering</h3><p>Scalable server-side systems, REST APIs and real-time database architectures that power high-traffic applications.</p><div class="stags"><span class="stag">Node.js</span><span class="stag">Firebase</span><span class="stag">Supabase</span><span class="stag">REST</span></div></div>
-      <div class="sc nfc"><div class="si nfi"><i class="fas fa-bullhorn"></i></div><h3>Digital Marketing &amp; Branding</h3><p>Brand strategy, social media, campaigns and content creation — delivered through our dedicated marketing partner.</p><div class="stags"><span class="stag">Social Media</span><span class="stag">SEO</span><span class="stag">Branding</span><span class="stag">Campaigns</span></div><a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="nfb"><i class="fas fa-external-link-alt" style="font-size:.65rem;"></i> Nur Futura Marketing</a></div>
+      <div class="sc rv">
+        <div class="si"><i class="fas fa-globe"></i></div>
+        <h3>Web Design &amp; Development</h3>
+        <p>Modern, responsive websites and web applications that convert visitors into clients &mdash; from focused landing pages to complex multi-user platforms.</p>
+        <div class="stags"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">HTML/CSS</span><span class="stag">WordPress</span></div>
+      </div>
+      <div class="sc rv d1">
+        <div class="si"><i class="fas fa-mobile-screen"></i></div>
+        <h3>Mobile &amp; Application Development</h3>
+        <p>Cross-platform applications built for real devices and real network conditions &mdash; fast, reliable, offline-capable, and built to be maintained long-term.</p>
+        <div class="stags"><span class="stag">React Native</span><span class="stag">Flutter</span><span class="stag">Offline-first</span></div>
+      </div>
+      <div class="sc rv d2">
+        <div class="si"><i class="fas fa-robot"></i></div>
+        <h3>AI &amp; Automation</h3>
+        <p>Intelligent tooling embedded into your product &mdash; AI-assisted explanations, smart recommendations, automated workflows and data-driven dashboards.</p>
+        <div class="stags"><span class="stag">OpenAI</span><span class="stag">Claude AI</span><span class="stag">LLM Tools</span><span class="stag">Automation</span></div>
+      </div>
+      <div class="sc rv d3">
+        <div class="si"><i class="fas fa-graduation-cap"></i></div>
+        <h3>EdTech Platform Development</h3>
+        <p>Exam preparation systems, learning management tools and AI-assisted tutoring platforms &mdash; built for JAMB, WAEC, NECO and international curricula.</p>
+        <div class="stags"><span class="stag">CBT Engine</span><span class="stag">LMS</span><span class="stag">Firebase</span><span class="stag">AI</span></div>
+      </div>
+      <div class="sc rv d1">
+        <div class="si"><i class="fas fa-database"></i></div>
+        <h3>Backend &amp; API Engineering</h3>
+        <p>Scalable server-side systems, REST APIs and real-time database architectures that power high-traffic applications reliably and securely.</p>
+        <div class="stags"><span class="stag">Node.js</span><span class="stag">Firebase</span><span class="stag">Supabase</span><span class="stag">REST</span></div>
+      </div>
+      <div class="sc nfc rv d2">
+        <div class="si nfi"><i class="fas fa-bullhorn"></i></div>
+        <h3>Digital Marketing &amp; Branding</h3>
+        <p>Brand strategy, social media management, campaigns and content creation &mdash; delivered through our dedicated marketing partner across Nigeria and beyond.</p>
+        <div class="stags"><span class="stag">Social Media</span><span class="stag">SEO</span><span class="stag">Branding</span><span class="stag">Campaigns</span></div>
+        <a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="nfb"><i class="fas fa-external-link-alt" style="font-size:.65rem;"></i> Nur Futura Marketing</a>
+      </div>
     </div>
   </div>
 </section>
@@ -443,93 +467,125 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
 <section id="projects" style="background:var(--bg2);">
   <div class="wrap">
     <div class="ptop">
-      <div><div class="badge">Our Work</div><h2>Selected work<br>from our studio</h2></div>
-      <a href="#contact" class="btn bg">Start a Project <i class="fas fa-arrow-right"></i></a>
+      <div><div class="badge rv">Our Work</div><h2 class="rv">Selected work from our studio</h2></div>
+      <a href="#contact" class="btn bg rv">Start a Project <i class="fas fa-arrow-right"></i></a>
     </div>
-    
     <div class="pgrid" id="pg">
-
-      <div class="pc">
-        <div class="pth th-e"><div class="ptg"></div><div class="pic" style="background:#001a3a;"><i class="fas fa-graduation-cap" style="color:#7db8ff;font-size:26px;"></i></div></div>
-        <div class="pb"><div class="pcat">EdTech Platform &middot; Nigeria</div><h3>Examora</h3>
-        <p>A comprehensive computer-based test preparation platform serving students across Nigeria. Covers JAMB, WAEC, NECO and Post-UTME — with structured practice sessions, performance analytics and AI-assisted explanations of exam content.</p>
-        <div class="ptags"><span class="ptag">EdTech</span><span class="ptag">Firebase</span><span class="ptag">AI</span></div>
-        <a href="https://examora.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Examora <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+      <div class="pc rv">
+        <div class="pth" style="background:linear-gradient(135deg,#001f3f,#003d7a);"><div class="ptg"></div><div class="pic" style="background:#001a3a;"><i class="fas fa-graduation-cap" style="color:#7db8ff;"></i></div></div>
+        <div class="pb">
+          <div class="pcat">EdTech Platform &middot; Nigeria</div>
+          <h3>Examora</h3>
+          <p>A comprehensive computer-based test preparation platform. Covers JAMB, WAEC, NECO and Post-UTME with AI-assisted explanations, performance analytics and offline capability.</p>
+          <div class="ptags"><span class="ptag">EdTech</span><span class="ptag">Firebase</span><span class="ptag">AI</span></div>
+          <a href="https://examora.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Examora <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
       </div>
-
-      <div class="pc">
-        <div class="pth" style="background:linear-gradient(135deg,#1a0828,#2d0a42);"><div class="ptg"></div><div class="pic" style="background:#120518;"><i class="fas fa-heart" style="color:#c77dff;font-size:26px;"></i></div></div>
-        <div class="pb"><div class="pcat">Health &amp; Wellness &middot; Global</div><h3>K&iacute;ra</h3>
-        <p>A privacy-first menstrual health application that runs entirely offline. Provides cycle tracking, mood logging and intelligent pattern insights — with no account required and no data leaving the device.</p>
-        <div class="ptags"><span class="ptag">Health Tech</span><span class="ptag">Offline-first</span><span class="ptag">Privacy</span></div>
-        <a href="https://kiracycle.netlify.app" target="_blank" rel="noopener noreferrer" class="plink">Visit K&iacute;ra <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+      <div class="pc rv d1">
+        <div class="pth" style="background:linear-gradient(135deg,#1a0828,#2d0a42);"><div class="ptg"></div><div class="pic" style="background:#120518;"><i class="fas fa-heart" style="color:#c77dff;"></i></div></div>
+        <div class="pb">
+          <div class="pcat">Health &amp; Wellness &middot; Global</div>
+          <h3>K&iacute;ra</h3>
+          <p>A privacy-first menstrual health application that runs entirely offline. Cycle tracking, mood logging and intelligent pattern insights &mdash; no account required, no data leaves the device.</p>
+          <div class="ptags"><span class="ptag">Health Tech</span><span class="ptag">Offline-first</span><span class="ptag">Privacy</span></div>
+          <a href="https://kiracycle.netlify.app" target="_blank" rel="noopener noreferrer" class="plink">Visit K&iacute;ra <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
       </div>
-
-      <div class="pc">
-        <div class="pth th-sc"><div class="ptg"></div><div class="pic" style="background:#0a0a2a;"><i class="fas fa-cloud-rain" style="color:#7db8ff;font-size:26px;"></i></div></div>
-        <div class="pb"><div class="pcat">Weather Intelligence &middot; Ireland</div><h3>Sc&aacute;th</h3>
-        <p>A localised weather application built specifically for Dublin. Delivers plain-language forecasts, rainfall analysis, daylight tracking and offline capability — designed around how people in Ireland actually navigate the weather.</p>
-        <div class="ptags"><span class="ptag">Weather</span><span class="ptag">Ireland</span><span class="ptag">Offline</span></div>
-        <a href="https://scath-ie.vercel.app" target="_blank" rel="noopener noreferrer" class="plink">Visit Sc&aacute;th <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+      <div class="pc rv d2">
+        <div class="pth" style="background:linear-gradient(135deg,#0d0d2e,#1a1a5e);"><div class="ptg"></div><div class="pic" style="background:#0a0a2a;"><i class="fas fa-cloud-rain" style="color:#7db8ff;"></i></div></div>
+        <div class="pb">
+          <div class="pcat">Weather Intelligence &middot; Ireland</div>
+          <h3>Sc&aacute;th</h3>
+          <p>A localised weather application built for Dublin. Plain-language forecasts, rainfall analysis, daylight tracking and offline capability &mdash; designed around how people in Ireland actually use weather data.</p>
+          <div class="ptags"><span class="ptag">Weather</span><span class="ptag">Ireland</span><span class="ptag">Offline</span></div>
+          <a href="https://scath-ie.vercel.app" target="_blank" rel="noopener noreferrer" class="plink">Visit Sc&aacute;th <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
       </div>
-
-      <div class="pc">
-        <div class="pth th-n"><div class="ptg"></div><div class="pic" style="background:#120500;"><i class="fas fa-bullhorn" style="color:#ff7433;font-size:26px;"></i></div></div>
-        <div class="pb"><div class="pcat">Creative Marketing Agency &middot; Nigeria</div><h3>Nur Futura Marketing</h3>
-        <p>A full-service creative agency offering brand strategy, artist development, music distribution and campaign management for businesses and individuals across Nigeria and the broader African market.</p>
-        <div class="ptags"><span class="ptag">Marketing</span><span class="ptag">Branding</span><span class="ptag">Music</span></div>
-        <a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Nur Futura <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+      <div class="pc rv d3">
+        <div class="pth" style="background:linear-gradient(135deg,#1a0800,#3a1000);"><div class="ptg"></div><div class="pic" style="background:#120500;"><i class="fas fa-bullhorn" style="color:#ff7433;"></i></div></div>
+        <div class="pb">
+          <div class="pcat">Creative Marketing Agency &middot; Nigeria</div>
+          <h3>Nur Futura Marketing</h3>
+          <p>A full-service creative agency offering brand strategy, artist development, music distribution and campaign management across Nigeria and the broader African market.</p>
+          <div class="ptags"><span class="ptag">Marketing</span><span class="ptag">Branding</span><span class="ptag">Music</span></div>
+          <a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Nur Futura <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
       </div>
-
-      <div class="pc">
-        <div class="pth th-w"><div class="ptg"></div><div class="pic" style="background:#061020;"><i class="fas fa-hands-holding-heart" style="color:#7db8ff;font-size:24px;"></i></div></div>
-        <div class="pb"><div class="pcat">Non-Profit Organisation &middot; Nigeria</div><h3>WOLACH Foundation</h3>
-        <p>Digital platform for a registered welfare foundation committed to inclusive education, physiotherapy access and vocational development for people living with disabilities across Nigeria.</p>
-        <div class="ptags"><span class="ptag">Non-Profit</span><span class="ptag">Social Impact</span><span class="ptag">Accessibility</span></div>
-        <a href="https://wolach.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit WOLACH <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+      <div class="pc rv d1">
+        <div class="pth" style="background:linear-gradient(135deg,#001428,#003366);"><div class="ptg"></div><div class="pic" style="background:#061020;"><i class="fas fa-hands-holding-heart" style="color:#7db8ff;"></i></div></div>
+        <div class="pb">
+          <div class="pcat">Non-Profit Organisation &middot; Nigeria</div>
+          <h3>WOLACH Foundation</h3>
+          <p>Digital platform for a registered welfare foundation committed to inclusive education, physiotherapy access and vocational development for people living with disabilities across Nigeria.</p>
+          <div class="ptags"><span class="ptag">Non-Profit</span><span class="ptag">Social Impact</span><span class="ptag">Accessibility</span></div>
+          <a href="https://wolach.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit WOLACH <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
       </div>
-
-      <div class="pc">
-        <div class="pth th-s"><div class="ptg"></div><div class="pic" style="background:#0a1a0a;"><i class="fas fa-school" style="color:#7db8ff;font-size:26px;"></i></div></div>
-        <div class="pb"><div class="pcat">Education &middot; Nigeria</div><h3>Sky-Light Model Schools</h3>
-        <p>Institutional web platform for a K&ndash;12 school covering admissions, academic information, results access and parent communication — built to reflect the school&rsquo;s standing and serve its community effectively.</p>
-        <div class="ptags"><span class="ptag">Education</span><span class="ptag">Institutional</span><span class="ptag">Web</span></div>
-        <a href="https://skylightmodelschools.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Sky-Light <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+      <div class="pc rv d2">
+        <div class="pth" style="background:linear-gradient(135deg,#0a1f0a,#1a4a1a);"><div class="ptg"></div><div class="pic" style="background:#0a1a0a;"><i class="fas fa-school" style="color:#7db8ff;"></i></div></div>
+        <div class="pb">
+          <div class="pcat">Education &middot; Nigeria</div>
+          <h3>Sky-Light Model Schools</h3>
+          <p>Institutional web platform for a K&ndash;12 school covering admissions, academic information, results access and parent communication &mdash; built to reflect the school&rsquo;s standing.</p>
+          <div class="ptags"><span class="ptag">Education</span><span class="ptag">Institutional</span><span class="ptag">Web</span></div>
+          <a href="https://skylightmodelschools.com.ng" target="_blank" rel="noopener noreferrer" class="plink">Visit Sky-Light <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
       </div>
-
     </div>
-
-    <!-- more work toggle -->
     <div style="margin-top:40px;text-align:center;">
-      <button id="moreBtn" onclick="var el=document.getElementById('moreWork');var shown=el.style.display!=='none';el.style.display=shown?'none':'block';this.textContent=shown?'+ See more work':'Hide additional work'" style="background:transparent;border:1px solid rgba(255,255,255,.08);color:#8a9ab8;font-family:'DM Sans',sans-serif;font-size:.9rem;padding:12px 28px;border-radius:99px;cursor:pointer;transition:all .2s;">+ See more work</button>
+      <button id="moreBtn" onclick="var el=document.getElementById('moreWork');var shown=el.style.display!=='none';el.style.display=shown?'none':'block';this.textContent=shown?'+ See more work':'Hide additional work';" style="background:transparent;border:1px solid var(--brd);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:12px 28px;border-radius:99px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='rgba(0,123,255,.4)';this.style.color='#007bff'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.color='var(--muted)'">+ See more work</button>
     </div>
     <div id="moreWork" style="display:none;margin-top:28px;">
       <p style="font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#3d4f6a;margin-bottom:18px;">Additional work</p>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <a href="https://finetouchmaintainance.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-wrench" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Finetouch Maintenance</div><div style="font-size:.78rem;color:#8a9ab8;">Contracting company website</div></div><i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;color:#3d4f6a;font-size:.78rem;"></i></a>
-        <a href="https://6thavenueconstruction.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-hard-hat" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">6th Ave Construction</div><div style="font-size:.78rem;color:#8a9ab8;">Roofing &amp; exterior services</div></div><i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;color:#3d4f6a;font-size:.78rem;"></i></a>
-        <a href="https://inthedoghouse.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-dog" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">In the Dog House</div><div style="font-size:.78rem;color:#8a9ab8;">Pet boarding &amp; care services</div></div><i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;color:#3d4f6a;font-size:.78rem;"></i></a>
-        <a href="https://pomochii.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-clock" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Pomochii</div><div style="font-size:.78rem;color:#8a9ab8;">Focus &amp; productivity timer</div></div><i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;color:#3d4f6a;font-size:.78rem;"></i></a>
-        <a href="https://nexacoregloball.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-money-bill-transfer" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Currency Converter</div><div style="font-size:.78rem;color:#8a9ab8;">Real-time exchange rates</div></div><i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;color:#3d4f6a;font-size:.78rem;"></i></a>
-        <a href="https://nexinvoice.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-file-invoice" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Simple Invoice</div><div style="font-size:.78rem;color:#8a9ab8;">Invoice generator for freelancers</div></div><i class="fas fa-arrow-up-right-from-square" style="margin-left:auto;color:#3d4f6a;font-size:.78rem;"></i></a>
+        <a href="https://finetouchmaintainance.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-wrench" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Finetouch Maintenance</div><div style="font-size:.78rem;color:#8a9ab8;">Contracting company website</div></div></a>
+        <a href="https://6thavenueconstruction.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-hard-hat" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">6th Ave Construction</div><div style="font-size:.78rem;color:#8a9ab8;">Roofing &amp; exterior services</div></div></a>
+        <a href="https://inthedoghouse.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-dog" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">In the Dog House</div><div style="font-size:.78rem;color:#8a9ab8;">Pet boarding &amp; care services</div></div></a>
+        <a href="https://pomochii.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-clock" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Pomochii</div><div style="font-size:.78rem;color:#8a9ab8;">Focus &amp; productivity timer</div></div></a>
+        <a href="https://nexacoregloball.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-money-bill-transfer" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Currency Converter</div><div style="font-size:.78rem;color:#8a9ab8;">Real-time exchange rates</div></div></a>
+        <a href="https://nexinvoice.netlify.app" target="_blank" style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;color:#e8eef8;font-size:.9rem;" onmouseover="this.style.borderColor='rgba(0,123,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'"><i class="fas fa-file-invoice" style="color:#007bff;width:16px;"></i><div><div style="font-weight:600;">Simple Invoice</div><div style="font-size:.78rem;color:#8a9ab8;">Invoice generator for freelancers</div></div></a>
       </div>
     </div>
+  </div>
+</section>
+<div class="divider"></div>
 
 <!-- CTA BANNER -->
 <section id="ctab">
   <div class="wrap">
     <div class="ctai">
-      <div class="badge">Ready to Build?</div>
-      <h2>Got a project in mind?<br>Let's make it real.</h2>
-      <p>Whether you're launching your first product or scaling an existing one — we're the team to call.</p>
-      <div class="ctaa">
+      <div class="badge rv">Ready to Build?</div>
+      <h2 class="rv">Got a project in mind?<br>Let&rsquo;s make it real.</h2>
+      <p class="rv">Whether you&rsquo;re launching your first product or scaling an existing one &mdash; we&rsquo;re the team to call.</p>
+      <div class="ctaa rv">
         <a href="#contact" class="btn bp" style="padding:15px 32px;font-size:1rem;"><i class="fas fa-rocket"></i> Start Your Project</a>
-        <a href="https://wa.me/2348187017489" target="_blank" class="btn bg" style="padding:15px 32px;font-size:1rem;"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        <a href="https://wa.me/2348187017489" target="_blank" rel="noopener noreferrer" class="btn bg" style="padding:15px 32px;font-size:1rem;"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
       </div>
-      <div class="ctas">
-        <div class="cs"><div class="csn">24<em>hr</em></div><div class="csl">Response Time</div></div>
-        <div class="cs"><div class="csn">14<em>+</em></div><div class="csl">Live Products</div></div>
-        <div class="cs"><div class="csn">2<em>+</em></div><div class="csl">Global Markets</div></div>
+      <div class="ctas rv d2">
+        <div><div class="csn">24<em>hr</em></div><div class="csl">Response Time</div></div>
+        <div><div class="csn">6<em>+</em></div><div class="csl">Live Products</div></div>
+        <div><div class="csn">2</div><div class="csl">Global Markets</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="proc-inner">
+      <div>
+        <div class="badge rv">How We Work</div>
+        <h2 class="rv">A clear process.<br>No surprises.</h2>
+        <p class="rv" style="margin-top:14px;max-width:400px;">Every project follows the same four stages. You know exactly what is happening at every step, and nothing ships without your approval.</p>
+        <div class="rv d2" style="margin-top:32px;"><a href="#contact" class="btn bp"><i class="fas fa-paper-plane"></i> Start a Project</a></div>
+      </div>
+      <div class="steps">
+        <div class="step rv"><div class="step-n">01</div><div class="step-b"><h3>Discovery</h3><p>We begin by understanding your goals, your users and your constraints. A clear brief produces a better product &mdash; and prevents expensive changes mid-build.</p></div></div>
+        <div class="step rv d1"><div class="step-n">02</div><div class="step-b"><h3>Design</h3><p>Every screen is agreed upon before we build. You see the structure and logic of the product early, so development proceeds without surprises or scope disagreements.</p></div></div>
+        <div class="step rv d2"><div class="step-n">03</div><div class="step-b"><h3>Build</h3><p>Clean architecture, tested code, continuous updates throughout. You stay informed at every stage &mdash; we do not go quiet for weeks and reappear with a finished product.</p></div></div>
+        <div class="step rv d3"><div class="step-n">04</div><div class="step-b"><h3>Launch &amp; Support</h3><p>We handle deployment and go-live. You receive full source code and 30&ndash;60 days of post-launch support as standard on every engagement.</p></div></div>
       </div>
     </div>
   </div>
@@ -541,55 +597,110 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
   <div class="wrap">
     <div class="agrid">
       <div class="at">
-        <div class="badge">About Us</div>
-        <h2>Technology studio<br>with global ambition</h2>
-        <p style="margin-top:16px;">NexaCore Labs bridges ambitious ideas and production-ready digital products. Operating across two vibrant ecosystems — Dublin and Lagos — we bring a perspective most agencies simply don't have.</p>
-        <p>We work with startups, schools, enterprises and entrepreneurs to build software that's fast, reliable and genuinely impactful.</p>
-        <div class="locs">
+        <div class="badge rv">About Us</div>
+        <h2 class="rv">A technology studio<br>with global reach</h2>
+        <p class="rv" style="margin-top:16px;">NexaCore Labs bridges ambitious ideas and production-ready digital products. We operate across two distinct markets &mdash; Dublin, Ireland and Nigeria &mdash; giving us a perspective most studios do not have.</p>
+        <p class="rv">We work with startups, schools, enterprises and entrepreneurs to build software that is fast, reliable and genuinely useful to real people.</p>
+        <div class="locs rv">
           <div class="loc"><i class="fas fa-location-dot"></i> Dublin, Ireland</div>
-          <div class="loc"><i class="fas fa-location-dot"></i> Lagos, Nigeria</div>
+          <div class="loc"><i class="fas fa-location-dot"></i> Nigeria</div>
         </div>
-        <div class="actas">
+        <div class="actas rv d2">
           <a href="#contact" class="btn bp"><i class="fas fa-handshake"></i> Work With Us</a>
           <a href="mailto:hello&#64;nexacorelabs&#46;site" class="btn bg"><i class="fas fa-envelope"></i> Email Us</a>
         </div>
       </div>
       <div class="fl">
-        <div class="feat"><div class="fi"><i class="fas fa-layer-group"></i></div><div><div class="fh4">Full-Cycle Delivery</div><p class="fb2">From wireframe to deployment — no handoff confusion, no excuses.</p></div></div>
-        <div class="feat"><div class="fi"><i class="fas fa-globe"></i></div><div><div class="fh4">Dual-Market Expertise</div><p class="fb2">We understand UX context for both Western and African digital markets.</p></div></div>
-        <div class="feat"><div class="fi"><i class="fas fa-robot"></i></div><div><div class="fh4">AI-First Approach</div><p class="fb2">Intelligent tooling and AI features integrated as standard — not an afterthought.</p></div></div>
-        <div class="feat"><div class="fi"><i class="fas fa-graduation-cap"></i></div><div><div class="fh4">Education &amp; Community</div><p class="fb2">We invest in tech education through coding instruction and community programs.</p></div></div>
+        <div class="feat rv"><div class="fti"><i class="fas fa-layer-group"></i></div><div class="ftb"><h4>Full-Cycle Delivery</h4><p>From wireframe to deployment and beyond &mdash; no handoff confusion, no loose ends, no excuses.</p></div></div>
+        <div class="feat rv d1"><div class="fti"><i class="fas fa-globe"></i></div><div class="ftb"><h4>Dual-Market Expertise</h4><p>We understand the context-specific requirements of both European and African digital markets and user expectations.</p></div></div>
+        <div class="feat rv d2"><div class="fti"><i class="fas fa-robot"></i></div><div class="ftb"><h4>AI-First Approach</h4><p>Intelligent tooling and AI features integrated as standard &mdash; not retrofitted as an afterthought when a product is already built.</p></div></div>
+        <div class="feat rv d3"><div class="fti"><i class="fas fa-graduation-cap"></i></div><div class="ftb"><h4>Education &amp; Community</h4><p>We invest in technology education through coding instruction and community development programmes in both markets.</p></div></div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
 
-<!-- BRANDS -->
-<section id="brands" style="padding:clamp(48px,6vw,80px) 0;background:var(--bg);">
+<!-- CASE STUDY -->
+<section id="casestudy" style="background:var(--bg2);">
   <div class="wrap">
-    <p style="font-family:var(--fm);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-align:center;margin-bottom:36px;">Brands we have worked with</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(24px,4vw,56px);">
-      <div style="font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--muted);letter-spacing:.01em;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">CWAY</div>
-      <div style="font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--muted);letter-spacing:.01em;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">Pringles</div>
-      <div style="font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--muted);letter-spacing:.01em;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">Airtel</div>
-      <div style="font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--muted);letter-spacing:.01em;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">Nur Futura</div>
-      <div style="font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--muted);letter-spacing:.01em;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">Examora</div>
-      <div style="font-family:var(--fh);font-size:1.25rem;font-weight:800;color:var(--muted);letter-spacing:.01em;opacity:.6;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">Sky-Light</div>
+    <div class="badge rv">Case Study</div>
+    <div class="cs-inner">
+      <div class="cs-text">
+        <h2 class="rv">How we built Examora</h2>
+        <p class="rv" style="margin-top:16px;">Students preparing for JAMB, WAEC and NECO in Nigeria had fragmented, outdated tools. Existing platforms were unreliable, poorly designed and built without consideration for how people actually use technology in that market.</p>
+        <p class="rv">We built Examora from scratch &mdash; a full-stack platform with AI-assisted explanations, offline tolerance, performance analytics and an admin system for continuous content expansion without touching code.</p>
+        <div class="cs-stats">
+          <div class="cs-stat rv"><div class="cs-sn">4</div><div class="cs-sl">Exams covered</div></div>
+          <div class="cs-stat rv d1"><div class="cs-sn">AI</div><div class="cs-sl">Explanation engine</div></div>
+          <div class="cs-stat rv d2"><div class="cs-sn">Free</div><div class="cs-sl">No account required</div></div>
+          <div class="cs-stat rv d3"><div class="cs-sn">Live</div><div class="cs-sl">examora.com.ng</div></div>
+        </div>
+        <a href="blog-post-3.html" class="btn bg rv" style="margin-top:24px;">Read the full case study <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="cs-vis rv d2">
+        <div class="cs-vbg"></div>
+        <div class="cs-vin">
+          <div class="cs-pn">Examora</div>
+          <div class="cs-ps">Nigeria&rsquo;s modern CBT exam preparation platform</div>
+          <div class="cs-ptags"><span class="cs-ptag">Firebase</span><span class="cs-ptag">Vanilla JS</span><span class="cs-ptag">AI Integration</span><span class="cs-ptag">Offline-capable</span><span class="cs-ptag">EdTech</span></div>
+          <a href="https://examora.com.ng" target="_blank" rel="noopener noreferrer" class="cs-live"><div class="cs-dot"></div> Live at examora.com.ng <i class="fas fa-arrow-up-right-from-square" style="font-size:.75rem;"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+<div class="divider"></div>
+
+<!-- BRANDS -->
+<section style="padding:clamp(48px,6vw,80px) 0;background:var(--bg);">
+  <div class="wrap">
+    <p class="rv" style="font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#3d4f6a;text-align:center;margin-bottom:36px;">Brands we have worked with</p>
+    <div class="brands-strip rv">
+      <span class="brand-name">CWAY</span>
+      <span class="brand-name">Pringles</span>
+      <span class="brand-name">Airtel</span>
+      <span class="brand-name">Nur Futura</span>
+      <span class="brand-name">Examora</span>
+      <span class="brand-name">Sky-Light</span>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
 
 <!-- TEAM -->
 <section id="team" style="background:var(--bg2);">
   <div class="wrap">
-    <div class="badge">Our Team</div>
-    <h2>The builders behind<br>NexaCore Labs</h2>
+    <div class="badge rv">Our Team</div>
+    <h2 class="rv">The people behind NexaCore Labs</h2>
     <div class="tgrid">
-      <div class="tc2"><div class="tav ta-r">R</div><h3>Ralph</h3><div class="trole tr-b">Founder &amp; Creative Tech Strategist</div><p>Leads product strategy, creative direction and technical architecture across every NexaCore product.</p><div class="tsoc"><a href="https://github.com/ralphlawal" target="_blank" class="ts"><i class="fab fa-github"></i></a><a href="https://linkedin.com/in/ralph-lawal" target="_blank" class="ts"><i class="fab fa-linkedin-in"></i></a><a href="https://x.com/RalphLawal_" target="_blank" class="ts"><i class="fab fa-x-twitter"></i></a></div></div>
-      <div class="tc2"><div class="tav ta-n">N</div><h3>Nur Futura</h3><div class="trole tr-n">Marketing Partner</div><p>Handles brand strategy, social media, campaigns and creative direction. Bringing NexaCore and clients' brands to life.</p><div class="tsoc"><a href="https://nurfuturamarketing.com.ng" target="_blank" class="ts"><i class="fas fa-external-link-alt"></i></a><a href="https://instagram.com/nurfuturamarketing" target="_blank" class="ts"><i class="fab fa-instagram"></i></a></div></div>
-      <div class="tc2" style="border-style:dashed;"><div class="tav ta-h" style="color:var(--muted);font-size:1.4rem;">+</div><h3>We're Hiring</h3><div class="trole tr-b">Open Roles</div><p>Always looking for talented developers, designers and creatives who love building things that matter.</p><a href="mailto:hello&#64;nexacorelabs&#46;site" class="btn bg" style="padding:9px 18px;font-size:.83rem;margin-top:16px;"><i class="fas fa-paper-plane"></i> Get In Touch</a></div>
+      <div class="tc2 rv">
+        <div class="tav ta-r">R</div>
+        <h3>Ralph</h3>
+        <div class="trole tr-b">Founder &amp; Creative Tech Strategist</div>
+        <p>Leads product strategy, creative direction and technical architecture across every NexaCore product. Based between Dublin, Ireland and Nigeria.</p>
+        <div class="tsoc">
+          <a href="https://github.com/ralphlawal" target="_blank" rel="noopener noreferrer" class="tsb"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/ralph-lawal" target="_blank" rel="noopener noreferrer" class="tsb"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/RalphLawal_" target="_blank" rel="noopener noreferrer" class="tsb"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="tc2 rv d1">
+        <div class="tav ta-n">N</div>
+        <h3>Nur Futura</h3>
+        <div class="trole tr-n">Marketing Partner</div>
+        <p>Handles brand strategy, social media management, campaigns and creative direction &mdash; bringing NexaCore and client brands to life across Nigeria and the African market.</p>
+        <div class="tsoc">
+          <a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer" class="tsb"><i class="fas fa-external-link-alt"></i></a>
+          <a href="https://instagram.com/nurfuturamarketing" target="_blank" rel="noopener noreferrer" class="tsb"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="tc2 rv d2" style="border-style:dashed;">
+        <div class="tav ta-p" style="color:var(--blue);font-size:1.2rem;"><i class="fas fa-code"></i></div>
+        <h3>Built in Public</h3>
+        <div class="trole tr-b">Our Philosophy</div>
+        <p>Every product we build is something we would use ourselves. We take on projects because they are worth building &mdash; not simply to fill a schedule or hit a revenue target.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -598,15 +709,56 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
 <!-- PRICING -->
 <section id="pricing">
   <div class="wrap">
-    <div class="badge">Pricing</div>
-    <h2>Transparent pricing.<br>No hidden costs.</h2>
-    <p style="margin-top:12px;max-width:520px;">Every project is unique — here's a clear starting point. All plans include full source code and 30-day post-launch support.</p>
+    <div class="badge rv">Pricing</div>
+    <h2 class="rv">Transparent pricing.<br>No hidden costs.</h2>
+    <p class="rv" style="margin-top:12px;max-width:520px;">Every project is unique &mdash; below is a clear starting point. All engagements include full source code handover and 30-day post-launch support.</p>
     <div class="priceg">
-      <div class="prc"><div class="ptier">Starter</div><div class="pprice">€499 <sub>from</sub></div><p class="pdesc">For small businesses, personal brands and landing pages that need a polished presence fast.</p><ul class="pfts"><li><i class="fas fa-check-circle"></i>Up to 5-page responsive website</li><li><i class="fas fa-check-circle"></i>Mobile-first design</li><li><i class="fas fa-check-circle"></i>Contact form integration</li><li><i class="fas fa-check-circle"></i>Basic SEO setup</li><li><i class="fas fa-check-circle"></i>30-day support</li></ul><a href="#contact" class="btn bg pbtn">Get Started <i class="fas fa-arrow-right"></i></a></div>
-      <div class="prc hot"><div class="hb">Most Popular</div><div class="ptier">Growth</div><div class="pprice">€1,499 <sub>from</sub></div><p class="pdesc">For growing businesses needing a full-featured web application with backend integration.</p><ul class="pfts"><li><i class="fas fa-check-circle"></i>Custom web app or platform</li><li><i class="fas fa-check-circle"></i>Firebase / Supabase backend</li><li><i class="fas fa-check-circle"></i>User auth &amp; dashboard</li><li><i class="fas fa-check-circle"></i>AI feature integration</li><li><i class="fas fa-check-circle"></i>Admin panel &amp; analytics</li><li><i class="fas fa-check-circle"></i>60-day support</li></ul><a href="#contact" class="btn bp pbtn">Get Started <i class="fas fa-arrow-right"></i></a></div>
-      <div class="prc"><div class="ptier">Enterprise</div><div class="pprice">Custom</div><p class="pdesc">Large-scale platforms, EdTech systems or anything that demands full engineering depth.</p><ul class="pfts"><li><i class="fas fa-check-circle"></i>Fully scoped &amp; custom built</li><li><i class="fas fa-check-circle"></i>Dedicated project manager</li><li><i class="fas fa-check-circle"></i>Advanced AI &amp; automation</li><li><i class="fas fa-check-circle"></i>Scalable cloud architecture</li><li><i class="fas fa-check-circle"></i>Ongoing retainer available</li><li><i class="fas fa-check-circle"></i>Priority support &amp; SLA</li></ul><a href="#contact" class="btn bg pbtn">Let's Talk <i class="fas fa-arrow-right"></i></a></div>
+      <div class="prc rv">
+        <div class="ptier">Starter</div>
+        <div class="pprice">&euro;499 <sub>from</sub></div>
+        <p class="pdesc">For small businesses, personal brands and landing pages that need a polished, professional presence without complexity.</p>
+        <ul class="pfts">
+          <li><i class="fas fa-check-circle"></i>Up to 5-page responsive website</li>
+          <li><i class="fas fa-check-circle"></i>Mobile-first design</li>
+          <li><i class="fas fa-check-circle"></i>Contact form integration</li>
+          <li><i class="fas fa-check-circle"></i>Basic SEO setup</li>
+          <li><i class="fas fa-check-circle"></i>Full source code handover</li>
+          <li><i class="fas fa-check-circle"></i>30-day post-launch support</li>
+        </ul>
+        <a href="#contact" class="btn bg pbtn">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="prc hot rv d1">
+        <div class="hbadge">Most Popular</div>
+        <div class="ptier">Growth</div>
+        <div class="pprice">&euro;1,499 <sub>from</sub></div>
+        <p class="pdesc">For growing businesses that need a full-featured web application with backend integration and real product functionality.</p>
+        <ul class="pfts">
+          <li><i class="fas fa-check-circle"></i>Custom web application or platform</li>
+          <li><i class="fas fa-check-circle"></i>Firebase or Supabase backend</li>
+          <li><i class="fas fa-check-circle"></i>User authentication &amp; dashboard</li>
+          <li><i class="fas fa-check-circle"></i>AI feature integration</li>
+          <li><i class="fas fa-check-circle"></i>Admin panel &amp; analytics</li>
+          <li><i class="fas fa-check-circle"></i>Full source code handover</li>
+          <li><i class="fas fa-check-circle"></i>60-day post-launch support</li>
+        </ul>
+        <a href="#contact" class="btn bp pbtn">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="prc rv d2">
+        <div class="ptier">Enterprise</div>
+        <div class="pprice">Custom</div>
+        <p class="pdesc">Large-scale platforms, EdTech systems or any project that demands full engineering depth and dedicated studio capacity.</p>
+        <ul class="pfts">
+          <li><i class="fas fa-check-circle"></i>Fully scoped &amp; custom built</li>
+          <li><i class="fas fa-check-circle"></i>Dedicated project manager</li>
+          <li><i class="fas fa-check-circle"></i>Advanced AI &amp; automation</li>
+          <li><i class="fas fa-check-circle"></i>Scalable cloud architecture</li>
+          <li><i class="fas fa-check-circle"></i>Ongoing retainer available</li>
+          <li><i class="fas fa-check-circle"></i>Priority support &amp; SLA</li>
+        </ul>
+        <a href="#contact" class="btn bg pbtn">Let&rsquo;s Talk <i class="fas fa-arrow-right"></i></a>
+      </div>
     </div>
-    <p class="pnote">Prices in EUR. Nigerian Naira equivalent available on request.</p>
+    <p class="pnote rv">Prices shown in EUR. Nigerian Naira equivalent available on request.</p>
   </div>
 </section>
 <div class="divider"></div>
@@ -616,82 +768,79 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
   <div class="wrap">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:56px;">
       <div>
-        <div class="badge">Insights</div>
-        <h2>What we&#39;re<br>thinking about</h2>
-        <p style="margin-top:12px;max-width:500px;">Practical writing on building software, growing a tech business, and working across markets.</p>
+        <div class="badge rv">Insights</div>
+        <h2 class="rv">What we&rsquo;re thinking about</h2>
+        <p class="rv" style="margin-top:12px;max-width:460px;">Practical writing on building software, growing a technology business, and working across markets.</p>
       </div>
-      <a href="blog-post-1.html" class="btn bg">Read All Articles <i class="fas fa-arrow-right"></i></a>
+      <a href="blog-post-1.html" class="btn bg rv">Read All Articles <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="blog-grid">
-
-      <a href="blog-post-1.html" class="bc">
-        <div class="bc-top" style="background:linear-gradient(135deg,#001f3f,#003d7a);">
-          <div class="bc-grid"></div>
-          <span class="bc-cat">Business</span>
-        </div>
+    <div class="bgrid">
+      <a href="blog-post-1.html" class="bc rv">
+        <div class="bc-top" style="background:linear-gradient(135deg,#001f3f,#003d7a);"><div class="bc-tgrid"></div><span class="bc-cat">Business</span></div>
         <div class="bc-body">
-          <div class="bc-meta">March 2026 · 4 min read</div>
-          <h3>Why Most Nigerian Business Websites Don&#39;t Convert — And What to Do About It</h3>
-          <p>A slow, untrustworthy website isn&#39;t neutral. It actively costs you clients. Here&#39;s what we see most often and how to fix it.</p>
-          <div class="bc-link">Read Article <i class="fas fa-arrow-right"></i></div>
+          <div class="bc-meta">March 2026 &middot; 4 min read</div>
+          <h3>Why Most Nigerian Business Websites Don&rsquo;t Convert</h3>
+          <p>A slow, untrustworthy website is not neutral. It actively costs you clients. Here is what we see most often and how to address it.</p>
+          <span class="bc-link">Read Article <i class="fas fa-arrow-right"></i></span>
         </div>
       </a>
-
-      <a href="blog-post-2.html" class="bc">
-        <div class="bc-top" style="background:linear-gradient(135deg,#0d0d2e,#1a1a5e);">
-          <div class="bc-grid"></div>
-          <span class="bc-cat">Technology</span>
-        </div>
+      <a href="blog-post-2.html" class="bc rv d1">
+        <div class="bc-top" style="background:linear-gradient(135deg,#0d0d2e,#1a1a5e);"><div class="bc-tgrid"></div><span class="bc-cat">Technology</span></div>
         <div class="bc-body">
-          <div class="bc-meta">March 2026 · 5 min read</div>
-          <h3>What Is a web application and Why Should Your Business Care?</h3>
-          <p>Progressive Web Apps sit between a website and a native app. They&#39;re faster, cheaper, and often the smarter choice — especially in markets like Nigeria.</p>
-          <div class="bc-link">Read Article <i class="fas fa-arrow-right"></i></div>
+          <div class="bc-meta">March 2026 &middot; 5 min read</div>
+          <h3>What Is a PWA and Why Should Your Business Care?</h3>
+          <p>Progressive Web Apps sit between a website and a native app. They are faster, cheaper to build, and often the smarter investment &mdash; especially in markets like Nigeria.</p>
+          <span class="bc-link">Read Article <i class="fas fa-arrow-right"></i></span>
         </div>
       </a>
-
-      <a href="blog-post-3.html" class="bc">
-        <div class="bc-top" style="background:linear-gradient(135deg,#001428,#003366);">
-          <div class="bc-grid"></div>
-          <span class="bc-cat">Case Study</span>
-        </div>
+      <a href="blog-post-3.html" class="bc rv d2">
+        <div class="bc-top" style="background:linear-gradient(135deg,#001428,#003366);"><div class="bc-tgrid"></div><span class="bc-cat">Case Study</span></div>
         <div class="bc-body">
-          <div class="bc-meta">February 2026 · 6 min read</div>
-          <h3>How We Built Examora: Nigeria&#39;s Modern CBT Exam Platform</h3>
+          <div class="bc-meta">February 2026 &middot; 6 min read</div>
+          <h3>How We Built Examora: Nigeria&rsquo;s Modern CBT Platform</h3>
           <p>From a conversation about JAMB prep to a live platform with AI-assisted practice. The decisions, challenges and lessons from building Examora.</p>
-          <div class="bc-link">Read Article <i class="fas fa-arrow-right"></i></div>
+          <span class="bc-link">Read Article <i class="fas fa-arrow-right"></i></span>
         </div>
       </a>
-
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" style="background:var(--bg2);">
   <div class="wrap">
     <div class="cgrid">
       <div>
-        <div class="badge">Contact</div>
-        <h2>Let's build something<br>exceptional</h2>
-        <p style="margin-top:14px;max-width:400px;">Have a project in mind? We respond within 24 hours and love an interesting challenge.</p>
+        <div class="badge rv">Contact</div>
+        <h2 class="rv">Let&rsquo;s build something exceptional</h2>
+        <p class="rv" style="margin-top:14px;max-width:400px;">Have a project in mind? We respond to every enquiry within 24 hours and enjoy an interesting challenge.</p>
         <div class="cms">
-          <a href="mailto:hello&#64;nexacorelabs&#46;site" class="cm"><div class="cmi ci-b"><i class="fas fa-envelope"></i></div><div><div class="cml">Email Us</div><div class="cmv">hello&#64;nexacorelabs&#46;site</div></div></a>
-          <a href="https://wa.me/2348187017489" target="_blank" rel="noopener noreferrer" class="cm"><div class="cmi ci-g"><i class="fab fa-whatsapp"></i></div><div><div class="cml">WhatsApp</div><div class="cmv">+234 818 701 7489</div></div></a>
-          <div class="cm" style="cursor:default;"><div class="cmi ci-b"><i class="fas fa-location-dot"></i></div><div><div class="cml">Locations</div><div class="cmv">Dublin, Ireland · Nigeria</div></div></div>
+          <a href="mailto:hello&#64;nexacorelabs&#46;site" class="cm rv"><div class="cmi ci-b"><i class="fas fa-envelope"></i></div><div><div class="cml">Email Us</div><div class="cmv">hello&#64;nexacorelabs&#46;site</div></div></a>
+          <a href="https://wa.me/2348187017489" target="_blank" rel="noopener noreferrer" class="cm rv d1"><div class="cmi ci-g"><i class="fab fa-whatsapp"></i></div><div><div class="cml">WhatsApp</div><div class="cmv">+234 818 701 7489</div></div></a>
+          <div class="cm rv d2" style="cursor:default;"><div class="cmi ci-b"><i class="fas fa-location-dot"></i></div><div><div class="cml">Locations</div><div class="cmv">Dublin, Ireland &middot; Nigeria</div></div></div>
         </div>
       </div>
-      <div class="fw">
+      <div class="fw rv d1">
         <div id="fmsg" class="fmsg"></div>
         <form id="cf" action="https://formspree.io/f/xjkvrdya" method="POST">
           <div class="fr">
             <div class="fg"><label>First Name</label><input type="text" name="firstName" placeholder="John" required></div>
             <div class="fg"><label>Last Name</label><input type="text" name="lastName" placeholder="Doe" required></div>
           </div>
-          <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@company.com" required></div>
-          <div class="fg"><label>Service</label><select name="service"><option value="">Select a service...</option><option>Web Design &amp; Development</option><option>Mobile / Application Development</option><option>AI &amp; Automation Solutions</option><option>EdTech Platform Development</option><option>Backend &amp; API Engineering</option><option>Digital Marketing (via Nur Futura)</option><option>Other / General Inquiry</option></select></div>
+          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required></div>
+          <div class="fg"><label>Service</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>Web Design &amp; Development</option>
+              <option>Mobile Application Development</option>
+              <option>AI &amp; Automation</option>
+              <option>EdTech Platform Development</option>
+              <option>Backend &amp; API Engineering</option>
+              <option>Digital Marketing (via Nur Futura)</option>
+              <option>Other / General Enquiry</option>
+            </select>
+          </div>
           <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your project..." required></textarea></div>
           <button type="submit" class="btn bp fsub" id="fBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
@@ -702,22 +851,22 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
 <div class="divider"></div>
 
 <!-- FAQ -->
-<section id="faq" style="background:var(--bg2);">
+<section id="faq">
   <div class="wrap">
     <div class="faqg">
       <div>
-        <div class="badge">FAQ</div>
-        <h2>Questions<br>answered.</h2>
-        <p style="margin-top:14px;margin-bottom:28px;">Everything you need to know before starting. Don't see yours? Just ask.</p>
-        <a href="mailto:hello&#64;nexacorelabs&#46;site" class="btn bp"><i class="fas fa-envelope"></i> Ask Us Directly</a>
+        <div class="badge rv">FAQ</div>
+        <h2 class="rv">Questions answered.</h2>
+        <p class="rv" style="margin-top:14px;margin-bottom:28px;">Everything you need to know before starting a project. Don&rsquo;t see yours? Just ask us directly.</p>
+        <a href="mailto:hello&#64;nexacorelabs&#46;site" class="btn bp rv"><i class="fas fa-envelope"></i> Ask Us Directly</a>
       </div>
       <div class="faql">
-        <div class="faqi"><div class="faqq">How long does a typical project take?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Landing pages take 1–2 weeks, full web apps take 4–10 weeks, complex platforms take 3–6 months. We give a realistic timeline at our discovery call before any work begins.</div></div></div>
-        <div class="faqi"><div class="faqq">Do you work with international clients?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Absolutely. We're fully remote-capable and work with clients in Ireland, Nigeria, the UK and beyond via email, WhatsApp and video calls.</div></div></div>
-        <div class="faqi"><div class="faqq">What do I need to get started?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Just a clear idea of what you want to build. We handle everything from scoping to design to launch. Brand assets are a bonus if you have them.</div></div></div>
-        <div class="faqi"><div class="faqq">Do you offer post-launch support?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Yes. Every project includes 30–60 days of post-launch support. Enterprise clients can access monthly retainer agreements for ongoing updates and priority fixes.</div></div></div>
-        <div class="faqi"><div class="faqq">Can you work within a fixed budget?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Yes — tell us your budget upfront and we'll design a scope that delivers maximum value within it. We'd rather be transparent than overpromise.</div></div></div>
-        <div class="faqi"><div class="faqq">What makes NexaCore Labs different?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">We're a focused studio — not a conveyor-belt agency. Every project gets strategic thinking, AI-first architecture and a dual-market perspective most agencies simply don't have.</div></div></div>
+        <div class="faqi"><div class="faqq">How long does a typical project take?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Landing pages take 1&ndash;2 weeks. Full web applications take 4&ndash;10 weeks. Complex platforms take 3&ndash;6 months. We give you a realistic timeline at the discovery stage before any work or payment begins.</div></div></div>
+        <div class="faqi"><div class="faqq">Do you work with international clients?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Yes. We are fully remote-capable and work with clients in Ireland, Nigeria, the UK and internationally. We communicate via email, WhatsApp and video calls across time zones.</div></div></div>
+        <div class="faqi"><div class="faqq">What do I need to get started?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">A clear idea of what you want to build. We handle everything from scoping through to launch. If you have brand assets or an existing brief, that helps &mdash; but they are not required to begin a conversation.</div></div></div>
+        <div class="faqi"><div class="faqq">Do you offer post-launch support?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Yes. Every engagement includes 30&ndash;60 days of post-launch support as standard. Enterprise clients can access monthly retainer agreements for ongoing development and priority issue resolution.</div></div></div>
+        <div class="faqi"><div class="faqq">Can you work within a fixed budget?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">Yes &mdash; tell us your budget upfront and we will scope a project that delivers maximum value within it. We would rather be transparent about constraints than overpromise and underdeliver.</div></div></div>
+        <div class="faqi"><div class="faqq">What makes NexaCore Labs different?<div class="faqic"><i class="fas fa-plus"></i></div></div><div class="faqa"><div class="faqa-in">We are a focused studio, not a volume agency. Every project gets genuine strategic thinking, a dual-market perspective you will not find elsewhere, and the engineering standards of a team that builds and maintains real products used by real people.</div></div></div>
       </div>
     </div>
   </div>
@@ -729,122 +878,87 @@ footer{background:var(--bg);border-top:1px solid var(--brd);padding:56px 0 28px;
   <div class="wrap">
     <div class="fg2">
       <div class="fbc">
-        <div class="logo"><svg viewBox="0 0 36 36" fill="none" style="width:30px;height:30px;"><polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="#007bff" stroke-width="2.2" fill="none"/><circle cx="18" cy="18" r="3.5" fill="#007bff"/><circle cx="18" cy="18" r="1.6" fill="#cce5ff"/></svg>NexaCore Labs</div>
-        <p>A technology studio building digital products, AI solutions and web platforms from Ireland &amp; Nigeria.</p>
+        <div class="logo">
+          <svg viewBox="0 0 36 36" fill="none" style="width:30px;height:30px;"><polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="#007bff" stroke-width="2.2" fill="none"/><circle cx="18" cy="18" r="3.5" fill="#007bff"/><circle cx="18" cy="18" r="1.6" fill="#cce5ff"/></svg>
+          NexaCore Labs
+        </div>
+        <p>A technology studio building digital products, AI solutions and web platforms &mdash; from Dublin, Ireland and Nigeria.</p>
         <div class="fsocs">
-          <a href="https://instagram.com/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://linkedin.com/company/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/nexacorelabs" target="_blank" class="fsoc"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/nexacorelabs" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/nexacorelabs" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/nexacorelabs" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://threads.net/@nexacorelabs" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
         </div>
       </div>
-      <div class="fc"><h4>Services</h4><ul class="fl2"><li><a href="#services">Web Development</a></li><li><a href="#services">Mobile &amp; Application Development</a></li><li><a href="#services">AI Solutions</a></li><li><a href="#services">EdTech Platforms</a></li><li><a href="#services">Digital Marketing</a></li></ul></div>
-      <div class="fc"><h4>Company</h4><ul class="fl2"><li><a href="#about">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#team">Team</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="fc">
+        <h4>Services</h4>
+        <ul class="fl2">
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Mobile Applications</a></li>
+          <li><a href="#services">AI &amp; Automation</a></li>
+          <li><a href="#services">EdTech Platforms</a></li>
+          <li><a href="#services">Digital Marketing</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Company</h4>
+        <ul class="fl2">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#projects">Our Work</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#blog">Insights</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
     <div class="fbtm">
-      <p>© 2026 NexaCore Labs. All rights reserved. Dublin, Ireland &amp; Nigeria</p>
-      <div class="nfc2"><i class="fas fa-bullhorn" style="color:var(--nf);font-size:11px;"></i> Marketing by <a href="https://nurfuturamarketing.com.ng" target="_blank">Nur Futura Marketing</a></div>
+      <p>&copy; 2026 NexaCore Labs. All rights reserved. Dublin, Ireland &amp; Nigeria.</p>
+      <div class="nfc2"><i class="fas fa-bullhorn" style="color:#ff6e28;font-size:11px;"></i>&nbsp;Marketing by <a href="https://nurfuturamarketing.com.ng" target="_blank" rel="noopener noreferrer">Nur Futura Marketing</a></div>
     </div>
   </div>
 </footer>
-<button id="btt"><i class="fas fa-arrow-up"></i></button>
+
+<a id="wa-float" href="https://wa.me/2348187017489" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button id="btt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
 <script>
 (function(){
-  // NAVBAR
-  var nav = document.getElementById('nav');
-  var btt = document.getElementById('btt');
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('sc', window.scrollY > 50);
-    btt.classList.toggle('show', window.scrollY > 500);
-  },{passive:true});
-  btt.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-
-  // DRAWER
-  var dov = document.getElementById('dov');
-  var drw = document.getElementById('drw');
-  function openD(){ dov.classList.add('on'); drw.classList.add('on'); document.body.style.overflow='hidden'; }
-  function closeD(){ dov.classList.remove('on'); drw.classList.remove('on'); document.body.style.overflow=''; }
-  document.getElementById('hamBtn').addEventListener('click', openD);
-  document.getElementById('drwClose').addEventListener('click', closeD);
-  dov.addEventListener('click', closeD);
-  document.querySelectorAll('.dl').forEach(function(a){ a.addEventListener('click', closeD); });
-
-  // SMOOTH SCROLL with navbar offset
+  var nav=document.getElementById('nav');
+  var btt=document.getElementById('btt');
+  window.addEventListener('scroll',function(){nav.classList.toggle('sc',window.scrollY>50);btt.classList.toggle('show',window.scrollY>500);},{passive:true});
+  btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  var dov=document.getElementById('dov'),drw=document.getElementById('drw');
+  function openD(){dov.classList.add('on');drw.classList.add('on');document.body.style.overflow='hidden';}
+  function closeD(){dov.classList.remove('on');drw.classList.remove('on');document.body.style.overflow='';}
+  document.getElementById('hamBtn').addEventListener('click',openD);
+  document.getElementById('drwClose').addEventListener('click',closeD);
+  dov.addEventListener('click',closeD);
+  document.querySelectorAll('.dl').forEach(function(a){a.addEventListener('click',closeD);});
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click',function(e){
-      var id = a.getAttribute('href');
-      if(!id || id==='#') return;
-      var el = document.querySelector(id);
-      if(!el) return;
-      e.preventDefault();
-      closeD();
-      setTimeout(function(){
-        var off = (nav.offsetHeight || 70) + 10;
-        window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - off, behavior:'smooth'});
-      }, 60);
+      var id=a.getAttribute('href');
+      if(!id||id==='#')return;
+      var el=document.querySelector(id);
+      if(!el)return;
+      e.preventDefault();closeD();
+      setTimeout(function(){var off=(nav?nav.offsetHeight:70)+12;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-off,behavior:'smooth'});},60);
     });
   });
-
-  // SERVICE CARD GLOW
-  document.querySelectorAll('.sc').forEach(function(c){
-    c.addEventListener('mousemove',function(e){
-      var r = c.getBoundingClientRect();
-      c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-      c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
-    });
-  });
-
-  // PROJECT FILTER
-  document.querySelectorAll('.fb').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.fb').forEach(function(b){ b.classList.remove('on'); });
-      btn.classList.add('on');
-      var f = btn.getAttribute('data-f');
-      document.querySelectorAll('#pg .pc').forEach(function(c){
-        c.style.display = (f==='all' || c.getAttribute('data-cat')===f) ? '' : 'none';
-      });
-    });
-  });
-
-  // FAQ
-  document.querySelectorAll('.faqi').forEach(function(item){
-    item.querySelector('.faqq').addEventListener('click',function(){
-      var was = item.classList.contains('open');
-      document.querySelectorAll('.faqi').forEach(function(i){ i.classList.remove('open'); });
-      if(!was) item.classList.add('open');
-    });
-  });
-
-  // CONTACT FORM
-  var form = document.getElementById('cf');
-  var fmsg = document.getElementById('fmsg');
-  var fBtn = document.getElementById('fBtn');
-  if(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      fBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
-      fBtn.disabled=true;
-      fmsg.className='fmsg';
-      fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){
-                    if(r.ok){
-            fmsg.textContent='\u2713 Message sent! We\'ll be in touch within 24 hours.';
-            fmsg.className='fmsg ok';
-            form.reset();
-            setTimeout(function(){ fmsg.className='fmsg'; },6000);
-          } else { throw new Error(); }
-        })
-        .catch(function(){
-          fmsg.textContent='\u2717 Something went wrong. Email us at hello@nexacorelabs.site';
-          fmsg.className='fmsg err';
-        })
-        .finally(function(){
-          fBtn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message';
-          fBtn.disabled=false;
-        });
-    });
+  if('IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
+    var co=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,target=parseInt(el.getAttribute('data-target'),10),start=null;function tick(ts){if(!start)start=ts;var p=Math.min((ts-start)/1400,1),eased=1-Math.pow(1-p,3);el.textContent=Math.floor(eased*target);if(p<1)requestAnimationFrame(tick);else el.textContent=target;}requestAnimationFrame(tick);co.unobserve(el);});},{threshold:0.5});
+    document.querySelectorAll('.cnt').forEach(function(el){co.observe(el);});
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
   }
+  document.querySelectorAll('.sc').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});});
+  document.querySelectorAll('.faqi').forEach(function(item){item.querySelector('.faqq').addEventListener('click',function(){var was=item.classList.contains('open');document.querySelectorAll('.faqi').forEach(function(i){i.classList.remove('open');});if(!was)item.classList.add('open');});});
+  var form=document.getElementById('cf'),fmsg=document.getElementById('fmsg'),fBtn=document.getElementById('fBtn');
+  if(form){form.addEventListener('submit',function(e){e.preventDefault();fBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';fBtn.disabled=true;fmsg.className='fmsg';fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){fmsg.textContent='\u2713 Message sent! We\'ll be in touch within 24 hours.';fmsg.className='fmsg ok';form.reset();setTimeout(function(){fmsg.className='fmsg';},6000);}else{throw new Error();}}).catch(function(){fmsg.textContent='\u2717 Something went wrong. Please email hello@nexacorelabs.site directly.';fmsg.className='fmsg err';}).finally(function(){fBtn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message';fBtn.disabled=false;});});}
 })();
 </script>
 </body>
